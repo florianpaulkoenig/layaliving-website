@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -23,10 +24,17 @@ export function SiteHeader() {
       <nav className="wrap flex flex-wrap items-center justify-between gap-x-8 gap-y-3 py-4">
         <Link
           href="/"
-          className="font-script text-3xl leading-none text-ink"
+          className="flex items-center"
           aria-label="Laya Living — Home"
         >
-          Laya
+          <Image
+            src="/logo-laya.png"
+            alt="Laya"
+            width={120}
+            height={80}
+            priority
+            className="h-10 w-auto sm:h-12"
+          />
         </Link>
 
         <div className="hidden items-center gap-8 text-[12px] uppercase tracking-[0.18em] text-ink-muted md:flex">

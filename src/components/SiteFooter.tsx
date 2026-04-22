@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function SiteFooter() {
@@ -5,8 +6,14 @@ export function SiteFooter() {
     <footer className="mt-24 border-t border-line bg-cream-light">
       <div className="wrap grid gap-10 py-14 md:grid-cols-3">
         <div>
-          <p className="font-script text-4xl leading-none text-ink">Laya</p>
-          <p className="mt-3 max-w-xs text-sm text-ink-muted">
+          <Image
+            src="/logo-laya.png"
+            alt="Laya"
+            width={160}
+            height={106}
+            className="h-16 w-auto"
+          />
+          <p className="mt-4 max-w-xs text-sm text-ink-muted">
             A little paradise near Lucerne — yours for a weekend, a week,
             or as long as you want to stay.
           </p>

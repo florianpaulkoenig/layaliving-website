@@ -1,60 +1,46 @@
+import { BookView } from "@/components/book/BookView";
 import { LodgifyBookNowBox } from "@/components/LodgifyBookNowBox";
+import "../pages.css";
 
 export const metadata = {
   title: "Book Now — Laya Living",
-  description: "Check availability and book Triangolo directly — no platform fees.",
+  description:
+    "Check availability and book Triangolo directly — no platform fees.",
 };
 
-export default function BookPage() {
-  return (
-    <section className="wrap py-20 md:py-28">
-      <div className="grid gap-12 md:grid-cols-[1.15fr_1fr] lg:gap-16">
-        <div>
+/**
+ * The main /book route ships the Alpine Quiet façade (custom calendar +
+ * guest picker + summary). "Request to reserve" opens a mailto to the
+ * host with the proposed stay; they confirm the reservation via their
+ * Lodgify backend.
+ *
+ * `?view=lodgify` falls back to the embedded Lodgify Book-Now-Box for
+ * guests who prefer the calendar-partner's direct online flow.
+ */
+export default function BookPage({
+  searchParams,
+}: {
+  searchParams?: { view?: string };
+}) {
+  if (searchParams?.view === "lodgify") {
+    return (
+      <section className="wrap py-20 md:py-28">
+        <div className="mx-auto max-w-xl">
           <p className="kicker">Book directly</p>
-          <h1 className="mt-4 text-5xl sm:text-6xl text-balance lg:text-7xl">
-            Book <em className="italic text-sage-dark">directly</em> — the best rate, no middlemen.
+          <h1 className="mt-4 text-5xl text-balance">
+            Book <em className="it-accent">directly</em> — the best rate.
           </h1>
-          <p className="mt-6 max-w-prose text-pretty text-lg text-ink-muted">
-            Reserve Triangolo straight from us. Same calendar, same quality —
-            without the Airbnb and Booking.com fees on top.
+          <p className="mt-6 text-ink-soft">
+            Reserve Triangolo straight through our calendar partner — same
+            quality, no middlemen.
           </p>
-
-          <ul className="mt-10 space-y-4 text-ink-muted">
-            <li className="flex gap-3">
-              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-sage-dark" />
-              <span>
-                <strong className="text-ink">Best price guarantee.</strong>{" "}
-                Direct is always the lowest rate.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-sage-dark" />
-              <span>
-                <strong className="text-ink">Flexible communication.</strong>{" "}
-                Reach us at any time on{" "}
-                <a
-                  href="mailto:info@layaliving.ch"
-                  className="underline-offset-4 hover:underline"
-                >
-                  info@layaliving.ch
-                </a>
-                .
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-sage-dark" />
-              <span>
-                <strong className="text-ink">Immediate confirmation.</strong>{" "}
-                Secure checkout — no manual approval.
-              </span>
-            </li>
-          </ul>
+          <div className="mt-10">
+            <LodgifyBookNowBox language="en" />
+          </div>
         </div>
+      </section>
+    );
+  }
 
-        <div className="md:sticky md:top-24 md:self-start">
-          <LodgifyBookNowBox language="en" />
-        </div>
-      </div>
-    </section>
-  );
+  return <BookView heroImage="/images/living-room.jpg" />;
 }

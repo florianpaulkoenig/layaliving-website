@@ -316,6 +316,327 @@
   .page-recs .recs-index td.dist { display: none; }
 }
 
+/* ───────── Book ───────── */
+
+.page-book .book {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-book .book-main {
+  padding: 72px 56px;
+  border-right: 1px solid var(--line);
+}
+
+.page-book .book-steps {
+  display: flex;
+  gap: 0;
+  margin-bottom: 48px;
+  border-bottom: 1px solid var(--line);
+}
+.page-book .book-step {
+  flex: 1;
+  padding: 18px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  color: var(--ink-muted);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.page-book .book-step.active {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+.page-book .book-step .n {
+  font-family: var(--font-display), "EB Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--accent);
+}
+.page-book .book-step .t {
+  font-family: var(--font-display), "EB Garamond", Georgia, serif;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+
+.page-book .book-section-title {
+  font-size: 36px;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+.page-book .book-section-sub {
+  font-size: 14px;
+  color: var(--ink-2);
+  margin: 0 0 28px;
+  max-width: 52ch;
+}
+
+.page-book .book-cal-wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.page-book .book-guests {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.page-book .book-guests .row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.page-book .book-guests .row .k {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.page-book .book-guests .row .sub {
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+.page-book .book-guests .stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding: 6px 0;
+}
+.page-book .book-guests .stepper .v {
+  font-family: var(--font-display), "EB Garamond", Georgia, serif;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+.page-book .book-guests .stepper button {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: transparent;
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  cursor: pointer;
+  color: var(--ink);
+  font-family: var(--font-display), "EB Garamond", Georgia, serif;
+  font-size: 16px;
+  line-height: 1;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.page-book .book-guests .stepper button:hover:not(:disabled) {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+.page-book .book-guests .stepper button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Sticky summary column */
+.page-book .book-side {
+  padding: 72px 48px;
+  background: color-mix(in oklab, var(--bg-2) 60%, var(--bg));
+  align-self: start;
+  position: sticky;
+  top: 0;
+}
+.page-book .book-side .fig {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+}
+.page-book .book-side h3 {
+  margin: 0 0 6px;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+.page-book .book-side .loc {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--ink-muted);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.page-book .book-side .summary {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.page-book .book-side .summary .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 14px;
+}
+.page-book .book-side .summary .row .k {
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 11px;
+  font-weight: 500;
+}
+.page-book .book-side .summary .row .v {
+  font-family: var(--font-display), "EB Garamond", Georgia, serif;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+.page-book .book-side .total {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.page-book .book-side .total .k {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--ink-2);
+  font-weight: 500;
+}
+.page-book .book-side .total .v {
+  font-family: var(--font-display), "EB Garamond", Georgia, serif;
+  font-size: 32px;
+  letter-spacing: -0.02em;
+}
+.page-book .book-side .confirm {
+  margin-top: 28px;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+.page-book .book-side .fine {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--ink-muted);
+  text-align: center;
+}
+
+/* Book calendar — range-selection look */
+.page-book .bc-month h4 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.page-book .bc-month h4 .nav {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+.page-book .bc-month h4 .nav button {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: transparent;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--ink);
+  font-family: var(--font-display), "EB Garamond", Georgia, serif;
+  font-size: 13px;
+  line-height: 1;
+}
+.page-book .bc-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  font-size: 12px;
+}
+.page-book .bc-dow {
+  text-align: center;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-muted);
+  padding: 6px 0 8px;
+  font-weight: 500;
+}
+.page-book .bc-cell {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  color: var(--ink);
+  border: 1px solid transparent;
+  user-select: none;
+}
+.page-book .bc-cell.empty {
+  color: transparent;
+  pointer-events: none;
+}
+.page-book .bc-cell.booked {
+  background: repeating-linear-gradient(-45deg, transparent, transparent 3px, var(--line) 3px, var(--line) 4px);
+  color: var(--ink-muted);
+  cursor: not-allowed;
+}
+.page-book .bc-cell.in-range {
+  background: color-mix(in oklab, var(--accent) 18%, transparent);
+}
+.page-book .bc-cell.range-start,
+.page-book .bc-cell.range-end {
+  background: var(--ink);
+  color: var(--bg);
+}
+.page-book .bc-cell:hover:not(.booked):not(.empty):not(.range-start):not(.range-end) {
+  box-shadow: inset 0 0 0 1px var(--ink);
+}
+
+/* Lodgify fallback link */
+.page-book .book-fallback {
+  padding: 48px 56px 96px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+.page-book .book-fallback p {
+  font-size: 14px;
+  color: var(--ink-muted);
+  margin: 0;
+}
+.page-book .book-fallback a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
+}
+
+/* Book mobile */
+@media (max-width: 768px) {
+  .page-book .book { grid-template-columns: 1fr; }
+  .page-book .book-main,
+  .page-book .book-side {
+    padding: 40px 20px;
+    border-right: none;
+    position: static;
+  }
+  .page-book .book-cal-wrap { grid-template-columns: 1fr; gap: 32px; }
+  .page-book .book-guests { grid-template-columns: 1fr; }
+  .page-book .book-steps { overflow-x: auto; }
+  .page-book .book-step { flex: 0 0 auto; padding-right: 20px; }
+  .page-book .book-fallback { padding: 32px 20px 56px; }
+}
+
 /* ───────── Contact ─────────
    Info-only (no form). Left = contact blocks, right = editorial panel
    with a line of serif copy and a full-bleed image. */

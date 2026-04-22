@@ -33,6 +33,7 @@ export type Season = "spring" | "summer" | "autumn" | "winter";
  * Primary filter dimension for guests — broad, covers many moods.
  */
 export const TAG_CATALOG: Array<{ slug: string; label: string }> = [
+  { slug: "personal-favorites", label: "Our favourites" },
   { slug: "romantic", label: "Romantic" },
   { slug: "family-friendly", label: "Family-friendly" },
   { slug: "kid-safe", label: "Kid-safe" },

@@ -111,6 +111,11 @@ export function CategoryListing({
                         No image yet
                       </div>
                     )}
+                    {(r.tags ?? []).includes("personal-favorites") && (
+                      <span className="absolute left-3 top-3 rounded-full bg-ink/90 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.14em] text-cream-light">
+                        Our pick
+                      </span>
+                    )}
                   </div>
                   <div className="flex flex-1 flex-col gap-2 p-5">
                     <h3 className="text-2xl">{r.name}</h3>

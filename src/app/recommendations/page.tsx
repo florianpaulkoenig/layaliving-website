@@ -1,22 +1,39 @@
 import Link from "next/link";
+import { supabasePublic } from "@/lib/supabase";
+import { CATEGORIES, type Category } from "@/types/recommendation";
 
 export const metadata = {
   title: "Our Recommendations — Laya Living",
-  description: "Hand-picked places to eat, drink, hike, cycle, and explore in Lucerne.",
+  description:
+    "Hand-picked places to eat, drink, hike, cycle, and explore in Lucerne.",
 };
 
-const CATEGORIES = [
-  { slug: "eat", title: "Eat", hint: "Family-run kitchens to quiet fine dining" },
-  { slug: "drink", title: "Drink", hint: "Third-wave coffee, wine bars, late-night cocktails" },
-  { slug: "hike", title: "Hike & Nature", hint: "Rigi, Pilatus, Stanserhorn & more" },
-  { slug: "bike", title: "Bike Routes", hint: "Velohighway and scenic loops" },
-  { slug: "culture", title: "Culture", hint: "Museums, old town, seasonal events" },
-  { slug: "daytrips", title: "Day Trips", hint: "Engelberg, Interlaken, Zurich" },
-  { slug: "family", title: "Family & Kids", hint: "Tested by locals with small humans" },
-  { slug: "gems", title: "Hidden Gems", hint: "The places we don't share online" },
-];
+export const dynamic = "force-dynamic";
 
-export default function RecommendationsPage() {
+async function getCategoryCounts(): Promise<Record<Category, number>> {
+  const counts = Object.fromEntries(
+    CATEGORIES.map((c) => [c.slug, 0])
+  ) as Record<Category, number>;
+  try {
+    const supabase = supabasePublic();
+    const { data, error } = await supabase
+      .from("recommendations")
+      .select("category")
+      .eq("published", true);
+    if (error || !data) return counts;
+    for (const row of data as Array<{ category: Category }>) {
+      if (counts[row.category] !== undefined) counts[row.category] += 1;
+    }
+  } catch {
+    /* swallow — empty counts shown as "coming soon" */
+  }
+  return counts;
+}
+
+export default async function RecommendationsPage() {
+  const counts = await getCategoryCounts();
+  const total = Object.values(counts).reduce((s, n) => s + n, 0);
+
   return (
     <>
       <section className="wrap py-20 md:py-28">
@@ -26,37 +43,57 @@ export default function RecommendationsPage() {
           you.
         </h1>
         <p className="mt-6 max-w-prose text-pretty text-lg text-ink-muted">
-          The restaurants, trails and rituals we&rsquo;d take a friend to.
-          Filter by mood, distance, or season — coming soon to your
-          Triangolo welcome guide.
+          The restaurants, trails, and rituals we&rsquo;d take a friend to.
+          Filter by mood, season, or distance — something for everyone.
         </p>
+        {total === 0 ? (
+          <p className="mt-6 rounded border border-line bg-cream-light px-4 py-3 text-sm text-ink-muted">
+            We&rsquo;re gathering our favourites right now. Check back soon —
+            or{" "}
+            <Link href="/contact" className="underline underline-offset-4">
+              ask us directly
+            </Link>
+            .
+          </p>
+        ) : null}
       </section>
 
       <section className="bg-cream-light py-16 md:py-20">
         <div className="wrap grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {CATEGORIES.map((c) => (
-            <div
-              key={c.slug}
-              className="group flex flex-col gap-2 rounded border border-line bg-white p-6 transition hover:border-ink/25"
-            >
-              <p className="kicker text-sage-dark">{c.title}</p>
-              <h3 className="text-2xl">{c.hint}</h3>
-              <span className="mt-auto pt-4 text-[11px] uppercase tracking-[0.16em] text-ink-muted">
-                Coming soon
-              </span>
-            </div>
-          ))}
+          {CATEGORIES.map((c) => {
+            const n = counts[c.slug];
+            const disabled = n === 0;
+            const body = (
+              <>
+                <p className="kicker text-sage-dark">{c.title}</p>
+                <h3 className="text-2xl">{c.hint}</h3>
+                <span className="mt-auto pt-4 text-[11px] uppercase tracking-[0.16em] text-ink-muted">
+                  {disabled
+                    ? "Coming soon"
+                    : `${n} ${n === 1 ? "place" : "places"} →`}
+                </span>
+              </>
+            );
+            const className = `group flex flex-col gap-2 rounded border border-line bg-white p-6 transition ${
+              disabled
+                ? "opacity-60"
+                : "hover:border-ink/25 hover:shadow-subtle"
+            }`;
+            return disabled ? (
+              <div key={c.slug} className={className}>
+                {body}
+              </div>
+            ) : (
+              <Link
+                key={c.slug}
+                href={`/recommendations/${c.slug}`}
+                className={className}
+              >
+                {body}
+              </Link>
+            );
+          })}
         </div>
-      </section>
-
-      <section className="wrap py-16 text-center">
-        <p className="text-ink-muted">
-          Want a sneak peek of our favourites?{" "}
-          <Link href="/contact" className="text-ink underline underline-offset-4">
-            Get in touch
-          </Link>
-          .
-        </p>
       </section>
     </>
   );

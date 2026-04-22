@@ -6,18 +6,18 @@ export const dynamic = "force-dynamic";
 /**
  * Server-side proxy for Google Places Photos (v1 API).
  *
- * Client calls `/api/photo?ref=places/<place_id>/photos/<photo_id>&w=1200`.
- * We attach the server-only GOOGLE_PLACES_API_KEY and 302 to Google, which in
- * turn redirects to the final `googleusercontent.com` image URL. The API key
- * never reaches the browser.
+ * We fetch the image binary server-side and stream it back, rather than 302ing
+ * the browser to Google. Two reasons:
+ *   1. The API key has HTTP-referrer restrictions (only www.layaliving.ch/*).
+ *      A browser-follow-redirect strips Referer, so Google would return 403.
+ *   2. Hiding the googleapis URL + key from the client is a nice bonus.
  *
- * Cache hint: Google's final URL is short-lived (hours) but stable enough
- * for an hour of browser caching and a day on Vercel Edge. Keeps our Places
- * API bill low even under traffic.
+ * Flow: client → /api/photo?ref=places/<pid>/photos/<photoId>&w=1200
+ *        → our server calls Google with Referer header (gets JSON with photoUri)
+ *        → our server fetches the lh3.googleusercontent.com binary
+ *        → we stream bytes back to the browser
  */
 
-// Place photo `name` format is: `places/<placeId>/photos/<photoId>`.
-// Example: `places/ChIJXXXX/photos/AdCG2DPYYY`
 const REF_SHAPE = /^places\/[A-Za-z0-9_-]+\/photos\/[A-Za-z0-9_-]+$/;
 
 export async function GET(req: Request) {
@@ -42,13 +42,43 @@ export async function GET(req: Request) {
 
   const maxHeight = Math.min(Math.max(parseInt(w, 10) || 1200, 200), 1600);
 
-  // Places API v1 photo endpoint. The `name` goes directly in the path.
-  const googleUrl = `https://places.googleapis.com/v1/${ref}/media?maxHeightPx=${maxHeight}&key=${apiKey}`;
+  // Step 1: resolve the photo → get the googleusercontent.com URL as JSON.
+  const metaUrl = `https://places.googleapis.com/v1/${ref}/media?maxHeightPx=${maxHeight}&skipHttpRedirect=true&key=${apiKey}`;
+  const metaRes = await fetch(metaUrl, {
+    headers: { Referer: "https://www.layaliving.ch/" },
+    cache: "no-store",
+  });
 
-  return NextResponse.redirect(googleUrl, {
-    status: 302,
+  if (!metaRes.ok) {
+    return NextResponse.json(
+      { error: "Upstream photo lookup failed", status: metaRes.status },
+      { status: 502 }
+    );
+  }
+
+  const meta = (await metaRes.json()) as { photoUri?: string };
+  if (!meta.photoUri) {
+    return NextResponse.json({ error: "No photoUri in response" }, { status: 502 });
+  }
+
+  // Step 2: fetch the actual image bytes and stream them back.
+  const imgRes = await fetch(meta.photoUri, { cache: "no-store" });
+  if (!imgRes.ok || !imgRes.body) {
+    return NextResponse.json(
+      { error: "Image fetch failed", status: imgRes.status },
+      { status: 502 }
+    );
+  }
+
+  const contentType = imgRes.headers.get("content-type") ?? "image/jpeg";
+
+  return new Response(imgRes.body, {
+    status: 200,
     headers: {
-      "Cache-Control": "public, max-age=3600, s-maxage=86400",
+      "Content-Type": contentType,
+      // Google's signed URL is short-lived but the `name` ref is stable —
+      // cache aggressively at the edge, moderately in the browser.
+      "Cache-Control": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800",
     },
   });
 }

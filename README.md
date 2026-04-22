@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Laya Living — Website
 
-## Getting Started
+Public marketing site for [layaliving.ch](https://www.layaliving.ch) — Triangolo apartment, Kriens / Lucerne.
 
-First, run the development server:
+Completely separate from the private [`laya-host-app`](https://github.com/florianpaulkoenig/laya-host-app) (admin dashboard) — different Supabase project, different Vercel deployment, different repo.
+
+## Stack
+
+- Next.js 14 (App Router, TypeScript)
+- Tailwind CSS + Cormorant Garamond + Lato + Dancing Script
+- Supabase (public-reads-only for Recommendations)
+- Lodgify Book-Now-Box embed
+- Deployed on Vercel
+
+## Setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local   # then fill in the anon + service role keys
+npm run dev                   # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Pages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Route | What |
+|---|---|
+| `/` | Landing page (Hero + apartment USPs + local experience + CTA) |
+| `/location` | Triangolo location + access info |
+| `/recommendations` | Curated Lucerne guide (categories + filters — W.3) |
+| `/contact` | Email + address |
+| `/book` | Lodgify Book-Now-Box embed (direct booking, no fees) |
+| `/welcome` | Guest-only page, not in navigation, QR-code access (W.2) |
+| `/impressum` · `/datenschutz` | Legal |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+Production on Vercel, auto-deploys on push to `main`. This project's env vars are its own separate set.
 
-To learn more about Next.js, take a look at the following resources:
+## Roadmap
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **W.1** Home / Location / Contact / Book (done)
+- **W.2** Welcome page (guest guide) + QR code
+- **W.3** Recommendations tool (DB schema, filters, CMS-editable entries)
+- **W.4** Content curation (populate ~80 recommendations)
+- **W.5** Custom domain swap: `www.layaliving.ch` from Squarespace → Vercel

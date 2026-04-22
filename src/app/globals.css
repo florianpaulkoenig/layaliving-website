@@ -2,26 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: var(--font-display), "Cormorant Garamond", Georgia, serif;
+    color: #2A2724;
+    letter-spacing: -0.005em;
   }
+  h1 { font-weight: 500; line-height: 1.05; }
+  h2 { font-weight: 500; line-height: 1.1; }
+  h3, h4 { font-weight: 500; line-height: 1.2; }
+  body {
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  img { display: block; }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .wrap {
+    @apply mx-auto max-w-content px-5 sm:px-8;
+  }
+  .kicker {
+    @apply text-[11px] uppercase tracking-[0.22em] text-ink-muted;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded bg-ink px-6 py-3 text-[13px] font-medium uppercase tracking-[0.14em] text-cream-light transition hover:bg-ink-soft;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded border border-ink/20 bg-transparent px-6 py-3 text-[13px] font-medium uppercase tracking-[0.14em] text-ink transition hover:bg-cream-dark;
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
 }

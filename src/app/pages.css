@@ -1,0 +1,159 @@
+/* ═══════════════════════════════════════════════════════════════════
+   Subpage-specific styles (Location · Contact · Recommendations · Book).
+   Each page wraps in a dedicated root class so their class names don't
+   leak into neighbouring pages.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ───────── Location ───────── */
+
+.page-location .loc-hero {
+  padding: 56px 56px 0;
+}
+.page-location .loc-hero .fig {
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+
+.page-location .loc-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid var(--line);
+}
+.page-location .loc-stat {
+  padding: 48px 40px;
+  border-right: 1px solid var(--line);
+}
+.page-location .loc-stat:last-child { border-right: none; }
+.page-location .loc-stat .k {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--ink-3, var(--ink-muted));
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.page-location .loc-stat .v {
+  font-family: var(--font-display), "EB Garamond", Georgia, serif;
+  font-size: 64px;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+  line-height: 1;
+}
+.page-location .loc-stat .v .unit {
+  font-style: italic;
+  color: var(--accent);
+  font-size: 28px;
+  margin-left: 6px;
+}
+.page-location .loc-stat .mode {
+  font-size: 14px;
+  color: var(--ink-2);
+  margin-top: 10px;
+}
+
+.page-location .loc-blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  padding: 96px 56px;
+  border-bottom: 1px solid var(--line);
+}
+.page-location .loc-blocks .b h2 {
+  font-size: 48px;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+  margin: 0 0 24px;
+}
+.page-location .loc-blocks .b p {
+  font-size: 16px;
+  color: var(--ink-2);
+  margin: 0 0 14px;
+  max-width: 44ch;
+}
+.page-location .loc-blocks .b .ledger {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.page-location .loc-blocks .b .ledger .k {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.page-location .loc-blocks .b .ledger .v {
+  font-family: var(--font-display), "EB Garamond", Georgia, serif;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  margin-top: 4px;
+}
+
+.page-location .loc-panels {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  padding: 0 56px 96px;
+  border-bottom: 1px solid var(--line);
+}
+.page-location .loc-panels .p {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.page-location .loc-panels .p .fig {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  position: relative;
+}
+.page-location .loc-panels .p .cap {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.page-location .loc-panels .p h3 {
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+}
+.page-location .loc-panels .p p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-2);
+  max-width: 44ch;
+}
+
+/* ───────── Location mobile ───────── */
+@media (max-width: 768px) {
+  .page-location .loc-hero { padding: 32px 20px 0; }
+  .page-location .loc-stats { grid-template-columns: 1fr; }
+  .page-location .loc-stat {
+    padding: 28px 20px;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .page-location .loc-stat:last-child { border-bottom: none; }
+  .page-location .loc-stat .v { font-size: 44px; }
+  .page-location .loc-blocks {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 56px 20px;
+  }
+  .page-location .loc-blocks .b h2 { font-size: 32px; }
+  .page-location .loc-panels {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 20px 56px;
+  }
+}

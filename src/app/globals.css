@@ -51,6 +51,124 @@
     font-style: italic;
     color: var(--accent);
   }
+
+  /* ───────── Shared page primitives (subpages) ─────────
+     Homepage has its own scoped versions in home.css. These are the
+     unscoped primitives reused by Location, Contact, Recommendations,
+     Book subpages. */
+
+  /* Page header — sits right under the global nav on every subpage */
+  .ph {
+    padding: 96px 56px 72px;
+    display: grid;
+    grid-template-columns: 140px 1fr 1fr;
+    gap: 40px;
+    align-items: end;
+    border-bottom: 1px solid var(--line);
+  }
+  .ph .ph-kicker {
+    font-family: var(--font-display), "EB Garamond", Georgia, serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-muted);
+    letter-spacing: 0;
+  }
+  .ph h1 {
+    margin: 0;
+    font-size: 104px;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    font-weight: 400;
+    text-wrap: balance;
+  }
+  .ph .lede {
+    font-size: 16px;
+    color: var(--ink-2);
+    max-width: 42ch;
+    margin: 0 0 12px;
+  }
+
+  /* Section header — reused on any subpage that needs a roman-numeral intro */
+  .sec-head {
+    display: grid;
+    grid-template-columns: 140px 1fr 1fr;
+    gap: 40px;
+    align-items: baseline;
+    padding-bottom: 56px;
+  }
+  .sec-head .sec-num {
+    font-family: var(--font-display), "EB Garamond", Georgia, serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-muted);
+  }
+  .sec-head .sec-title {
+    font-size: 56px;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    font-weight: 400;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .sec-head .sec-lede {
+    font-size: 16px;
+    color: var(--ink-2);
+    max-width: 48ch;
+    margin: 0;
+  }
+
+  /* Dark CTA band — shared between homepage CTA and subpage closers */
+  .cta-band {
+    padding: 140px 56px;
+    text-align: center;
+    background: var(--ink);
+    color: var(--bg);
+    border-bottom: 1px solid var(--ink);
+  }
+  .cta-band .kicker { color: color-mix(in oklab, var(--bg) 60%, transparent); }
+  .cta-band h2 {
+    font-size: 104px;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin: 24px auto 40px;
+    max-width: 14ch;
+    text-wrap: balance;
+    color: var(--bg);
+  }
+  .cta-band h2 .it-accent { color: color-mix(in oklab, var(--bg) 70%, transparent); }
+  .cta-band .actions { display: inline-flex; gap: 10px; }
+  .cta-band .btn-primary {
+    border-color: var(--bg);
+    background: var(--bg);
+    color: var(--ink);
+  }
+  .cta-band .btn-ghost {
+    border-color: var(--bg);
+    background: transparent;
+    color: var(--bg);
+  }
+  .cta-band .btn-primary:hover { background: color-mix(in oklab, var(--bg) 85%, var(--ink)); }
+  .cta-band .btn-ghost:hover { background: color-mix(in oklab, var(--bg) 15%, transparent); }
+}
+
+/* ───────── Shared subpage mobile overrides ───────── */
+@media (max-width: 768px) {
+  .ph {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 56px 20px 40px;
+  }
+  .ph h1 { font-size: 48px; }
+
+  .sec-head { grid-template-columns: 1fr; gap: 16px; padding-bottom: 32px; }
+  .sec-head .sec-num { font-size: 14px; }
+  .sec-head .sec-title { font-size: 36px; }
+  .sec-head .sec-lede { font-size: 15px; }
+
+  .cta-band { padding: 88px 20px; }
+  .cta-band h2 { font-size: 50px; }
+  .cta-band .actions { flex-direction: column; width: 100%; }
+  .cta-band .actions > * { width: 100%; justify-content: center; }
 }
 
 @layer utilities {

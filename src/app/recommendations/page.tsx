@@ -1,6 +1,8 @@
-import Link from "next/link";
 import { supabasePublic } from "@/lib/supabase";
+import { photoFor } from "@/lib/photo";
 import { CATEGORIES, type Category } from "@/types/recommendation";
+import { RecommendationsView } from "@/components/recommendations/RecommendationsView";
+import "../pages.css";
 
 export const metadata = {
   title: "Our Recommendations — Laya Living",
@@ -10,91 +12,85 @@ export const metadata = {
 
 export const dynamic = "force-dynamic";
 
-async function getCategoryCounts(): Promise<Record<Category, number>> {
-  const counts = Object.fromEntries(
-    CATEGORIES.map((c) => [c.slug, 0])
-  ) as Record<Category, number>;
-  try {
-    const supabase = supabasePublic();
-    const { data, error } = await supabase
-      .from("recommendations")
-      .select("category")
-      .eq("published", true);
-    if (error || !data) return counts;
-    for (const row of data as Array<{ category: Category }>) {
-      if (counts[row.category] !== undefined) counts[row.category] += 1;
-    }
-  } catch {
-    /* swallow — empty counts shown as "coming soon" */
-  }
-  return counts;
+/**
+ * Visual rhythm for the editorial grid — matches the Alpine Quiet handoff:
+ *   feat, std, feat, std, wide, wide, wide, std.
+ * Applied positionally to the 8 CATEGORIES in order.
+ */
+const VARIANT_RHYTHM: Array<"feat" | "wide" | ""> = [
+  "feat", "", "feat", "", "wide", "wide", "wide", "",
+];
+
+type CategoryCard = {
+  slug: Category;
+  title: string;
+  hint: string;
+  count: number;
+  imageUrl: string | null;
+  variant: "feat" | "wide" | "";
+};
+
+type LedgerRow = {
+  n: string;
+  slug: string;
+  category: Category;
+  categoryLabel: string;
+  name: string;
+  note: string;
+  dist: string | null;
+};
+
+function formatDistance(walk: number | null, bike: number | null, bus: string | null): string | null {
+  if (walk && walk <= 15) return `${walk} min walk`;
+  if (bike && bike <= 30) return `${bike} min bike`;
+  if (walk) return `${walk} min walk`;
+  if (bike) return `${bike} min bike`;
+  if (bus) return bus;
+  return null;
 }
 
 export default async function RecommendationsPage() {
-  const counts = await getCategoryCounts();
-  const total = Object.values(counts).reduce((s, n) => s + n, 0);
+  const supabase = supabasePublic();
 
-  return (
-    <>
-      <section className="wrap py-20 md:py-28">
-        <p className="kicker">Our Recommendations</p>
-        <h1 className="mt-4 text-5xl sm:text-6xl text-balance lg:text-7xl">
-          Our Lucerne, <em className="italic text-sage-dark">curated</em> for
-          you.
-        </h1>
-        <p className="mt-6 max-w-prose text-pretty text-lg text-ink-muted">
-          The restaurants, trails, and rituals we&rsquo;d take a friend to.
-          Filter by mood, season, or distance — something for everyone.
-        </p>
-        {total === 0 ? (
-          <p className="mt-6 rounded border border-line bg-cream-light px-4 py-3 text-sm text-ink-muted">
-            We&rsquo;re gathering our favourites right now. Check back soon —
-            or{" "}
-            <Link href="/contact" className="underline underline-offset-4">
-              ask us directly
-            </Link>
-            .
-          </p>
-        ) : null}
-      </section>
+  const { data: rows, error } = await supabase
+    .from("recommendations")
+    .select(
+      "id, slug, category, name, tagline, walk_time_min, bike_time_min, bus_route, sort_order, image_reference, image_url"
+    )
+    .eq("published", true)
+    .order("sort_order", { ascending: true });
 
-      <section className="bg-cream-light py-16 md:py-20">
-        <div className="wrap grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {CATEGORIES.map((c) => {
-            const n = counts[c.slug];
-            const disabled = n === 0;
-            const body = (
-              <>
-                <p className="kicker text-sage-dark">{c.title}</p>
-                <h3 className="text-2xl">{c.hint}</h3>
-                <span className="mt-auto pt-4 text-[11px] uppercase tracking-[0.16em] text-ink-muted">
-                  {disabled
-                    ? "Coming soon"
-                    : `${n} ${n === 1 ? "place" : "places"} →`}
-                </span>
-              </>
-            );
-            const className = `group flex flex-col gap-2 rounded border border-line bg-white p-6 transition ${
-              disabled
-                ? "opacity-60"
-                : "hover:border-ink/25 hover:shadow-subtle"
-            }`;
-            return disabled ? (
-              <div key={c.slug} className={className}>
-                {body}
-              </div>
-            ) : (
-              <Link
-                key={c.slug}
-                href={`/recommendations/${c.slug}`}
-                className={className}
-              >
-                {body}
-              </Link>
-            );
-          })}
-        </div>
-      </section>
-    </>
-  );
+  const all = !error && rows ? rows : [];
+
+  // Per-category counts + hero image (first entry with a usable image).
+  const cards: CategoryCard[] = CATEGORIES.map((c, i) => {
+    const inCat = all.filter((r) => r.category === c.slug);
+    const withImage = inCat.find((r) => r.image_reference || r.image_url);
+    return {
+      slug: c.slug,
+      title: c.title,
+      hint: c.hint,
+      count: inCat.length,
+      imageUrl: withImage ? photoFor(withImage, 1400) : null,
+      variant: VARIANT_RHYTHM[i] ?? "",
+    };
+  });
+
+  // Top 9 picks for the ledger — by Supabase sort_order.
+  const ledger: LedgerRow[] = all.slice(0, 9).map((r, i) => {
+    const cat = CATEGORIES.find((c) => c.slug === r.category);
+    return {
+      n: String(i + 1).padStart(2, "0"),
+      slug: r.slug,
+      category: r.category as Category,
+      categoryLabel: cat?.title ?? r.category,
+      name: r.name,
+      note: r.tagline ?? "",
+      dist: formatDistance(r.walk_time_min, r.bike_time_min, r.bus_route),
+    };
+  });
+
+  return <RecommendationsView cards={cards} ledger={ledger} />;
 }
+
+export type { CategoryCard, LedgerRow };

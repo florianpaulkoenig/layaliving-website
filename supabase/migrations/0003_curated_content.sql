@@ -3,6 +3,11 @@
 -- Total: ~70 entries across 8 categories
 -- Distances computed from Triangolo (Nidfeldstrasse 2G, 6010 Kriens)
 --   walking 5 km/h, biking 15 km/h; NULL where unrealistic for that mode.
+--
+-- Idempotent: wipes + reseeds. Safe to re-run.
+-- If you manually edited entries in the dashboard, make a backup first.
+
+truncate table recommendations restart identity;
 
 -- ==================== EAT ====================
 

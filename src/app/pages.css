@@ -134,6 +134,91 @@
   max-width: 44ch;
 }
 
+/* ───────── Contact ─────────
+   Info-only (no form). Left = contact blocks, right = editorial panel
+   with a line of serif copy and a full-bleed image. */
+
+.page-contact .contact {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-contact .contact-info {
+  padding: 96px 56px;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.page-contact .contact-info h2 {
+  margin: 0;
+  font-size: 36px;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+
+.page-contact .contact-block .k {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--ink-muted);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.page-contact .contact-block .v {
+  font-family: var(--font-display), "EB Garamond", Georgia, serif;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+.page-contact .contact-block .v a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+}
+.page-contact .contact-block .v a:hover { border-bottom-color: var(--ink); }
+.page-contact .contact-block .v--small { font-size: 18px; line-height: 1.5; }
+.page-contact .contact-block p {
+  font-size: 14px;
+  color: var(--ink-2);
+  margin: 4px 0 0;
+}
+
+.page-contact .contact-aside {
+  padding: 96px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.page-contact .contact-aside blockquote {
+  margin: 0;
+  font-family: var(--font-display), "EB Garamond", Georgia, serif;
+  font-size: 36px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.page-contact .contact-aside .fig {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  margin-top: auto;
+}
+
+/* ───────── Contact mobile ───────── */
+@media (max-width: 768px) {
+  .page-contact .contact { grid-template-columns: 1fr; }
+  .page-contact .contact-info,
+  .page-contact .contact-aside {
+    padding: 48px 20px;
+    border-right: none;
+  }
+  .page-contact .contact-info { border-bottom: 1px solid var(--line); }
+  .page-contact .contact-aside blockquote { font-size: 26px; }
+}
+
 /* ───────── Location mobile ───────── */
 @media (max-width: 768px) {
   .page-location .loc-hero { padding: 32px 20px 0; }

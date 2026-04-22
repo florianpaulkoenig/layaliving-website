@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
@@ -9,16 +10,30 @@ export default function LocationPage() {
   return (
     <>
       <section className="wrap py-20 md:py-28">
-        <p className="kicker">Location</p>
-        <h1 className="mt-4 text-5xl sm:text-6xl text-balance lg:text-7xl">
-          Kriens, Lucerne —{" "}
-          <em className="italic text-sage-dark">quiet above,</em> lively below.
-        </h1>
-        <p className="mt-6 max-w-prose text-pretty text-lg text-ink-muted">
-          Triangolo sits on the hill above Kriens, 10 minutes by bike from
-          the old town of Lucerne. Close enough to feel part of the city;
-          high enough to breathe mountain air.
-        </p>
+        <div className="grid gap-10 md:grid-cols-[1fr_1.1fr] md:items-center lg:gap-16">
+          <div>
+            <p className="kicker">Location</p>
+            <h1 className="mt-4 text-5xl sm:text-6xl text-balance lg:text-7xl">
+              Kriens, Lucerne —{" "}
+              <em className="italic text-sage-dark">quiet above,</em> lively below.
+            </h1>
+            <p className="mt-6 max-w-prose text-pretty text-lg text-ink-muted">
+              Triangolo sits on the hill above Kriens, 10 minutes by bike from
+              the old town of Lucerne. Close enough to feel part of the city;
+              high enough to breathe mountain air.
+            </p>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded bg-cream-dark shadow-image">
+            <Image
+              src="/images/lucerne-vista.jpg"
+              alt="Panoramic view of Lucerne"
+              fill
+              sizes="(min-width: 768px) 52vw, 100vw"
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
       </section>
 
       <section className="bg-cream-light py-16 md:py-24">

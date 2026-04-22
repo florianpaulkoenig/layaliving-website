@@ -1,22 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Lato, Dancing_Script } from "next/font/google";
+import { EB_Garamond, Inter, Dancing_Script } from "next/font/google";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import "./globals.css";
 
-const display = Cormorant_Garamond({
+const display = EB_Garamond({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-display",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500"],
   style: ["normal", "italic"],
 });
-const body = Lato({
+const body = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-body",
-  weight: ["300", "400", "700"],
-  style: ["normal", "italic"],
+  weight: ["300", "400", "500", "600"],
 });
 const script = Dancing_Script({
   subsets: ["latin"],
@@ -28,7 +27,7 @@ const script = Dancing_Script({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#F7F3EE",
+  themeColor: "#f4f1ea",
 };
 
 export const metadata: Metadata = {

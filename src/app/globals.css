@@ -2,20 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ───────── Alpine Quiet tokens (global) ───────── */
+:root {
+  --bg: #f4f1ea;
+  --bg-2: #ebe6db;
+  --ink: #1d1a15;
+  --ink-2: #4a443a;
+  --ink-3: #857e72;
+  --line: #d9d2c4;
+  --accent: #6b6a52;
+  --accent-warm: #a6765a;
+}
+
 @layer base {
+  html, body { background: var(--bg); color: var(--ink); }
   h1, h2, h3, h4 {
-    font-family: var(--font-display), "Cormorant Garamond", Georgia, serif;
-    color: #2A2724;
-    letter-spacing: -0.005em;
+    font-family: var(--font-display), "EB Garamond", Georgia, serif;
+    color: var(--ink);
+    font-weight: 400;
+    letter-spacing: -0.015em;
   }
-  h1 { font-weight: 500; line-height: 1.05; }
-  h2 { font-weight: 500; line-height: 1.1; }
-  h3, h4 { font-weight: 500; line-height: 1.2; }
-  body {
-    font-feature-settings: "ss01", "cv11";
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+  h1 { line-height: 0.95; }
+  h2 { line-height: 1.02; }
+  h3, h4 { line-height: 1.15; }
+  body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
   img { display: block; }
 }
 
@@ -25,12 +35,21 @@
   }
   .kicker {
     @apply text-[11px] uppercase tracking-[0.22em] text-ink-muted;
+    font-weight: 500;
   }
+
+  /* Handoff pills — ink fill / ghost outline, rounded to infinity */
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded bg-ink px-6 py-3 text-[13px] font-medium uppercase tracking-[0.14em] text-cream-light transition hover:bg-ink-soft;
+    @apply inline-flex items-center justify-center gap-2.5 rounded-pill border border-ink bg-ink px-[22px] py-3 text-[13px] tracking-[0.02em] text-cream-light transition hover:bg-ink-soft;
   }
   .btn-ghost {
-    @apply inline-flex items-center justify-center rounded border border-ink/20 bg-transparent px-6 py-3 text-[13px] font-medium uppercase tracking-[0.14em] text-ink transition hover:bg-cream-dark;
+    @apply inline-flex items-center justify-center gap-2.5 rounded-pill border border-ink bg-transparent px-[22px] py-3 text-[13px] tracking-[0.02em] text-ink transition hover:bg-cream-dark;
+  }
+
+  /* Recurring italic-accent highlight pattern for serif headings */
+  .it-accent {
+    font-style: italic;
+    color: var(--accent);
   }
 }
 

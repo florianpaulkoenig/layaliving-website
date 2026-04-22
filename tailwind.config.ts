@@ -1,10 +1,9 @@
 import type { Config } from "tailwindcss";
 
 /**
- * LAYA Living website brand system.
- * Cream background, warm ink text, sage accent — aligned with host-app
- * for brand consistency. Cormorant Garamond (display) + Lato (body) as
- * open-source stand-ins for Kepler Std.
+ * LAYA Living — Alpine Quiet palette.
+ * Warm off-white, deep ink, dusty sage, with terracotta held on reserve
+ * for the availability calendar. EB Garamond (display) + Inter (body).
  */
 const config: Config = {
   content: [
@@ -15,36 +14,45 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Cream aliases kept so pre-existing utility classes stay valid
+        // during the subpage rollout; DEFAULT / light / dark now map to
+        // Alpine Quiet values so the perceptual shift is consistent.
         cream: {
-          DEFAULT: "#F7F3EE",
-          light: "#FBF8F3",
-          dark: "#EFE9E0",
+          DEFAULT: "#f4f1ea",
+          light: "#faf7f1",
+          dark: "#ebe6db",
         },
         ink: {
-          DEFAULT: "#2A2724",
-          soft: "#3a3530",
-          muted: "#6b645d",
+          DEFAULT: "#1d1a15",
+          soft: "#4a443a",
+          muted: "#857e72",
         },
         sage: {
-          DEFAULT: "#8A9E94",
-          light: "#D4E0DC",
-          dark: "#6f8379",
+          DEFAULT: "#8a947c",
+          light: "#c4c6b4",
+          dark: "#6b6a52",
         },
-        line: "#E3DCD0",
+        accent: {
+          DEFAULT: "#6b6a52",
+          warm: "#a6765a",
+        },
+        line: "#d9d2c4",
       },
       fontFamily: {
-        display: ["var(--font-display)", "Cormorant Garamond", "Georgia", "serif"],
-        sans: ["var(--font-body)", "Lato", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "EB Garamond", "Iowan Old Style", "Georgia", "serif"],
+        sans: ["var(--font-body)", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
         script: ["var(--font-script)", "Dancing Script", "cursive"],
       },
+      // Editorial flat edges — rounded radii only on pills.
       borderRadius: {
-        DEFAULT: "2px",
-        sm: "2px",
-        md: "2px",
-        lg: "4px",
+        DEFAULT: "0",
+        sm: "0",
+        md: "0",
+        lg: "0",
+        pill: "999px",
       },
       boxShadow: {
-        subtle: "0 1px 0 0 rgba(42, 39, 36, 0.08)",
+        subtle: "0 1px 0 0 rgba(29, 26, 21, 0.08)",
         image: "0 24px 54px 0 rgba(0, 0, 0, 0.1)",
       },
       maxWidth: {

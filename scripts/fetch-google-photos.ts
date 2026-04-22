@@ -55,6 +55,9 @@ async function findPlaceId(name: string, address: string | null): Promise<{
       "Content-Type": "application/json",
       "X-Goog-Api-Key": API_KEY!,
       "X-Goog-FieldMask": "places.id,places.displayName,places.photos",
+      // Pose as a request from our allowed origin so the HTTP-referrer
+      // restriction on the API key accepts the call from a server context.
+      Referer: "https://www.layaliving.ch/",
     },
     body: JSON.stringify({ textQuery: query, languageCode: "en" }),
   });

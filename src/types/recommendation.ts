@@ -84,6 +84,10 @@ export type Recommendation = {
   image_credit: string | null;
   source_url: string | null;
 
+  google_place_id: string | null;
+  image_reference: string | null;     // Google Places photo_reference
+  image_attribution: string | null;   // Plain-text attribution required by Google
+
   published: boolean;
   sort_order: number;
 

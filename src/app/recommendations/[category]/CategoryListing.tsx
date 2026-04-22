@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { photoFor } from "@/lib/photo";
 import { TAG_CATALOG, type Category, type Recommendation } from "@/types/recommendation";
 
 export function CategoryListing({
@@ -98,13 +99,14 @@ export function CategoryListing({
                   className="group flex h-full flex-col overflow-hidden rounded border border-line bg-white transition hover:shadow-image"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden bg-cream-dark">
-                    {r.image_url ? (
+                    {photoFor(r, 800) ? (
                       <Image
-                        src={r.image_url}
+                        src={photoFor(r, 800)!}
                         alt={r.name}
                         fill
                         sizes="(min-width: 1024px) 32vw, (min-width: 640px) 48vw, 100vw"
                         className="object-cover transition duration-500 group-hover:scale-[1.02]"
+                        unoptimized
                       />
                     ) : (
                       <div className="flex h-full items-center justify-center text-xs uppercase tracking-[0.2em] text-ink-muted/60">

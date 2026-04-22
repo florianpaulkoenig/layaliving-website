@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { supabasePublic } from "@/lib/supabase";
+import { photoFor } from "@/lib/photo";
 import { CATEGORIES, TAG_CATALOG, type Category, type Recommendation } from "@/types/recommendation";
 
 type Params = { category: string; slug: string };
@@ -113,14 +114,15 @@ export default async function RecommendationDetail({
         </div>
 
         <div className="relative aspect-[4/5] overflow-hidden rounded bg-cream-dark shadow-image">
-          {r.image_url ? (
+          {photoFor(r, 1200) ? (
             <Image
-              src={r.image_url}
+              src={photoFor(r, 1200)!}
               alt={r.name}
               fill
               sizes="(min-width: 768px) 40vw, 100vw"
               className="object-cover"
               priority
+              unoptimized
             />
           ) : null}
         </div>
@@ -195,10 +197,13 @@ export default async function RecommendationDetail({
         </Fact>
       </section>
 
-      {r.image_credit && (
-        <p className="mt-10 text-xs text-ink-muted">
-          Photo: {r.image_credit}
-        </p>
+      {(r.image_attribution || r.image_credit) && (
+        <p
+          className="mt-10 text-xs text-ink-muted"
+          dangerouslySetInnerHTML={{
+            __html: `Photo: ${r.image_attribution ?? r.image_credit}`,
+          }}
+        />
       )}
     </article>
   );

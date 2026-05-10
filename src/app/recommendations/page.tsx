@@ -1,6 +1,5 @@
-import { supabasePublic } from "@/lib/supabase";
-import { photoFor } from "@/lib/photo";
 import { CATEGORIES, type Category } from "@/types/recommendation";
+import { RECOMMENDATIONS, countByCategory } from "@/lib/recommendations-data";
 import { RecommendationsView } from "@/components/recommendations/RecommendationsView";
 import "../pages.css";
 
@@ -10,13 +9,6 @@ export const metadata = {
     "Hand-picked places to eat, drink, hike, cycle, and explore in Lucerne.",
 };
 
-export const dynamic = "force-dynamic";
-
-/**
- * Visual rhythm for the editorial grid — matches the Alpine Quiet handoff:
- *   feat, std, feat, std, wide, wide, wide, std.
- * Applied positionally to the 8 CATEGORIES in order.
- */
 const VARIANT_RHYTHM: Array<"feat" | "wide" | ""> = [
   "feat", "", "feat", "", "wide", "wide", "wide", "",
 ];
@@ -49,35 +41,31 @@ function formatDistance(walk: number | null, bike: number | null, bus: string | 
   return null;
 }
 
-export default async function RecommendationsPage() {
-  const supabase = supabasePublic();
-
-  const { data: rows, error } = await supabase
-    .from("recommendations")
-    .select(
-      "id, slug, category, name, tagline, walk_time_min, bike_time_min, bus_route, sort_order, image_reference, image_url"
-    )
-    .eq("published", true)
-    .order("sort_order", { ascending: true });
-
-  const all = !error && rows ? rows : [];
-
-  // Per-category counts + hero image (first entry with a usable image).
-  const cards: CategoryCard[] = CATEGORIES.map((c, i) => {
-    const inCat = all.filter((r) => r.category === c.slug);
-    const withImage = inCat.find((r) => r.image_reference || r.image_url);
-    return {
+export default function RecommendationsPage() {
+  // Only show categories that have at least one entry.
+  const cards: CategoryCard[] = CATEGORIES
+    .map((c, i) => ({
       slug: c.slug,
       title: c.title,
       hint: c.hint,
-      count: inCat.length,
-      imageUrl: withImage ? photoFor(withImage, 1400) : null,
-      variant: VARIANT_RHYTHM[i] ?? "",
-    };
-  });
+      count: countByCategory(c.slug),
+      imageUrl: null,
+      variant: VARIANT_RHYTHM[i] ?? "" as "feat" | "wide" | "",
+    }))
+    .filter((c) => c.count > 0);
 
-  // Top 9 picks for the ledger — by Supabase sort_order.
-  const ledger: LedgerRow[] = all.slice(0, 9).map((r, i) => {
+  // Top 9 picks for the ledger — personal-favorites first, then sort_order.
+  const top9 = [...RECOMMENDATIONS]
+    .filter((r) => r.published)
+    .sort((a, b) => {
+      const aFav = a.tags.includes("personal-favorites") ? 0 : 1;
+      const bFav = b.tags.includes("personal-favorites") ? 0 : 1;
+      if (aFav !== bFav) return aFav - bFav;
+      return a.sort_order - b.sort_order;
+    })
+    .slice(0, 9);
+
+  const ledger: LedgerRow[] = top9.map((r, i) => {
     const cat = CATEGORIES.find((c) => c.slug === r.category);
     return {
       n: String(i + 1).padStart(2, "0"),

@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { supabasePublic } from "@/lib/supabase";
 import { photoFor } from "@/lib/photo";
 import { CATEGORIES, TAG_CATALOG, type Category, type Recommendation } from "@/types/recommendation";
+import { getBySlug, RECOMMENDATIONS } from "@/lib/recommendations-data";
 
 type Params = { category: string; slug: string };
 
@@ -11,31 +11,13 @@ function isCategory(v: string): v is Category {
   return CATEGORIES.some((c) => c.slug === v);
 }
 
-export const dynamic = "force-dynamic";
-
-async function loadOne(
-  category: Category,
-  slug: string
-): Promise<Recommendation | null> {
-  try {
-    const supabase = supabasePublic();
-    const { data, error } = await supabase
-      .from("recommendations")
-      .select("*")
-      .eq("category", category)
-      .eq("slug", slug)
-      .eq("published", true)
-      .maybeSingle();
-    if (error || !data) return null;
-    return data as unknown as Recommendation;
-  } catch {
-    return null;
-  }
+export function generateStaticParams() {
+  return RECOMMENDATIONS.map((r) => ({ category: r.category, slug: r.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Params }) {
+export function generateMetadata({ params }: { params: Params }) {
   if (!isCategory(params.category)) return {};
-  const r = await loadOne(params.category as Category, params.slug);
+  const r = getBySlug(params.category, params.slug);
   if (!r) return {};
   return {
     title: `${r.name} — ${CATEGORIES.find((c) => c.slug === r.category)?.title} — Laya Living`,
@@ -55,14 +37,14 @@ function mapsUrl(r: Recommendation): string | null {
   return null;
 }
 
-export default async function RecommendationDetail({
+export default function RecommendationDetail({
   params,
 }: {
   params: Params;
 }) {
   if (!isCategory(params.category)) notFound();
   const category = params.category as Category;
-  const r = await loadOne(category, params.slug);
+  const r = getBySlug(category, params.slug);
   if (!r) notFound();
 
   const categoryTitle = CATEGORIES.find((c) => c.slug === category)?.title;

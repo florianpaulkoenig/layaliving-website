@@ -1,13 +1,17 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { supabasePublic } from "@/lib/supabase";
-import { CATEGORIES, type Category, type Recommendation } from "@/types/recommendation";
+import { CATEGORIES, type Category } from "@/types/recommendation";
+import { getByCategory } from "@/lib/recommendations-data";
 import { CategoryListing } from "./CategoryListing";
 
 type Params = { category: string };
 
 function isCategory(v: string): v is Category {
   return CATEGORIES.some((c) => c.slug === v);
+}
+
+export function generateStaticParams() {
+  return CATEGORIES.map((c) => ({ category: c.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Params }) {
@@ -19,30 +23,13 @@ export async function generateMetadata({ params }: { params: Params }) {
   };
 }
 
-export const dynamic = "force-dynamic";
-
-async function loadByCategory(category: Category): Promise<Recommendation[]> {
-  try {
-    const supabase = supabasePublic();
-    const { data, error } = await supabase
-      .from("recommendations")
-      .select("*")
-      .eq("category", category)
-      .eq("published", true)
-      .order("sort_order", { ascending: true })
-      .order("name", { ascending: true });
-    if (error || !data) return [];
-    return data as unknown as Recommendation[];
-  } catch {
-    return [];
-  }
-}
-
-export default async function CategoryPage({ params }: { params: Params }) {
+export default function CategoryPage({ params }: { params: Params }) {
   if (!isCategory(params.category)) notFound();
   const category = params.category as Category;
   const meta = CATEGORIES.find((c) => c.slug === category)!;
-  const rows = await loadByCategory(category);
+  const rows = getByCategory(category);
+
+  if (rows.length === 0) notFound();
 
   return (
     <>

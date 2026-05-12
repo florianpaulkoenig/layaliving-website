@@ -253,7 +253,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     id: 21, slug: "montana-beach-club", category: "drink", sort_order: 20,
     image_url: "/images/recommendations/montana-beach-club.jpg",
     name: "Montana Beach Club",
-    tagline: "Elegant · Art Deco Hotel Montana rooftop",
+    tagline: "Elegant · Art Deco Hotel Montana rooftop · open views over the lake",
     address: "Adligenswilerstrasse 22, 6006 Luzern",
     website: "https://www.hotel-montana.ch",
     phone: "+41 41 419 00 00",

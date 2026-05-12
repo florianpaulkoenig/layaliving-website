@@ -48,7 +48,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     id: 2, slug: "melissas-kitchen", category: "eat", sort_order: 20,
     image_url: "/images/recommendations/melissas-kitchen.jpg",
     name: "Melissa's Kitchen",
-    tagline: "Homemade, fresh, organic",
+    tagline: "Homemade, fresh, organic — brunch on Sundays",
     address: "Hirschengraben 19, 6003 Luzern",
     website: "https://www.melissaskitchen.ch",
     price_range: 1,

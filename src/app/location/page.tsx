@@ -49,12 +49,7 @@ export default function LocationPage() {
           <h2>
             The view <span className="it-accent">from the couch</span>.
           </h2>
-          <p>Rigi to the east. Bürgenstock to the right.</p>
-          <p>
-            From the first blue sky of morning to the warm glow of late
-            afternoon, the panorama of the Rigi is always there — from the
-            couch, the bed, or the balcony.
-          </p>
+          <p>On clear days, the Rigi is visible from the balcony. The Bürgenstock sits to the right.</p>
           <div className="ledger">
             <div><div className="k">Rigi</div><div className="v">1 798 m</div></div>
             <div><div className="k">Bürgenstock</div><div className="v">874 m</div></div>
@@ -97,13 +92,8 @@ export default function LocationPage() {
             />
           </div>
           <div className="cap"><span>Fig. 02</span><span>VIEW FROM THE BALCONY</span></div>
-          <h3>Blue sky and the Rigi, all day long.</h3>
-          <p>
-            Clear blue skies frame the Rigi from sunrise to sunset. From the
-            balcony, the view stretches across the valley — a panorama that
-            never gets old, whether you&rsquo;re having morning coffee or
-            watching the last light fade.
-          </p>
+          <h3>The Rigi from the balcony.</h3>
+          <p>On clear days, you can see the Rigi from the balcony. The Bürgenstock sits to the right.</p>
         </figure>
         <figure className="p">
           <div className="fig">

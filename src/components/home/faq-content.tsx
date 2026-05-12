@@ -102,7 +102,8 @@ export const FAQ_GROUPS: FaqGroup[] = [
         q: "How do I get here by public transport?",
         a: (
           <>
-            From Lucerne train station, take bus <strong>14</strong> toward Horw Zentrum to <strong>Kriens, Nidfeld</strong>. About 10 minutes on the bus, then a short walk to the building.
+            From Lucerne train station, take bus <strong>14</strong> toward Horw Zentrum to <strong>Kriens, Nidfeld</strong>. About 10 minutes on the bus, then a short walk to the building.{" "}
+            <a href="https://www.sbb.ch/en" target="_blank" rel="noopener noreferrer">Plan your journey on SBB.ch →</a>
           </>
         ),
       },

@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Treat Sanity packages as external during server build to avoid React hook conflicts
+  serverExternalPackages: ["sanity", "@sanity/ui", "@sanity/vision", "next-sanity"],
   images: {
     remotePatterns: [
       // Recommendation images from external sources (Unsplash, Google, etc.)

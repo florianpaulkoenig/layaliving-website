@@ -50,10 +50,10 @@ export const SEASONS: Season[] = [
     n: "01", key: "spring", name: "Spring", months: "Mar – May",
     img: "/images/spring-lucerne.jpg",
     imgCredit: "Photo: Ricardo Gómez Angel / Unsplash",
-    titleLead: "Orchards in bloom",
-    titleTail: " and the lake warming.",
+    titleLead: "The mountains clear",
+    titleTail: " and the days lengthen.",
     body: "Apple trees in bloom above Kriens. The first ferries back on Lake Lucerne. Mild afternoons at the Ufschötti before the summer crowds arrive. Good conditions for day hikes — the lower trails are clear early, and the first summits open by late April.",
-    data: [["Day Temp. Range", "5 – 25°C"], ["Daylight", "13 h"], ["Best for", "Cycling · hikes"]],
+    data: [["Day Temp. Range", "5 – 25°C"], ["Daylight", "13 h"], ["Best for", "Cycling · hikes · walks"]],
   },
   {
     n: "02", key: "summer", name: "Summer", months: "Jun – Aug",

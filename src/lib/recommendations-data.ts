@@ -740,7 +740,6 @@ export const RECOMMENDATIONS: Recommendation[] = [
     tags: ["lake", "family-friendly"],
   },
   {
-  {
     ...BASE,
     id: 83, slug: "cycling-sempachersee", category: "bike", sort_order: 40,
     image_url: "/images/recommendations/cycling-05-sempach.jpg",

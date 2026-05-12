@@ -1006,7 +1006,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     id: 205, slug: "sunday-shops", category: "essentials", sort_order: 60,
     image_url: "/images/recommendations/practical-02-sunday.jpg",
     name: "Sunday-Open Shops",
-    tagline: "Swiss retail closes Sundays — here's what stays open",
+    tagline: "Swiss retail closes Sundays — open at Lucerne station",
     description: "Swiss retail otherwise closes Sundays. Coop Pronto and Migros at Lucerne train station open daily until 22:00 — full small supermarkets. Useful for arrivals or anything forgotten. migrolino Nidfeld (5 min walk from the apartment) is the closest option from the door.",
     bus_route: "Bus 14 from Kriens, Nidfeld to Lucerne station (~10 min). Shops inside the station.",
     lat: 47.0506, lng: 8.3094,

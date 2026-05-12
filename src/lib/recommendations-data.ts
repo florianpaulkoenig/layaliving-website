@@ -929,7 +929,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     walk_time_min: 5,
     lat: 47.0395, lng: 8.2818,
     season: ["spring", "summer", "autumn", "winter"],
-    tags: ["budget", "walk-in"],
+    tags: ["budget", "walk-in", "long-hours", "open-sundays"],
     why_we_love_it: "Mon–Fri 05:30–22:00, Sat–Sun 06:00–22:00.",
   },
   {
@@ -943,7 +943,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     walk_time_min: 10,
     lat: 47.0367, lng: 8.2832,
     season: ["spring", "summer", "autumn", "winter"],
-    tags: ["family-friendly"],
+    tags: ["family-friendly", "everyday-shopping", "mall"],
     why_we_love_it: "Mon–Sat, closed Sunday. Always check current hours on site, especially around public holidays.",
   },
   {
@@ -958,7 +958,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     walk_time_min: 45,
     lat: 47.0488, lng: 8.2933,
     season: ["spring", "summer", "autumn", "winter"],
-    tags: ["family-friendly", "budget"],
+    tags: ["family-friendly", "budget", "everyday-shopping", "mall"],
     why_we_love_it: "Mon, Tue, Thu 09:00–18:30 · Wed, Fri 09:00–21:00 · Sat 08:00–16:00 · closed Sunday.",
   },
   {
@@ -971,7 +971,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     walk_time_min: 10,
     lat: 47.0426, lng: 8.2848,
     season: ["spring", "summer", "autumn", "winter"],
-    tags: ["morning", "walk-in"],
+    tags: ["morning", "walk-in", "open-sundays"],
     why_we_love_it: "Bäckerei Hug: Mon–Fri 06:00–19:00, Sat–Sun 07:00–17:00 — one of the few options open on Sundays.",
   },
   {
@@ -998,7 +998,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     bus_route: "Bus 14 from Kriens, Nidfeld to Lucerne station (~10 min). Shops inside the station.",
     lat: 47.0506, lng: 8.3094,
     season: ["spring", "summer", "autumn", "winter"],
-    tags: ["walk-in"],
+    tags: ["walk-in", "open-sundays", "long-hours"],
     why_we_love_it: "Daily including Sundays and public holidays.",
   },
   {

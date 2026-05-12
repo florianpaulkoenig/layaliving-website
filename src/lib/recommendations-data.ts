@@ -923,7 +923,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     id: 200, slug: "migrolino-nidfeld", category: "essentials", sort_order: 10,
     image_url: "/images/recommendations/practical-01-migros.jpg",
     name: "migrolino Nidfeld",
-    tagline: "Closest shop — long hours including Sundays",
+    tagline: "Closest shop — small, long hours including Sundays",
     description: "Smallest and closest option for drinks, snacks, basic groceries, coffee, and breakfast items. Opens much longer than the supermarkets — useful for late arrivals, Sunday mornings, and forgotten essentials.",
     address: "Nidfeldstrasse 10, Kriens",
     walk_time_min: 5,

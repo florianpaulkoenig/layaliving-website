@@ -136,8 +136,8 @@ export default async function RecommendationDetail({ params }: { params: Params 
               Open in Google Maps →
             </a>
           )}
-          <Link href="/recommendations" className="btn-ghost">
-            ← Back to recommendations
+          <Link href={`/recommendations/${category}`} className="btn-ghost">
+            ← Back to {categoryTitle}
           </Link>
         </div>
       </div>

@@ -210,7 +210,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     address: "Grabenstrasse 8, 6002 Luzern",
     website: "https://www.jazzkantine.ch",
     price_range: 2,
-    description: "The Jazzkantine in Lucerne is a lively meeting place for music and cocktail lovers. Creative drinks and selected wines are served in a relaxed, stylish atmosphere. With its varied program and charming service, the Jazzkantine is an integral part of Lucerne's nightlife. The restaurant has great options for vegetarians.",
+    description: "Right in the old town — the Jazzkantine is a relaxed spot for an evening out with live music, cocktails, and a rotating programme. Good vegetarian options on the menu. Worth checking their schedule before you go.",
     bus_route: "In the old town; the Jazzkantine offers delicious lunch menus or sourdough bread with spreads for a quick bite!",
     why_we_love_it: "Sourdough bread with spread",
     tags: ["evening"],

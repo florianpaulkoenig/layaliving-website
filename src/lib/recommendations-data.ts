@@ -1016,6 +1016,18 @@ export const RECOMMENDATIONS: Recommendation[] = [
   },
   {
     ...BASE,
+    id: 208, slug: "food-delivery", category: "essentials", sort_order: 65,
+    image_url: null,
+    name: "Food Delivery",
+    tagline: "eat.ch · Uber Eats — delivered to the door",
+    description: "Both eat.ch and Uber Eats deliver to the apartment. Search by address (Nidfeldstrasse 10, Kriens) to see what's available. Selection varies by time of day — most options are active from late afternoon into the evening.",
+    website: "https://www.eat.ch",
+    season: ["spring", "summer", "autumn", "winter"],
+    tags: ["walk-in"],
+    why_we_love_it: "eat.ch tends to have more local restaurants; Uber Eats more chain options. Worth checking both.",
+  },
+  {
+    ...BASE,
     id: 206, slug: "takeaway-nearby", category: "essentials", sort_order: 70,
     image_url: "/images/recommendations/practical-05-takeaway.jpg",
     name: "Easy Dinner at the Mattenhof",

@@ -110,11 +110,16 @@ export default async function RecommendationDetail({ params }: { params: Params 
       {/* ─── Body ─── */}
       <div className="rec-detail-body">
         <div className="rec-detail-text">
-          {r.description && r.description.split('\n\n').map((block, i) =>
-            block.startsWith('## ')
-              ? <h4 key={i} className="rec-detail-section-title">{block.slice(3)}</h4>
-              : <p key={i}>{block}</p>
-          )}
+          {r.description && r.description.split('\n\n').flatMap((block, i) => {
+            if (block.startsWith('## ')) {
+              const [titleLine, ...rest] = block.split('\n');
+              return [
+                <h4 key={`t-${i}`} className="rec-detail-section-title">{titleLine.slice(3)}</h4>,
+                ...rest.filter(Boolean).map((line, j) => <p key={`p-${i}-${j}`}>{line}</p>),
+              ];
+            }
+            return [<p key={i}>{block}</p>];
+          })}
           {r.why_we_love_it && (
             <blockquote className="rec-detail-quote">
               <span className="rec-detail-quote-label">Why we love it</span>

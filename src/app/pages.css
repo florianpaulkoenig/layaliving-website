@@ -887,6 +887,14 @@
   font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em;
   color: var(--ink); font-weight: 500; margin: 0;
 }
+/* pull the paragraph closer to its section title */
+.page-rec-detail .rec-detail-section-title + p {
+  margin-top: -20px;
+}
+/* extra breathing room before a new section title (not the first) */
+.page-rec-detail .rec-detail-text > * + .rec-detail-section-title {
+  margin-top: 16px;
+}
 .page-rec-detail .rec-detail-quote {
   margin: 0;
   padding: 0 0 0 24px;

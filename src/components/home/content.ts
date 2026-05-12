@@ -61,7 +61,7 @@ export const SEASONS: Season[] = [
     imgCredit: "Photo: PJ Soans / Unsplash",
     titleLead: "Swims, slow dinners",
     titleTail: " and the longest evenings.",
-    body: "Long days — daylight until around 9:30 PM in June. Lake swimming at the Lido, Ufschötti, or the quieter Seebadi in Horw. Cable cars on Rigi and Pilatus run into the evening. Many restaurants in Lucerne have terraces along the river or the lake.",
+    body: "Long days — daylight until around 9:30 PM in June. Lake swimming at the Lido, Ufschötti, or the Seebadi in Lucerne, or the quieter Winkel in Horw. Cable cars on Rigi and Pilatus run into the evening. Many restaurants in Lucerne have terraces along the river or the lake.",
     data: [["Day Temp. Range", "18 – 32°C"], ["Daylight", "16 h"], ["Best for", "Lake swims · terrace"]],
   },
   {

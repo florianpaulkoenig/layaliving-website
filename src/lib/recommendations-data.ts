@@ -460,9 +460,9 @@ export const RECOMMENDATIONS: Recommendation[] = [
     address: "Vitznau",
     website: "https://www.rigi.ch",
     price_range: 3,
-    description: "The Rigi offers a 360-degree panorama of Lake Lucerne, Lake Zug, and the Alps, and can be reached by mountain railway or cable car. In summer there are hiking trails and picnic spots; in winter snowshoe trails and sledging. A good choice year-round.\n\nAt the Kaltbad mid-station, the Mineralbad & Spa Rigi Kaltbad (designed by Mario Botta) is well worth a visit — especially on a grey day or in winter. Book ahead.",
+    description: "The Rigi offers a 360-degree panorama of Lake Lucerne, Lake Zug, and the Alps, and can be reached by mountain railway or cable car. In summer there are hiking trails and picnic spots; in winter snowshoe trails and sledging. A good choice year-round.\n\nAt the Kaltbad mid-station, the Mineralbad & Spa Rigi Kaltbad (designed by Mario Botta) is well worth a visit — especially on a grey day or in winter. Book ahead. The paths around Kaltbad are wide gravel tracks, mostly level and suitable for all abilities including prams. In autumn and winter, Kaltbad is often above the fog layer — worth checking the forecast before you go.",
     bus_route: "Take the train from Lucerne to Arth-Goldau and from there take the train up to the Rigi. Or take the boat from Lucerne to Vitznau and ride up on the historic mountain railway.",
-    tags: ["view", "mountain", "photo-spot"],
+    tags: ["view", "mountain", "photo-spot", "family-friendly"],
   },
   {
     ...BASE,
@@ -596,18 +596,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     season: ["spring", "summer", "autumn", "winter"],
     tags: ["view", "mountain", "family-friendly"],
   },
-  {
-    ...BASE,
-    id: 108, slug: "rigi-kaltbad-panorama", category: "walks", sort_order: 90,
-    image_url: "/images/recommendations/walk-17-rigi-kaltbad.jpg",
-    name: "Rigi Kaltbad Panorama Loop",
-    tagline: "Wide gravel paths above the lake — often above the fog",
-    description: "Wide gravel paths around the Rigi Kaltbad mid-station, with views across the lake. Mostly level, suitable for all abilities and prams. The mid-station has a modern spa (Mineralbad & Spa Rigi Kaltbad, designed by Mario Botta) — book ahead if interested. Often above the fog in autumn and winter. Check weather before going.",
-    bus_route: "Via Lucerne station, boat to Vitznau, then mountain railway up to Rigi Kaltbad.",
-    website: "https://www.rigi.ch/en",
-    season: ["spring", "summer", "autumn", "winter"],
-    tags: ["view", "mountain", "family-friendly"],
-  },
+
 
   // ── ADDITIONAL HIKES ───────────────────────────────────────────────────
   {

@@ -49,7 +49,6 @@ export default function LocationPage() {
           <h2>
             The view <span className="it-accent">from the couch</span>.
           </h2>
-          <p>On clear days, the Rigi is visible from the balcony. The Bürgenstock sits to the right.</p>
           <div className="ledger">
             <div><div className="k">Rigi</div><div className="v">1 798 m</div></div>
             <div><div className="k">Bürgenstock</div><div className="v">874 m</div></div>

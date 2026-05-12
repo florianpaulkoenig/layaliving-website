@@ -740,16 +740,6 @@ export const RECOMMENDATIONS: Recommendation[] = [
     tags: ["lake", "family-friendly"],
   },
   {
-    ...BASE,
-    id: 82, slug: "cycling-reuss-valley", category: "bike", sort_order: 30,
-    image_url: "/images/recommendations/cycling-04-reuss.jpg",
-    name: "Reuss Valley Toward Emmen",
-    tagline: "Flat river path, shaded and local — less busy than the lakeshore",
-    description: "From the old town along the Reuss river east through quiet riverside paths toward Emmen and Rathausen. Mostly on a dedicated cycle path along the water, shaded in summer, less busy than the lakeshore. Return the same way, or by S-Bahn from Emmen (bikes allowed).",
-    bus_route: "Via Lucerne station (bus 14 from Kriens, Nidfeld, ~10 min), then start at the Reuss embankment behind the old town.",
-    season: ["spring", "summer", "autumn"],
-    tags: [],
-  },
   {
     ...BASE,
     id: 83, slug: "cycling-sempachersee", category: "bike", sort_order: 40,

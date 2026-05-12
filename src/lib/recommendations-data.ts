@@ -481,7 +481,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
   {
     ...BASE,
     id: 54, slug: "klewendalp", category: "hike", sort_order: 50,
-    image_url: "/images/recommendations/klewendalp.jpg",
+    image_url: "/images/recommendations/walk-27-klewenalp.jpg",
     name: "Klewenalp",
     tagline: "Scenic walks · family-friendly · gondola",
     address: "Beckenried",

@@ -96,7 +96,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     price_range: 2,
     description: "Nooch is a ten-minute walk from the apartment — one of the easiest dinner options if you don't feel like taking the bus. Asian street food: sushi, curries, noodle and rice bowls. The Mattenhof complex it sits in is new and modern. Good for a relaxed evening out without going all the way into Lucerne.",
     bus_route: "It is a 10-minute walk from Mattenhof station in Kriens.",
-    why_we_love_it: "Infused Water \"Phoenix and Passion\"",
+    why_we_love_it: "Infused Water \"Phoenix and Passion\" and the sushi",
   },
   {
     ...BASE,

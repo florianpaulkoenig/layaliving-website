@@ -460,7 +460,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     address: "Vitznau",
     website: "https://www.rigi.ch",
     price_range: 3,
-    description: "The Rigi, also known as the \"Queen of the Mountains,\" offers a 360-degree panorama of Lake Lucerne, Lake Zug, and the Alps. It is a popular destination all year round and can be easily reached by mountain railway or cable car. In summer, idyllic hiking trails and picnic spots invite you to linger, while in winter, snowshoe trails and sleigh rides beckon. The combination of nature, views, and accessibility makes the Rigi a classic among Swiss mountains.",
+    description: "The Rigi offers a 360-degree panorama of Lake Lucerne, Lake Zug, and the Alps, and can be reached by mountain railway or cable car. In summer there are hiking trails and picnic spots; in winter snowshoe trails and sledging. A good choice year-round.\n\nAt the Kaltbad mid-station, the Mineralbad & Spa Rigi Kaltbad (designed by Mario Botta) is well worth a visit — especially on a grey day or in winter. Book ahead.",
     bus_route: "Take the train from Lucerne to Arth-Goldau and from there take the train up to the Rigi. Or take the boat from Lucerne to Vitznau and ride up on the historic mountain railway.",
     tags: ["view", "mountain", "photo-spot"],
   },

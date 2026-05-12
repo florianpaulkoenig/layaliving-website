@@ -225,7 +225,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     website: "https://hotel-himmelrich.ch",
     phone: "+41 41 557 40 07",
     price_range: 2,
-    description: "The Himmelrich restaurant in Lucerne combines modern, uncomplicated cuisine with a cozy atmosphere. The menu features seasonal dishes made from fresh, regional ingredients – from creative bowls and crisp salads to hearty classics. The stylish, bright interior and relaxed atmosphere make it the ideal meeting place for lunch, after-work drinks, or a relaxed dinner. With friendly service and a varied menu, Himmelrich is a popular place to enjoy good food in the heart of the neighborhood of the same name.",
+    description: "Worth going on a clear day — take the walk up through the Himmelrich neighbourhood, have lunch or a drink on the terrace, and enjoy the views over the city. Seasonal dishes, salads, bowls. The terrace is the reason to come; the walk there and back makes it a proper outing.",
     bus_route: "Accessible by car via Kriens, or on foot up the Pilatus, approx. 30 minutes.",
     why_we_love_it: "The view from the terrace is magnificent.",
     tags: ["view", "sunny-day"],

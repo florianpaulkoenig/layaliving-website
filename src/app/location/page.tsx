@@ -77,6 +77,7 @@ export default function LocationPage() {
           </p>
           <div className="ledger">
             <div><div className="k">Bus</div><div className="v">№ 14 · at the door</div></div>
+            <div><div className="k">Train</div><div className="v">Mattenhof S-Bahn · 10 min walk</div></div>
             <div><div className="k">Bikes</div><div className="v">To rent nearby</div></div>
             <div><div className="k">Parking</div><div className="v">~CHF 1 / hour</div></div>
           </div>

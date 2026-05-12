@@ -242,7 +242,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     lat: 47.0506, lng: 8.3085,
     website: "https://www.suite-luzern.ch",
     price_range: 3,
-    description: "The Suite Rooftop Bar in Lucerne offers breathtaking views of the lake, city, and mountains—perfect for unforgettable evenings. In an elegant, modern atmosphere, the team serves creative cocktails, fine wines, and delicious snacks. At sunset, the roof terrace is transformed into a magical place where music, lights, and views merge into a unique experience. The Suite Rooftop Bar is the ideal meeting place for stylish drinks and special moments high above the rooftops of Lucerne.",
+    description: "A rooftop bar on top of the Hotel The Suite, with open views over the lake and the city. Cocktails and wine, a relaxed crowd, and good music in the evening. Worth going once — especially on a clear summer evening when the light is right. Can get busy on weekends; arriving early helps.",
     bus_route: "Directly at the train station, above Starbucks.",
     why_we_love_it: "Whiskey Sour",
     tags: ["personal-favorites", "view", "evening"],

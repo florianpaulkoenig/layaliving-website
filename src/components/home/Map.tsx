@@ -117,36 +117,56 @@ export function MapSection() {
           </APIProvider>
         </div>
 
-        {/* Sidebar list */}
+        {/* Sidebar list — grouped by category */}
         <div className="map-list">
-          {PICKS.map((r, i) => (
-            <div
-              key={r.id}
-              className="map-item"
-              data-active={active === r.id ? "true" : "false"}
-              onClick={() => setActive(r.id === active ? null : r.id)}
-              style={{ cursor: "pointer" }}
-            >
-              <div className="num">{String(i + 1).padStart(2, "0")}</div>
-              <div>
-                <div className="name">{r.name}</div>
-                <div className="kind">
-                  {CATEGORY_LABEL[r.category] ?? r.category}
-                  {r.tagline ? ` · ${r.tagline}` : ""}
+          {(() => {
+            // Group PICKS by category, preserving order of first appearance
+            const seen = new Set<string>();
+            const catOrder: string[] = [];
+            for (const r of PICKS) {
+              if (!seen.has(r.category)) { seen.add(r.category); catOrder.push(r.category); }
+            }
+            let counter = 0;
+            return catOrder.map((cat) => {
+              const group = PICKS.filter((r) => r.category === cat);
+              return (
+                <div key={cat} className="map-group">
+                  <div className="map-group-label">{CATEGORY_LABEL[cat] ?? cat}</div>
+                  {group.map((r) => {
+                    counter++;
+                    const n = counter;
+                    return (
+                      <div
+                        key={r.id}
+                        className="map-item"
+                        data-active={active === r.id ? "true" : "false"}
+                        onClick={() => setActive(r.id === active ? null : r.id)}
+                        style={{ cursor: "pointer" }}
+                      >
+                        <div className="num">{String(n).padStart(2, "0")}</div>
+                        <div>
+                          <div className="name">{r.name}</div>
+                          {r.tagline && <div className="kind">{r.tagline}</div>}
+                        </div>
+                        <Link
+                          href={`/recommendations/${r.category}/${r.slug}`}
+                          className="dist"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          →
+                        </Link>
+                      </div>
+                    );
+                  })}
                 </div>
-              </div>
-              <Link
-                href={`/recommendations/${r.category}/${r.slug}`}
-                className="dist"
-                onClick={(e) => e.stopPropagation()}
-              >
-                →
-              </Link>
-            </div>
-          ))}
-          <Link href="/recommendations" className="map-all-link">
-            See all recommendations →
-          </Link>
+              );
+            });
+          })()}
+          <div className="map-all-wrap">
+            <Link href="/recommendations" className="h-btn">
+              See all recommendations →
+            </Link>
+          </div>
         </div>
       </div>
     </section>

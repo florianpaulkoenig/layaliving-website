@@ -291,17 +291,20 @@
 .home-redesign .map-item .dist {
   font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums;
 }
-.home-redesign .map-all-link {
-  display: block;
-  padding: 16px 0;
+.home-redesign .map-group { margin-bottom: 4px; }
+.home-redesign .map-group-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding: 14px 0 4px;
   border-top: 1px solid var(--line);
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  color: var(--ink);
-  text-decoration: none;
-  text-align: right;
 }
-.home-redesign .map-all-link:hover { color: var(--gold-dark); }
+.home-redesign .map-group:first-child .map-group-label { border-top: none; padding-top: 0; }
+.home-redesign .map-all-wrap {
+  padding: 20px 0 4px;
+  border-top: 1px solid var(--line);
+}
 
 /* CTA band */
 .home-redesign .cta-band {

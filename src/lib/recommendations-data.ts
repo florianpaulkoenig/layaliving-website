@@ -610,7 +610,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     website: "https://www.titlis.ch/en",
     season: ["summer"],
     tags: ["mountain", "view"],
-    why_we_love_it: "A full immersion in Central Switzerland's mountain world — quiet lakes, open ridges, and views that change at every turn. Four shortcuts if needed: Jochpass chairlift up from Trübsee, Engstlenalp chairlift over the pass, the Melchsee-Frutt Zügli (small electric train across the plateau), and the Stöckalp gondola at the end. Even with all four, the day stays substantial.",
+    why_we_love_it: "One of our favourite summer hikes — we do this one with our dog every year. A full immersion in Central Switzerland's mountain world — quiet lakes, open ridges, and views that change at every turn.\n\nFour shortcuts if needed: Jochpass chairlift up from Trübsee, Engstlenalp chairlift over the pass, the Melchsee-Frutt Zügli (small electric train across the plateau), and the Stöckalp gondola at the end. Even with all four, the day stays substantial.",
   },
   {
     ...BASE,

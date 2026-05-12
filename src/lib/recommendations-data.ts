@@ -965,7 +965,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     image_url: "/images/recommendations/essentials-pilatusmarkt.jpg",
     name: "Pilatusmarkt",
     tagline: "Larger shopping centre with Coop, Jumbo and pharmacy — paid parking",
-    description: "Larger shopping centre a short bus ride away. Includes Coop supermarket, Coop Vitality pharmacy, Jumbo home & DIY, clothing stores, children's toys, a bookshop, Confiseur Bachmann, and other shops. Parking is paid. ALDI is nearby on the same street (Ringstrasse 27) but a separate building.",
+    description: "Larger shopping centre a short bus ride away. Includes Coop supermarket, Coop Vitality pharmacy, Jumbo home & DIY, clothing stores, children's toys, a bookshop, Confiseur Bachmann, and other shops. Parking is paid.",
     address: "Ringstrasse 19, Kriens",
     bus_route: "Bus from Kriens, Nidfeld — check SBB Mobile for the current line. About 45 min on foot — most guests take the bus.",
     walk_time_min: 45,

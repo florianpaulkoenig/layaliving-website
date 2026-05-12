@@ -1,33 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { SEASONS } from "./content";
-import type { SanitySiteContent } from "../../../sanity/lib/queries";
 
-type Props = {
-  sanitySeasons?: SanitySiteContent["seasons"];
-};
-
-export function Seasons({ sanitySeasons }: Props = {}) {
-  const seasons = useMemo(() => {
-    if (!sanitySeasons || sanitySeasons.length === 0) return SEASONS;
-    return SEASONS.map((staticSeason) => {
-      const override = sanitySeasons.find((s) => s.key === staticSeason.key);
-      if (!override) return staticSeason;
-      return {
-        ...staticSeason,
-        name: override.name || staticSeason.name,
-        months: override.months || staticSeason.months,
-        titleLead: override.titleLead || staticSeason.titleLead,
-        titleTail: override.titleTail || staticSeason.titleTail,
-        body: override.body || staticSeason.body,
-      };
-    });
-  }, [sanitySeasons]);
-
+export function Seasons() {
   const [i, setI] = useState(1);
-  const s = seasons[i];
+  const s = SEASONS[i];
 
   return (
     <section className="h-section">
@@ -45,7 +24,7 @@ export function Seasons({ sanitySeasons }: Props = {}) {
       </div>
 
       <div className="seasons-tabs" role="tablist">
-        {seasons.map((ss, idx) => (
+        {SEASONS.map((ss, idx) => (
           <button
             key={ss.key}
             type="button"

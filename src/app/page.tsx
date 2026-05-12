@@ -9,28 +9,21 @@ import { MapSection } from "@/components/home/Map";
 import { Guestbook } from "@/components/home/Guestbook";
 import { Faq } from "@/components/home/Faq";
 import { Cta } from "@/components/home/Cta";
-import { fetchFaqGroups, fetchSiteContent } from "../../sanity/lib/queries";
 import "./home.css";
 
-export default async function Home() {
-  // Fetch from Sanity — returns null if not yet configured, falls back gracefully
-  const [sanityFaq, sanityContent] = await Promise.all([
-    fetchFaqGroups(),
-    fetchSiteContent(),
-  ]);
-
+export default function Home() {
   return (
     <div className="home-redesign">
-      <Hero heroParagraph={sanityContent?.heroParagraph} />
+      <Hero />
       <Spec />
       <Apartment />
       <Pull />
-      <Seasons sanitySeasons={sanityContent?.seasons} />
+      <Seasons />
       <Availability />
       <Families />
       <MapSection />
-      <Guestbook sanityReviews={sanityContent?.guestReviews} />
-      <Faq sanityGroups={sanityFaq} />
+      <Guestbook />
+      <Faq />
       <Cta />
     </div>
   );

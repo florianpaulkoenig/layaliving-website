@@ -1,9 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { PortableText } from "@portabletext/react";
 import { FAQ_GROUPS, type FaqGroup } from "./faq-content";
-import type { SanityFaqGroup } from "../../../sanity/lib/queries";
 
 // ── Plain-text extractor (for search) ────────────────────────────────────────
 
@@ -19,49 +17,13 @@ function getAnswerText(a: React.ReactNode): string {
   return "";
 }
 
-function portableTextToString(blocks: unknown[]): string {
-  if (!Array.isArray(blocks)) return "";
-  return blocks
-    .map((block: unknown) => {
-      const b = block as { _type?: string; children?: Array<{ text?: string }> };
-      if (b._type !== "block" || !b.children) return "";
-      return b.children.map((c) => c.text ?? "").join("");
-    })
-    .join(" ");
-}
-
-// ── Convert Sanity groups to the local FaqGroup shape ────────────────────────
-
-function sanityToFaqGroups(sanityGroups: SanityFaqGroup[]): FaqGroup[] {
-  return sanityGroups.map((group, gi) => ({
-    topic: group.topic,
-    items: group.items.map((item, ii) => ({
-      n: item.n ?? String(gi * 10 + ii + 1).padStart(2, "0"),
-      q: item.question,
-      a: Array.isArray(item.answer) && item.answer.length > 0
-        ? <PortableText value={item.answer as Parameters<typeof PortableText>[0]["value"]} />
-        : "",
-    })),
-  }));
-}
-
 // ── Component ─────────────────────────────────────────────────────────────────
 
-interface FaqProps {
-  sanityGroups?: SanityFaqGroup[] | null;
-}
-
-export function Faq({ sanityGroups }: FaqProps = {}) {
+export function Faq() {
   const [open, setOpen] = useState<string | null>("01");
   const [query, setQuery] = useState("");
 
-  const groups: FaqGroup[] = useMemo(
-    () =>
-      sanityGroups && sanityGroups.length > 0
-        ? sanityToFaqGroups(sanityGroups)
-        : FAQ_GROUPS,
-    [sanityGroups]
-  );
+  const groups: FaqGroup[] = FAQ_GROUPS;
 
   const needle = query.trim().toLowerCase();
 
@@ -73,12 +35,7 @@ export function Faq({ sanityGroups }: FaqProps = {}) {
         items: group.items.filter(
           (item) =>
             item.q.toLowerCase().includes(needle) ||
-            getAnswerText(item.a).toLowerCase().includes(needle) ||
-            portableTextToString(
-              Array.isArray(item.a) ? (item.a as unknown[]) : []
-            )
-              .toLowerCase()
-              .includes(needle)
+            getAnswerText(item.a).toLowerCase().includes(needle)
         ),
       }))
       .filter((group) => group.items.length > 0);

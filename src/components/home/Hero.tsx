@@ -2,10 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { HOME_IMG } from "./content";
 
-const HERO_PARAGRAPH_DEFAULT =
-  "A thoughtfully designed top-floor apartment in Kriens — quiet, comfortable, and well connected. The old town is ten minutes by bus, and Pilatus, Rigi and Engelberg are all within easy reach by train.";
-
-export function Hero({ heroParagraph }: { heroParagraph?: string }) {
+export function Hero() {
   return (
     <section className="hero">
       <div className="hero-head">
@@ -16,7 +13,7 @@ export function Hero({ heroParagraph }: { heroParagraph?: string }) {
         </h1>
         <div className="hero-meta">
           <div className="eyebrow">Kriens near Lucerne · Switzerland</div>
-          <p>{heroParagraph || HERO_PARAGRAPH_DEFAULT}</p>
+          <p>A thoughtfully designed top-floor apartment in Kriens — quiet, comfortable, and well connected. The old town is ten minutes by bus, and Pilatus, Rigi and Engelberg are all within easy reach by train.</p>
           <div className="hero-actions">
             <Link href="/book" className="h-btn">Reserve your stay</Link>
             <Link href="#apartment" className="h-btn ghost">Look inside</Link>

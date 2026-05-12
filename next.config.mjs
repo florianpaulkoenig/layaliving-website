@@ -9,8 +9,7 @@ const nextConfig = {
       { protocol: "https", hostname: "images.squarespace-cdn.com" },
       { protocol: "https", hostname: "static1.squarespace.com" },
       // Add more as content curation reveals them
-      // Sanity image CDN
-      { protocol: "https", hostname: "cdn.sanity.io" },
+
     ],
   },
 };

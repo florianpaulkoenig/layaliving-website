@@ -10,17 +10,12 @@
     "fetch-photos": "tsx --env-file=.env.local scripts/fetch-google-photos.ts"
   },
   "dependencies": {
-    "@portabletext/react": "^6.2.0",
-    "@sanity/vision": "^5.24.0",
     "@supabase/ssr": "^0.10.2",
     "@supabase/supabase-js": "^2.104.0",
     "@vis.gl/react-google-maps": "^1.8.3",
     "next": "^15.5.18",
-    "next-sanity": "^12.4.5",
     "react": "^19.2.6",
-    "react-dom": "^19.2.6",
-    "sanity": "^5.24.0",
-    "styled-components": "^6.4.1"
+    "react-dom": "^19.2.6"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -60,7 +60,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         n: "08",
         q: "Is the kitchen fully equipped?",
-        a: "Yes — stove and oven, microwave, dishwasher, coffee machine, kettle, toaster, rice cooker, fridge and freezer. Cookware, utensils, plates, glasses, cutlery. Basic spices and oil.",
+        a: "Yes — induction hob and oven, microwave, dishwasher, coffee machine, kettle, toaster, rice cooker, fridge and freezer. Cookware, utensils, plates, glasses, cutlery. Basic spices and oil.",
       },
       {
         n: "09",

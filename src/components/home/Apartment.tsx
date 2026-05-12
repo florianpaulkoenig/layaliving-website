@@ -16,7 +16,7 @@ const FIGS: Fig[] = [
   { cls: "apt-3", src: HOME_IMG.bed,        alt: "Thoughtful design for cozy nights",  title: "Thoughtful design for cozy nights",  n: "03 / 06", sizes: "(max-width: 768px) 100vw, 65vw" },
   { cls: "apt-4", src: HOME_IMG.sofa,       alt: "Designer details",                   title: "Designer details",                   n: "04 / 06", sizes: "(max-width: 768px) 100vw, 30vw" },
   { cls: "apt-5", src: HOME_IMG.naturalLight, alt: "Flooded with natural light",       title: "Flooded with natural light",         n: "05 / 06", sizes: "(max-width: 768px) 100vw, 50vw" },
-  { cls: "apt-6", src: HOME_IMG.sofabed,    alt: "Sofa bed for additional guests",     title: "Sofa bed for additional guests",     n: "06 / 06", sizes: "(max-width: 768px) 100vw, 45vw" },
+  { cls: "apt-6", src: HOME_IMG.sofabed,    alt: "The sofa converts into a bed",        title: "The sofa converts into a bed",       n: "06 / 06", sizes: "(max-width: 768px) 100vw, 45vw" },
 ];
 
 export function Apartment() {

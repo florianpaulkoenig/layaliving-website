@@ -106,10 +106,11 @@ export default function LocationPage() {
             />
           </div>
           <div className="cap"><span>Fig. 03</span><span>Ten minutes to the old town</span></div>
-          <h3>Along the Reuss, through the wooden bridge.</h3>
+          <h3>Car-free into the city from the door.</h3>
           <p>
-            A mostly-flat ride along the river. You arrive in the old town
-            without breaking a sweat, and leave again at your own pace.
+            The Velohighway starts right outside the building — a dedicated,
+            flat cycle path that takes you car-free into Lucerne old town in
+            about ten minutes.
           </p>
         </figure>
       </div>

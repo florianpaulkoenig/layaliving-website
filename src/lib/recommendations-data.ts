@@ -137,7 +137,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     price_range: 2,
     description: "The Wirtshaus Taube in Lucerne stands for genuine hospitality and honest, down-to-earth cuisine. Seasonal specialities, Swiss classics and fine home-style dishes are served in a cosy, rustic atmosphere – always freshly prepared and often using regional products. Whether for lunch, dinner, or a get-together with friends, the Traube offers a warm, inviting atmosphere where you will immediately feel at home. Here, tradition meets warmth—a piece of Lucerne's way of life.",
     bus_route: "Take bus no. 14 to Pilatusplatz, then walk 5 minutes toward the Reuss River.",
-    why_we_love_it: "A typical Lucerne dish, Lucerne Kügelipastetli",
+    why_we_love_it: "Lucerne Kügelipastetli — and a terrace right on the Reuss on sunny days",
     tags: ["personal-favorites"],
   },
   {

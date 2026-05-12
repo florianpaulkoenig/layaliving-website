@@ -144,6 +144,9 @@ export function MapSection() {
               </Link>
             </div>
           ))}
+          <Link href="/recommendations" className="map-all-link">
+            See all recommendations →
+          </Link>
         </div>
       </div>
     </section>

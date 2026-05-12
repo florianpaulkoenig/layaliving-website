@@ -938,7 +938,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     image_url: "/images/recommendations/essentials-migros-produce.jpg",
     name: "Mattenhof",
     tagline: "Shopping complex 10 min walk — groceries, clothes, pharmacy and more",
-    description: "The Mattenhof complex in Kriens is the closest place for most daily needs — Migros for food and everyday essentials, plus pharmacy (Medbase) and a sports shop. Bäckerei Hug is also here and open on Sundays. Note: Migros does not sell alcohol — ALDI on Ringstrasse is the nearest alternative for that.",
+    description: "The Mattenhof complex in Kriens is the closest place for most daily needs — Migros for food and everyday essentials, plus pharmacy (Medbase) and a sports shop. Bäckerei Hug is also here and open on Sundays. Note: Migros does not sell alcohol.",
     address: "Am Mattenhof 2, Kriens",
     walk_time_min: 10,
     lat: 47.0367, lng: 8.2832,

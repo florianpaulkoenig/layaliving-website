@@ -14,7 +14,7 @@ export type SanityFaqGroup = {
 };
 
 export async function fetchFaqGroups(): Promise<SanityFaqGroup[] | null> {
-  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) return null;
+  if (!sanityClient) return null;
   try {
     const data = await sanityClient.fetch(
       `*[_type == "faq"][0].groups[]{
@@ -57,7 +57,7 @@ export type SanitySiteContent = {
 };
 
 export async function fetchSiteContent(): Promise<SanitySiteContent | null> {
-  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) return null;
+  if (!sanityClient) return null;
   try {
     const data = await sanityClient.fetch(
       `*[_type == "siteContent"][0]{

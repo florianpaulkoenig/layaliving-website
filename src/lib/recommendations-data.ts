@@ -41,7 +41,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     description: "Two Hands is our go-to for brunch in Lucerne. The menu is creative and cosmopolitan — think seasonal ingredients put together with care, in a relaxed setting that doesn't feel rushed. It gets busy on weekend mornings, so arriving early or on a weekday is worth it. The chai tea and homemade pancakes are a good reason to come back.",
     bus_route: "Take bus no. 14 to Moosmatt, then walk 4 minutes to Neustadt.",
     why_we_love_it: "Chai tea and homemade pancakes",
-    tags: ["personal-favorites"],
+    tags: ["personal-favorites", "brunch"],
   },
   {
     ...BASE,
@@ -55,6 +55,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     description: "Melissa's Kitchen in Lucerne delights guests with homemade, fresh, and healthy dishes inspired by international flavors. Here, creative cuisine meets warm hospitality. Whether breakfast, lunch, or afternoon cake, everything is prepared with love, often using regional and organic ingredients. The cozy atmosphere invites you to linger and makes Melissa's Kitchen a place where enjoyment, quality, and a feel-good atmosphere harmonize perfectly.",
     bus_route: "Take bus no. 14 to Pilatusplatz, then walk for 5 minutes.",
     why_we_love_it: "On Sundays and public holidays, there is a large, delicious brunch buffet.",
+    tags: ["brunch"],
   },
   {
     ...BASE,
@@ -69,7 +70,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     description: "Karls Kraut in Lucerne stands for creative, plant-based cuisine full of flavor and variety. Here, fresh, seasonal ingredients are transformed into colorful bowls, sophisticated vegetable dishes, and homemade specialties – all vegetarian or vegan. The charming, cozy atmosphere invites you to linger, while the changing menu always has new culinary surprises in store. Karls Kraut is the perfect place for conscious enjoyment that is healthy, sustainable, and simply delicious.",
     bus_route: "Take bus no. 14 to Pilatusplatz, then walk 10 minutes to the old town, past Mühlenplatz and along the Reuss river.",
     why_we_love_it: "Brunch is served every second and fourth Sunday of the month and is very delicious.",
-    tags: ["vegetarian"],
+    tags: ["vegetarian", "brunch"],
   },
   {
     ...BASE,
@@ -183,7 +184,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     description: "FED in Lucerne combines modern design with innovative cuisine and a food-sharing concept. The restaurant focuses on fresh, regional ingredients and uses them to create creative dishes with international influences. Whether for a relaxed lunch, a stylish dinner, or cocktails at the bar, FED offers a culinary experience in an urban, elegant atmosphere. The open kitchen and attentive service make every visit special. A meeting place for connoisseurs who appreciate good food, a stylish ambience, and lively hospitality.",
     bus_route: "Take bus no. 14 to Pilatusplatz, then walk 3 minutes across the intersection.",
     why_we_love_it: "Homemade cherry lemonade",
-    tags: ["romantic"],
+    tags: [],
   },
   {
     ...BASE,
@@ -260,7 +261,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     description: "The Montana Beach Club in Lucerne combines a vacation feeling with spectacular views of Lake Lucerne and the Alps. On the roof terrace of the Art Deco Hotel Montana, guests can enjoy comfortable lounges, cool drinks, refreshing cocktails, and summer snacks. Sand under your feet, relaxing music, and sparkling water create a unique atmosphere in the middle of the city. Whether for sunbathing during the day or sundowners in the evening, the Montana Beach Club is an exclusive hotspot for summer enjoyment.",
     bus_route: "Take bus no. 14 to Gärtnerstrasse, then walk down Abendweg for 5 minutes. Or change at Lucerne train station to bus no. 8 or 6 to Lucerne Casino-Palace, where you will find the lift directly to the Montana on the other side of the street.",
     why_we_love_it: "The fantastic mocktails",
-    tags: ["view", "sunset", "romantic"],
+    tags: ["view", "sunset"],
   },
   {
     ...BASE,
@@ -514,7 +515,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     price_range: 3,
     description: "A boat trip from Lucerne to Bürgenstock combines relaxed travel with spectacular views. From the Lucerne lake basin, you glide past picturesque shores and mountains to the Bürgenstock station. From there, the funicular railway takes you up to the famous Bürgenstock Resort with breathtaking views over Lake Lucerne. Whether you prefer a walk, the panoramic terrace, or the spectacular rock trail, this excursion is a highlight for nature lovers and connoisseurs alike.",
     bus_route: "Take bus no. 14 to Lucerne train station; the boat is at the pier in front of the station.",
-    tags: ["view", "lake", "romantic"],
+    tags: ["view", "lake"],
   },
   {
     ...BASE,
@@ -694,7 +695,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     bus_route: "Via Lucerne station (bus 14 from Kriens, Nidfeld, ~10 min), then 3 min walk to Pier 1.",
     website: "https://www.lakelucerne.ch",
     season: ["spring", "summer", "autumn"],
-    tags: ["lake", "romantic", "family-friendly"],
+    tags: ["lake", "family-friendly"],
     why_we_love_it: "Upper-deck first class is worth the extra in good weather.",
   },
   {
@@ -719,7 +720,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     bus_route: "Via Lucerne station (bus 14 from Kriens, Nidfeld, ~10 min), 3 min to Pier 1.",
     website: "https://www.lakelucerne.ch",
     season: ["spring", "summer", "autumn"],
-    tags: ["lake", "view", "romantic"],
+    tags: ["lake", "view"],
   },
   {
     ...BASE,
@@ -731,7 +732,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     bus_route: "Via Lucerne station (bus 14 from Kriens, Nidfeld, ~10 min), 3 min to Pier 1.",
     website: "https://www.lakelucerne.ch",
     season: ["spring", "summer"],
-    tags: ["lake", "romantic", "sunset", "evening"],
+    tags: ["lake", "sunset", "evening"],
   },
   {
     ...BASE,

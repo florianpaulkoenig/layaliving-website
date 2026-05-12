@@ -42,10 +42,10 @@ export type Season = "spring" | "summer" | "autumn" | "winter";
  */
 export const TAG_CATALOG: Array<{ slug: string; label: string }> = [
   { slug: "personal-favorites", label: "Our favourites" },
-  { slug: "romantic", label: "Romantic" },
+  { slug: "brunch", label: "Brunch" },
   { slug: "family-friendly", label: "Family-friendly" },
   { slug: "kid-safe", label: "Kid-safe" },
-  { slug: "view", label: "With a view" },
+  { slug: "view", label: "View & terrace" },
   { slug: "hidden-gem", label: "Hidden gem" },
   { slug: "budget", label: "Budget-friendly" },
   { slug: "splurge", label: "Special occasion" },

@@ -569,7 +569,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     bus_route: "Via Lucerne station, then a short bus ride toward Wartegg, then 5 min walk down to the lake. Check SBB Mobile for the current line.",
     website: "https://www.richard-wagner-museum.ch",
     season: ["spring", "summer", "autumn", "winter"],
-    tags: ["lake", "culture"],
+    tags: ["lake", "culture", "family-friendly"],
   },
   {
     ...BASE,

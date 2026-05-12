@@ -154,7 +154,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     description: "Mamma Leone in Lucerne brings the authentic taste of Italy to your plate. Fresh pasta, crispy stone-baked pizzas, and homemade desserts are prepared with the finest ingredients and lots of amore. The Mediterranean atmosphere, friendly service, and exquisite wine selection invite you to linger—whether for a relaxed lunch, a romantic dinner, or a cheerful get-together with friends. Mamma Leone is a piece of Italy in the heart of Lucerne that combines enjoyment and joie de vivre. 14 Gault Millau points",
     bus_route: "Take bus no. 14 to Pilatusplatz, then walk 8 minutes to the old town.",
     why_we_love_it: "Carpaccio di barbabietola (beetroot carpaccio with burrata)",
-    tags: ["splurge", "view"],
+    tags: ["view"],
   },
   {
     ...BASE,
@@ -184,7 +184,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     description: "FED in Lucerne combines modern design with innovative cuisine and a food-sharing concept. The restaurant focuses on fresh, regional ingredients and uses them to create creative dishes with international influences. Whether for a relaxed lunch, a stylish dinner, or cocktails at the bar, FED offers a culinary experience in an urban, elegant atmosphere. The open kitchen and attentive service make every visit special. A meeting place for connoisseurs who appreciate good food, a stylish ambience, and lively hospitality.",
     bus_route: "Take bus no. 14 to Pilatusplatz, then walk 3 minutes across the intersection.",
     why_we_love_it: "Homemade cherry lemonade",
-    tags: [],
+    tags: ["splurge"],
   },
   {
     ...BASE,
@@ -200,7 +200,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     description: "Grottino 1313 in Lucerne is a culinary gem with charming industrial charm. There is no fixed menu here – whatever is in season and available at the market is what is cooked. Mediterranean-inspired dishes, fresh and prepared with love, are served in a convivial atmosphere at long wooden tables. Grottino stands for shared enjoyment, honest cuisine, and warm hospitality. It's a place where you feel like you're among friends and are surprised every time you visit.",
     bus_route: "Take bus no. 14 to Kantonalbank, walk 2 minutes to the next bus stop (around the corner on the right), then take bus no. 6, 7, 8, or 21 to Werkhofstrasse, and walk 4 minutes to the restaurant.",
     why_we_love_it: "This Mediterranean restaurant offers a 4 or 5-course surprise menu in tavolata style. It is always very busy, so reservations are recommended.",
-    tags: ["personal-favorites", "splurge"],
+    tags: ["personal-favorites"],
   },
   {
     ...BASE,

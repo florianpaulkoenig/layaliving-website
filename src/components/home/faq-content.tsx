@@ -135,7 +135,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         n: "17",
         q: "Is the apartment suitable for children?",
-        a: "Yes — a travel cot is available on request. Just let us know before you arrive.",
+        a: "Yes — a travel cot for babies up to 18 months is available on request. Just let us know before you arrive.",
       },
       {
         n: "18",

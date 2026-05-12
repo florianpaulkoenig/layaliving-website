@@ -115,7 +115,12 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         n: "16",
         q: "How do I get here from Zurich Airport?",
-        a: "Train to Luzern Bahnhof — about 80 minutes, usually direct. Then bus 14 to Kriens, Nidfeld. A full arrival guide goes out by email two days before check-in.",
+        a: (
+          <>
+            Train to Luzern Bahnhof — about 80 minutes, usually direct. Then bus 14 to Kriens, Nidfeld. A full arrival guide goes out by message two days before check-in.{" "}
+            <a href="https://www.sbb.ch/en/buying/pages/fahrplan/fahrplan.xhtml?von=Z%C3%BCrich+Flughafen&nach=Kriens%2C+Nidfeld" target="_blank" rel="noopener noreferrer">Plan your journey on SBB.ch →</a>
+          </>
+        ),
       },
     ],
   },

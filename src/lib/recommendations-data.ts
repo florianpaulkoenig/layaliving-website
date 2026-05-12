@@ -621,7 +621,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     website: "https://www.titlis.ch/en",
     season: ["summer", "autumn"],
     tags: ["mountain", "view"],
-    why_we_love_it: "Three shortcuts: Jochpass chairlift up from Trübsee, the Melchsee-Frutt Zügli (small electric train across the plateau), and the Stöckalp gondola at the end. Even with all three, the day stays substantial.",
+    why_we_love_it: "Four shortcuts: Jochpass chairlift up from Trübsee, Engstlenalp chairlift over the pass, the Melchsee-Frutt Zügli (small electric train across the plateau), and the Stöckalp gondola at the end. Even with all four, the day stays substantial.",
   },
   {
     ...BASE,

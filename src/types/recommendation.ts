@@ -59,8 +59,7 @@ export const TAG_CATALOG: Array<{ slug: string; label: string }> = [
   { slug: "morning", label: "Morning" },
   { slug: "lake", label: "By the lake" },
   { slug: "mountain", label: "Mountain" },
-  { slug: "long-hours", label: "Long hours" },
-  { slug: "open-sundays", label: "Open Sundays & holidays" },
+  { slug: "open-sundays", label: "Long hours · open Sundays" },
   { slug: "everyday-shopping", label: "Everyday shopping" },
   { slug: "mall", label: "Mall nearby" },
 ];

@@ -54,7 +54,6 @@ export const TAG_CATALOG: Array<{ slug: string; label: string }> = [
   { slug: "dog-friendly", label: "Dog-friendly" },
   { slug: "photo-spot", label: "Photo spot" },
   { slug: "takeaway", label: "Takeaway" },
-  { slug: "reservation", label: "Reservation advised" },
   { slug: "walk-in", label: "Walk-in" },
   { slug: "sunset", label: "Best at sunset" },
   { slug: "morning", label: "Morning" },

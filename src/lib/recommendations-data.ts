@@ -1020,7 +1020,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     image_url: null,
     name: "Food Delivery",
     tagline: "eat.ch · Uber Eats — delivered to the door",
-    description: "Both eat.ch and Uber Eats deliver to the apartment. Search by address (Nidfeldstrasse 10, Kriens) to see what's available. Selection varies by time of day — most options are active from late afternoon into the evening.",
+    description: "Both eat.ch and Uber Eats deliver to the apartment. Search by address (Nidfeldstrasse 2G, Kriens) to see what's available. Selection varies by time of day — most options are active from late afternoon into the evening.",
     website: "https://www.eat.ch",
     season: ["spring", "summer", "autumn", "winter"],
     tags: ["walk-in"],

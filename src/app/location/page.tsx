@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { LocationMap } from "@/components/location/LocationMap";
 import "../pages.css";
 
 export const metadata = {
   title: "Location — Laya Living",
   description:
-    "Triangolo apartment in Kriens, Lucerne — the base for your Alpine getaway.",
+    "Our apartment in Kriens near Lucerne — the perfect base for your Alpine getaway.",
 };
 
 export default function LocationPage() {
@@ -15,35 +16,31 @@ export default function LocationPage() {
       <header className="ph">
         <div className="ph-kicker">Location</div>
         <h1>
-          Kriens, Lucerne —{" "}
+          Kriens near Lucerne —{" "}
           <span className="it-accent">quiet above, lively below</span>.
         </h1>
         <p className="lede">
-          Triangolo sits on the hill above Kriens, ten minutes by bike from the
-          old town of Lucerne. Close enough to feel part of the city; high
-          enough to breathe mountain air.
+          The apartment sits on the top floor of a newly built campus near
+          Lucerne. Close enough to the city — but high enough to breathe. The
+          bus stop is right in front of the building, and the local train
+          station (with trains to Lucerne and Engelberg) is around ten minutes
+          on foot.
         </p>
       </header>
 
-      {/* ─── Panoramic hero ─── */}
+      {/* ─── Styled map ─── */}
       <div className="loc-hero">
-        <div className="fig">
-          <Image
-            src="/images/lucerne-vista.jpg"
-            alt="Panoramic view of Lucerne"
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
-          />
+        <div className="loc-map-wrap">
+          <LocationMap />
         </div>
       </div>
 
       {/* ─── Transit ledger ─── */}
       <div className="loc-stats">
-        <Stat k="To Lucerne old town" n="10" unit="min" mode="by bike or bus" />
-        <Stat k="To Mount Pilatus base" n="15" unit="min" mode="on foot" />
-        <Stat k="To Zurich airport" n="55" unit="min" mode="by train + car" />
+        <Stat k="Lucerne old town" n="10" unit="min" mode="by bus (Bus 14)" />
+        <Stat k="Mount Pilatus base" n="15" unit="min" mode="by bus from Kriens Sternmatt" />
+        <Stat k="Zurich airport" n="50 / 80" unit="min" mode="by car / by train" />
+        <Stat k="Engelberg (Mt. Titlis)" n="35 / 60" unit="min" mode="by car / by train" />
       </div>
 
       {/* ─── Two content blocks ─── */}
@@ -52,35 +49,34 @@ export default function LocationPage() {
           <h2>
             The view <span className="it-accent">from the couch</span>.
           </h2>
-          <p>Rigi to the east. Stanserhorn opposite. Pilatus a handshake away.</p>
+          <p>Rigi to the east. Bürgenstock to the right.</p>
           <p>
-            From sunrise gold on the Rigi face to evening blue over the Pilatus
-            ridge, the panorama is yours — from the couch, the bed, or the
-            balcony.
+            From the first blue sky of morning to the warm glow of late
+            afternoon, the panorama of the Rigi is always there — from the
+            couch, the bed, or the balcony.
           </p>
           <div className="ledger">
             <div><div className="k">Rigi</div><div className="v">1 798 m</div></div>
-            <div><div className="k">Pilatus</div><div className="v">2 128 m</div></div>
-            <div><div className="k">Stanserhorn</div><div className="v">1 898 m</div></div>
+            <div><div className="k">Bürgenstock</div><div className="v">874 m</div></div>
           </div>
         </div>
         <div className="b">
           <h2>
-            Car-free <span className="it-accent">by design</span>.
+            Getting around, <span className="it-accent">effortlessly</span>.
           </h2>
           <p>
-            Two vintage city bikes are parked at the door. Bus stop ninety
-            seconds away.
+            Bus No. 14 stops right in front of the building and takes you to
+            Lucerne main station in about ten minutes.
           </p>
           <p>
-            The Lucerne bike highway runs right past the building — you&rsquo;ll
-            reach the Kapellbrücke in about ten easy minutes, mostly along the
-            river.
+            Bikes are available to rent near the apartment — a flat, scenic
+            ride along the river brings you to the Kapellbrücke in roughly
+            ten minutes.
           </p>
           <div className="ledger">
-            <div><div className="k">Bus</div><div className="v">№ 1 · 90 s</div></div>
-            <div><div className="k">Bikes</div><div className="v">2 included</div></div>
-            <div><div className="k">Parking</div><div className="v">On request</div></div>
+            <div><div className="k">Bus</div><div className="v">№ 14 · at the door</div></div>
+            <div><div className="k">Bikes</div><div className="v">To rent nearby</div></div>
+            <div><div className="k">Parking</div><div className="v">~CHF 1 / hour</div></div>
           </div>
         </div>
       </div>
@@ -90,19 +86,20 @@ export default function LocationPage() {
         <figure className="p">
           <div className="fig">
             <Image
-              src="/images/titlis.jpg"
-              alt="Alps from the balcony"
+              src="/images/balcony-view.jpg"
+              alt="View from the balcony"
               fill
               sizes="(max-width: 768px) 100vw, 48vw"
               className="object-cover"
             />
           </div>
-          <div className="cap"><span>Fig. 02</span><span>From the balcony</span></div>
-          <h3>A panorama that changes by the hour.</h3>
+          <div className="cap"><span>Fig. 02</span><span>VIEW FROM THE BALCONY</span></div>
+          <h3>Blue sky and the Rigi, all day long.</h3>
           <p>
-            The Föhn light in autumn; the thin pink edge at sunrise in
-            February; the long blue of July evenings. The view is the sixth
-            member of the family.
+            Clear blue skies frame the Rigi from sunrise to sunset. From the
+            balcony, the view stretches across the valley — a panorama that
+            never gets old, whether you&rsquo;re having morning coffee or
+            watching the last light fade.
           </p>
         </figure>
         <figure className="p">

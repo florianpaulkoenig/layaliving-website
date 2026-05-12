@@ -1,169 +1,147 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
-import { PICKS, type Pick } from "./content";
+import { APIProvider, Map, Marker, InfoWindow } from "@vis.gl/react-google-maps";
+import { RECOMMENDATIONS } from "@/lib/recommendations-data";
+import { CATEGORIES } from "@/types/recommendation";
 
-function MapSVG({
-  picks,
-  hovered,
-  onHover,
-}: {
-  picks: Pick[];
-  hovered: string | null;
-  onHover: (n: string | null) => void;
-}) {
-  return (
-    <svg viewBox="0 0 600 480" style={{ position: "absolute", inset: 0 }}>
-      <defs>
-        <pattern
-          id="home-map-hatch"
-          width="6"
-          height="6"
-          patternUnits="userSpaceOnUse"
-          patternTransform="rotate(45)"
-        >
-          <line x1="0" y1="0" x2="0" y2="6" stroke="#d9d2c4" strokeWidth="0.6" />
-        </pattern>
-      </defs>
+const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "";
 
-      <path
-        d="M60,260 C120,210 220,200 320,230 C420,255 520,220 560,260 C540,320 460,360 380,345 C300,330 220,360 160,340 C110,325 70,300 60,260 Z"
-        fill="#c9d7d6"
-        stroke="#8faba8"
-        strokeWidth="1"
-      />
-      <path
-        d="M60,260 C120,210 220,200 320,230 C420,255 520,220 560,260 C540,320 460,360 380,345 C300,330 220,360 160,340 C110,325 70,300 60,260 Z"
-        fill="url(#home-map-hatch)"
-        opacity="0.35"
-      />
-      <path
-        d="M280,240 C300,180 340,140 380,80"
-        fill="none"
-        stroke="#8faba8"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
-      <path
-        d="M0,420 L80,320 L140,380 L210,300 L280,400 L360,330 L430,410 L520,340 L600,420 L600,480 L0,480 Z"
-        fill="#b9b099"
-        opacity="0.6"
-      />
-      <path
-        d="M0,440 L100,380 L180,430 L260,370 L340,430 L420,380 L500,430 L600,400 L600,480 L0,480 Z"
-        fill="#9a9078"
-        opacity="0.8"
-      />
+// Personal-favourite recommendations that have coordinates
+const PICKS = RECOMMENDATIONS.filter(
+  (r) => r.published && r.tags.includes("personal-favorites") && r.lat != null && r.lng != null
+);
 
-      <g>
-        <circle cx="252" cy="312" r="8" fill="#1d1a15" />
-        <circle
-          cx="252"
-          cy="312"
-          r="16"
-          fill="none"
-          stroke="#1d1a15"
-          strokeWidth="1"
-          strokeDasharray="2 3"
-        />
-        <text
-          x="268"
-          y="316"
-          fontFamily="var(--h-serif)"
-          fontSize="14"
-          fontStyle="italic"
-          fill="#1d1a15"
-        >
-          Triangolo
-        </text>
-      </g>
+const CATEGORY_LABEL = Object.fromEntries(CATEGORIES.map((c) => [c.slug, c.title]));
 
-      {picks.map((p) => {
-        const cx = (p.x / 100) * 600;
-        const cy = (p.y / 100) * 480;
-        const active = hovered === p.n;
-        return (
-          <g
-            key={p.n}
-            onMouseEnter={() => onHover(p.n)}
-            onMouseLeave={() => onHover(null)}
-            style={{ cursor: "pointer" }}
-          >
-            <circle
-              cx={cx}
-              cy={cy}
-              r={active ? 14 : 10}
-              fill={active ? "var(--h-accent)" : "var(--h-bg)"}
-              stroke="#1d1a15"
-              strokeWidth="1.2"
-            />
-            <text
-              x={cx}
-              y={cy + 4}
-              fontFamily="var(--h-serif)"
-              fontStyle="italic"
-              fontSize="11"
-              textAnchor="middle"
-              fill={active ? "var(--h-bg)" : "#1d1a15"}
-            >
-              {p.n}
-            </text>
-          </g>
-        );
-      })}
+// Custom map style matching the site's cream-and-sage palette
+const MAP_STYLES: google.maps.MapTypeStyle[] = [
+  { elementType: "geometry",            stylers: [{ color: "#f0ebe0" }] },
+  { elementType: "labels.text.fill",    stylers: [{ color: "#1d1a15" }] },
+  { elementType: "labels.text.stroke",  stylers: [{ color: "#f5f0e8" }] },
+  { featureType: "water", elementType: "geometry",          stylers: [{ color: "#9fbfbc" }] },
+  { featureType: "water", elementType: "labels.text.fill",  stylers: [{ color: "#4a7a78" }] },
+  { featureType: "road",  elementType: "geometry",          stylers: [{ color: "#e8e2d8" }] },
+  { featureType: "road",  elementType: "geometry.stroke",   stylers: [{ color: "#d4cbbf" }] },
+  { featureType: "road.highway", elementType: "geometry",        stylers: [{ color: "#d4c8b4" }] },
+  { featureType: "road.highway", elementType: "geometry.stroke",  stylers: [{ color: "#b8b0a0" }] },
+  { featureType: "poi",       elementType: "geometry",  stylers: [{ color: "#e8e2d8" }] },
+  { featureType: "poi",       elementType: "labels",    stylers: [{ visibility: "off" }] },
+  { featureType: "poi.park",  elementType: "geometry",  stylers: [{ color: "#c8d8c4" }] },
+  { featureType: "poi.park",  elementType: "labels.text.fill", stylers: [{ color: "#4a6b58" }] },
+  { featureType: "landscape",         elementType: "geometry", stylers: [{ color: "#f0ebe0" }] },
+  { featureType: "landscape.natural", elementType: "geometry", stylers: [{ color: "#ddd8c8" }] },
+  { featureType: "administrative",    elementType: "geometry.stroke", stylers: [{ color: "#c4bdb0" }] },
+  { featureType: "administrative.locality", elementType: "labels.text.fill", stylers: [{ color: "#1d1a15" }] },
+  { featureType: "transit", elementType: "geometry", stylers: [{ color: "#e0d8c8" }] },
+  { featureType: "transit", elementType: "labels",   stylers: [{ visibility: "off" }] },
+];
 
-      <g transform="translate(540,60)">
-        <circle r="22" fill="none" stroke="#1d1a15" strokeWidth="0.8" />
-        <path d="M0,-18 L4,0 L0,18 L-4,0 Z" fill="#1d1a15" />
-        <text
-          y="-26"
-          textAnchor="middle"
-          fontFamily="var(--h-serif)"
-          fontStyle="italic"
-          fontSize="10"
-          fill="#1d1a15"
-        >
-          N
-        </text>
-      </g>
-    </svg>
-  );
+// Circle marker — path: 0 == google.maps.SymbolPath.CIRCLE, no google.* call needed
+function markerIcon(active: boolean) {
+  return {
+    path: 0, // CIRCLE
+    fillColor: active ? "#1d1a15" : "#f5f0e8",
+    fillOpacity: 1,
+    strokeColor: "#1d1a15",
+    strokeWeight: 2,
+    scale: 8,
+  };
 }
 
 export function MapSection() {
-  const [hovered, setHovered] = useState<string | null>(null);
+  const [active, setActive] = useState<number | null>(null);
+  const activeRec = active != null ? PICKS.find((r) => r.id === active) : null;
 
   return (
     <section className="h-section">
       <div className="sec-head">
         <div className="sec-num">V — Our Lucerne</div>
         <h2 className="sec-title">
-          The places locals don&apos;t share online.
+          Wine &amp; dine at <span className="it">hidden gems</span>.
         </h2>
         <p className="sec-lede">
-          A curated field guide to the neighbourhood, the lake, and the
-          quieter corners of the old town. Updated after every stay.
+          Lucerne&apos;s culinary scene is full of hidden gems — and we&apos;ll
+          help you discover them. In our apartment, you&apos;ll find a curated
+          guide to our favourite local spots, from cozy wine bars to family-run
+          eateries off the tourist trail.
         </p>
       </div>
+
       <div className="map-wrap">
+        {/* Google Map */}
         <div className="map-canvas">
-          <MapSVG picks={PICKS} hovered={hovered} onHover={setHovered} />
-        </div>
-        <div className="map-list">
-          {PICKS.map((p) => (
-            <div
-              key={p.n}
-              className="map-item"
-              data-active={hovered === p.n ? "true" : "false"}
-              onMouseEnter={() => setHovered(p.n)}
-              onMouseLeave={() => setHovered(null)}
+          <APIProvider apiKey={API_KEY}>
+            <Map
+              defaultCenter={{ lat: 47.044, lng: 8.299 }}
+              defaultZoom={12}
+              disableDefaultUI
+              gestureHandling="cooperative"
+              styles={MAP_STYLES}
+              style={{ width: "100%", height: "100%" }}
             >
-              <div className="num">{p.n}</div>
+              {PICKS.map((r) => (
+                <Marker
+                  key={r.id}
+                  position={{ lat: r.lat!, lng: r.lng! }}
+                  icon={markerIcon(r.id === active)}
+                  onClick={() => setActive(r.id === active ? null : r.id)}
+                />
+              ))}
+
+              {activeRec && activeRec.lat != null && activeRec.lng != null && (
+                <InfoWindow
+                  position={{ lat: activeRec.lat, lng: activeRec.lng }}
+                  onCloseClick={() => setActive(null)}
+                  pixelOffset={[0, -44]}
+                >
+                  <div style={{ fontFamily: "inherit", maxWidth: 200 }}>
+                    <div style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.12em", color: "#6b6356", marginBottom: 2 }}>
+                      {CATEGORY_LABEL[activeRec.category] ?? activeRec.category}
+                    </div>
+                    <div style={{ fontWeight: 600, fontSize: 14, color: "#1d1a15", marginBottom: 4 }}>{activeRec.name}</div>
+                    {activeRec.tagline && (
+                      <div style={{ fontSize: 12, color: "#6b6356", marginBottom: 6 }}>{activeRec.tagline}</div>
+                    )}
+                    <Link
+                      href={`/recommendations/${activeRec.category}/${activeRec.slug}`}
+                      style={{ fontSize: 12, color: "#1d1a15", textDecoration: "underline" }}
+                    >
+                      See details →
+                    </Link>
+                  </div>
+                </InfoWindow>
+              )}
+            </Map>
+          </APIProvider>
+        </div>
+
+        {/* Sidebar list */}
+        <div className="map-list">
+          {PICKS.map((r, i) => (
+            <div
+              key={r.id}
+              className="map-item"
+              data-active={active === r.id ? "true" : "false"}
+              onClick={() => setActive(r.id === active ? null : r.id)}
+              style={{ cursor: "pointer" }}
+            >
+              <div className="num">{String(i + 1).padStart(2, "0")}</div>
               <div>
-                <div className="name">{p.name}</div>
-                <div className="kind">{p.kind}</div>
+                <div className="name">{r.name}</div>
+                <div className="kind">
+                  {CATEGORY_LABEL[r.category] ?? r.category}
+                  {r.tagline ? ` · ${r.tagline}` : ""}
+                </div>
               </div>
-              <div className="dist">{p.dist}</div>
+              <Link
+                href={`/recommendations/${r.category}/${r.slug}`}
+                className="dist"
+                onClick={(e) => e.stopPropagation()}
+              >
+                →
+              </Link>
             </div>
           ))}
         </div>

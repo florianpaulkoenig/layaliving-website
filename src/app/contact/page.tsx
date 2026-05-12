@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import "../pages.css";
 
@@ -72,15 +71,6 @@ export default function ContactPage() {
             weekend.
           </p>
 
-          <div className="fig">
-            <Image
-              src="/images/lucerne-riverside.jpg"
-              alt="Lucerne riverside at dusk"
-              fill
-              sizes="(max-width: 768px) 100vw, 55vw"
-              className="object-cover"
-            />
-          </div>
         </div>
       </div>
     </div>

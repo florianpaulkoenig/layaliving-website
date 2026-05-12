@@ -1,46 +1,35 @@
-import { BookView } from "@/components/book/BookView";
-import { LodgifyBookNowBox } from "@/components/LodgifyBookNowBox";
+import { LodgifyEmbed } from "@/components/LodgifyEmbed";
+import { LodgifyButton } from "@/components/LodgifyEmbed";
 import "../pages.css";
 
 export const metadata = {
-  title: "Book Now — Laya Living",
+  title: "Reserve — Laya Living",
   description:
-    "Check availability and book Triangolo directly — no platform fees.",
+    "We'd love to welcome you. Check live availability and book our apartment directly.",
 };
 
-/**
- * The main /book route ships the Alpine Quiet façade (custom calendar +
- * guest picker + summary). "Request to reserve" opens a mailto to the
- * host with the proposed stay; they confirm the reservation via their
- * Lodgify backend.
- *
- * `?view=lodgify` falls back to the embedded Lodgify Book-Now-Box for
- * guests who prefer the calendar-partner's direct online flow.
- */
-export default function BookPage({
-  searchParams,
-}: {
-  searchParams?: { view?: string };
-}) {
-  if (searchParams?.view === "lodgify") {
-    return (
-      <section className="wrap py-20 md:py-28">
-        <div className="mx-auto max-w-xl">
-          <p className="kicker">Book directly</p>
-          <h1 className="mt-4 text-5xl text-balance">
-            Book <em className="it-accent">directly</em> — the best rate.
-          </h1>
-          <p className="mt-6 text-ink-soft">
-            Reserve Triangolo straight through our calendar partner — same
-            quality, no middlemen.
-          </p>
-          <div className="mt-10">
-            <LodgifyBookNowBox language="en" />
-          </div>
-        </div>
-      </section>
-    );
-  }
+export default function BookPage() {
+  return (
+    <div className="page-book-lodgify">
+      <div className="wrap">
+        <p className="kicker">Reserve your stay</p>
+        <h1 className="mt-4 text-5xl text-balance">
+          We&apos;d love to <em className="it-accent">welcome you</em>.
+        </h1>
+        <p className="mt-6 text-ink-soft">
+          Book directly and we&apos;ll take care of the rest. Our calendar is
+          always up to date — pick your dates, and we look forward to hosting
+          you in Lucerne.
+        </p>
+      </div>
 
-  return <BookView heroImage="/images/living-room.jpg" />;
+      <div className="book-lodgify-frame">
+        <LodgifyEmbed />
+      </div>
+
+      <div className="wrap mt-6">
+        <LodgifyButton label="Open in new tab →" />
+      </div>
+    </div>
+  );
 }

@@ -1,6 +1,16 @@
 import { GUESTS } from "./content";
+import type { SanitySiteContent } from "../../../sanity/lib/queries";
 
-export function Guestbook() {
+type Props = {
+  sanityReviews?: SanitySiteContent["guestReviews"];
+};
+
+export function Guestbook({ sanityReviews }: Props = {}) {
+  const reviews =
+    sanityReviews && sanityReviews.length > 0
+      ? sanityReviews.map((r) => ({ q: r.quote, who: r.who, where: r.where }))
+      : GUESTS;
+
   return (
     <section className="h-section">
       <div className="sec-head">
@@ -13,7 +23,7 @@ export function Guestbook() {
         </p>
       </div>
       <div className="guest">
-        {GUESTS.map((g, i) => (
+        {reviews.map((g, i) => (
           <blockquote key={i} className="guest-card">
             <p className="guest-quote">&ldquo;{g.q}&rdquo;</p>
             <div className="guest-cite">

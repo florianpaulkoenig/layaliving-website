@@ -2,11 +2,15 @@ export type Category =
   | "eat"
   | "drink"
   | "hike"
+  | "walks"
   | "bike"
+  | "boats"
+  | "swim"
   | "culture"
   | "daytrips"
   | "family"
-  | "gems";
+  | "gems"
+  | "essentials";
 
 export const CATEGORIES: Array<{
   slug: Category;
@@ -16,11 +20,15 @@ export const CATEGORIES: Array<{
   { slug: "eat", title: "Eat", hint: "Family-run kitchens to quiet fine dining" },
   { slug: "drink", title: "Drink", hint: "Third-wave coffee, wine bars, late-night cocktails" },
   { slug: "hike", title: "Hike & Nature", hint: "Rigi, Pilatus, Stanserhorn & more" },
-  { slug: "bike", title: "Bike Routes", hint: "Velohighway and scenic loops" },
+  { slug: "walks", title: "Walks", hint: "Short to half-day walks from the door and city" },
+  { slug: "bike", title: "Bike Routes", hint: "Lakeside paths and scenic loops" },
+  { slug: "boats", title: "By Boat", hint: "Paddle steamers, lake crossings and sunsets" },
+  { slug: "swim", title: "Swimming", hint: "Lake baths, free spots and mountain pools" },
   { slug: "culture", title: "Culture", hint: "Museums, old town, seasonal events" },
   { slug: "daytrips", title: "Day Trips", hint: "Engelberg, Interlaken, Zurich" },
   { slug: "family", title: "Family & Kids", hint: "Tested by locals with small humans" },
   { slug: "gems", title: "Hidden Gems", hint: "The places we don't share online" },
+  { slug: "essentials", title: "Shopping & Essentials", hint: "Groceries, pharmacy, Sunday shops" },
 ];
 
 export function categoryTitle(slug: string): string {

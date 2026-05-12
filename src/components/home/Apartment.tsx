@@ -2,7 +2,7 @@ import Image from "next/image";
 import { HOME_IMG } from "./content";
 
 type Fig = {
-  cls: "apt-1" | "apt-2" | "apt-3" | "apt-4";
+  cls: "apt-1" | "apt-2" | "apt-3" | "apt-4" | "apt-5" | "apt-6";
   src: string;
   alt: string;
   title: string;
@@ -11,23 +11,28 @@ type Fig = {
 };
 
 const FIGS: Fig[] = [
-  { cls: "apt-1", src: HOME_IMG.living,  alt: "Living room", title: "Living room", n: "01 / 04", sizes: "(max-width: 768px) 100vw, 55vw" },
-  { cls: "apt-2", src: HOME_IMG.sofa,    alt: "Details",     title: "Details",     n: "02 / 04", sizes: "(max-width: 768px) 100vw, 40vw" },
-  { cls: "apt-3", src: HOME_IMG.bed,     alt: "Bedroom",     title: "Bedroom",     n: "03 / 04", sizes: "(max-width: 768px) 100vw, 30vw" },
-  { cls: "apt-4", src: HOME_IMG.titlis,  alt: "The view",    title: "The view",    n: "04 / 04", sizes: "(max-width: 768px) 100vw, 65vw" },
+  { cls: "apt-1", src: HOME_IMG.living,     alt: "Main living area",                  title: "Main living area",                  n: "01 / 06", sizes: "(max-width: 768px) 100vw, 55vw" },
+  { cls: "apt-2", src: HOME_IMG.kitchen,    alt: "Fully equipped kitchen",             title: "Fully equipped kitchen",             n: "02 / 06", sizes: "(max-width: 768px) 100vw, 42vw" },
+  { cls: "apt-3", src: HOME_IMG.bed,        alt: "Thoughtful design for cozy nights",  title: "Thoughtful design for cozy nights",  n: "03 / 06", sizes: "(max-width: 768px) 100vw, 65vw" },
+  { cls: "apt-4", src: HOME_IMG.sofa,       alt: "Designer details",                   title: "Designer details",                   n: "04 / 06", sizes: "(max-width: 768px) 100vw, 30vw" },
+  { cls: "apt-5", src: HOME_IMG.naturalLight, alt: "Flooded with natural light",       title: "Flooded with natural light",         n: "05 / 06", sizes: "(max-width: 768px) 100vw, 50vw" },
+  { cls: "apt-6", src: HOME_IMG.sofabed,    alt: "Sofa bed for additional guests",     title: "Sofa bed for additional guests",     n: "06 / 06", sizes: "(max-width: 768px) 100vw, 45vw" },
 ];
 
 export function Apartment() {
   return (
     <section className="h-section" id="apartment">
       <div className="sec-head">
-        <div className="sec-num">I — The Apartment</div>
+        <div className="sec-num">I — The Apartment: face to face with the Rigi</div>
         <h2 className="sec-title">
-          Above the rooftops, <span className="it">face to face</span> with the Alps.
+          Perched above the rooftops, <span className="it">face to face</span> with the Alps.
         </h2>
         <p className="sec-lede">
-          Designed with a modern, minimalist hand — natural materials, a
-          carefully curated palette, and a view that does most of the talking.
+          Wake up to the Bürgenstock from your bed, and step onto the living
+          room or private balcony to find yourself face to face with the iconic
+          Rigi. Designed with a modern, minimalist aesthetic, the apartment
+          blends natural materials and a carefully curated color palette to
+          create a sense of calm and balance.
         </p>
       </div>
       <div className="apt-grid">

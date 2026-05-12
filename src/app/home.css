@@ -3,10 +3,12 @@
    .split, .journal) don't leak into other pages. Tokens come from :root
    in globals.css so colour/type stay in sync across the site. */
 
-.home-redesign {
+:root {
   --h-serif: var(--font-display), "EB Garamond", "Iowan Old Style", Georgia, serif;
   --h-sans: var(--font-body), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
 
+.home-redesign {
   font-family: var(--h-sans);
   font-size: 15px;
   line-height: 1.55;
@@ -100,10 +102,10 @@
   border-bottom: 1px solid var(--line);
 }
 .home-redesign .spec-cell {
-  padding: 24px 0 22px;
+  padding: 24px 24px 22px 20px;
   border-right: 1px solid var(--line);
-  padding-right: 24px;
 }
+.home-redesign .spec-cell:first-child { padding-left: 0; }
 .home-redesign .spec-cell:last-child { border-right: none; padding-right: 0; }
 .home-redesign .spec-k {
   font-size: 11px; text-transform: uppercase; letter-spacing: 0.22em;
@@ -120,7 +122,7 @@
   display: grid;
   grid-template-columns: 140px 1fr 1fr;
   gap: 40px;
-  align-items: baseline;
+  align-items: start;
   padding-bottom: 56px;
 }
 .home-redesign .sec-num {
@@ -174,11 +176,15 @@
 .home-redesign .apt-1 { grid-column: 1 / span 7; }
 .home-redesign .apt-1 .apt-img { aspect-ratio: 4 / 3; }
 .home-redesign .apt-2 { grid-column: 8 / span 5; align-self: end; }
-.home-redesign .apt-2 .apt-img { aspect-ratio: 4 / 5; }
-.home-redesign .apt-3 { grid-column: 1 / span 4; }
-.home-redesign .apt-3 .apt-img { aspect-ratio: 4 / 5; }
-.home-redesign .apt-4 { grid-column: 5 / span 8; }
-.home-redesign .apt-4 .apt-img { aspect-ratio: 16 / 9; }
+.home-redesign .apt-2 .apt-img { aspect-ratio: 4 / 3; }
+.home-redesign .apt-3 { grid-column: 1 / span 8; }
+.home-redesign .apt-3 .apt-img { aspect-ratio: 16 / 9; }
+.home-redesign .apt-4 { grid-column: 9 / span 4; }
+.home-redesign .apt-4 .apt-img { aspect-ratio: 4 / 5; }
+.home-redesign .apt-5 { grid-column: 1 / span 6; }
+.home-redesign .apt-5 .apt-img { aspect-ratio: 3 / 2; }
+.home-redesign .apt-6 { grid-column: 7 / span 6; }
+.home-redesign .apt-6 .apt-img { aspect-ratio: 3 / 2; }
 
 /* Pull */
 .home-redesign .pull {
@@ -478,8 +484,98 @@
   color: var(--ink); font-family: var(--h-serif); font-size: 16px; letter-spacing: -0.01em; text-transform: none;
 }
 
+/* Availability */
+.home-redesign .avail-bleed {
+  margin-left: -56px;
+  margin-right: -56px;
+}
+.home-redesign .avail-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-top: 28px;
+  flex-wrap: wrap;
+}
+.home-redesign .avail-footer p {
+  font-size: 15px;
+  color: var(--ink-muted);
+  line-height: 1.65;
+  max-width: 480px;
+}
+.home-redesign .avail-footer-btns {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+/* Availability split */
+.home-redesign .avail-split {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+}
+.home-redesign .avail-split .avail-left .sec-num { margin-bottom: 16px; }
+.home-redesign .avail-split .avail-left .sec-title { margin: 0; }
+.home-redesign .avail-split .avail-right { padding-top: 4px; }
+
 /* FAQ */
+.home-redesign .faq-search-wrap {
+  grid-column: 2;
+  margin-top: 24px;
+}
+.home-redesign .faq-search-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.home-redesign .faq-search-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--ink-3);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+.home-redesign .faq-search {
+  width: 100%;
+  padding: 11px 40px 11px 40px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-family: var(--body-sans, inherit);
+  font-size: 15px;
+  color: var(--ink);
+  background: transparent;
+  outline: none;
+  transition: border-color 0.15s;
+  -webkit-appearance: none;
+}
+.home-redesign .faq-search::placeholder { color: var(--ink-3); }
+.home-redesign .faq-search:focus { border-color: var(--ink-2); }
+.home-redesign .faq-search::-webkit-search-cancel-button { display: none; }
+.home-redesign .faq-search-clear {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--ink-3);
+  cursor: pointer;
+  padding: 2px 4px;
+}
+.home-redesign .faq-search-clear:hover { color: var(--ink); }
+.home-redesign .faq-no-results {
+  padding: 40px 0;
+  font-size: 15px;
+  color: var(--ink-3);
+  border-top: 1px solid var(--ink);
+}
 .home-redesign .faq { border-top: 1px solid var(--ink); }
+.home-redesign .faq-group { }
+.home-redesign .faq-topic {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--ink-3); padding: 28px 0 8px;
+  font-family: var(--h-sans);
+}
 .home-redesign .faq-row {
   border-bottom: 1px solid var(--line);
   padding: 22px 0;
@@ -511,6 +607,8 @@
 }
 .home-redesign .faq-row[data-open="true"] .toggle::before { content: '−'; }
 .home-redesign .faq-row[data-open="false"] .toggle::before { content: '+'; }
+.home-redesign .faq[data-searching="true"] .faq-row .toggle { visibility: hidden; }
+.home-redesign .faq[data-searching="true"] .faq-row { cursor: default; }
 
 /* Mobile */
 @media (max-width: 768px) {
@@ -548,11 +646,15 @@
   .home-redesign .apt-1,
   .home-redesign .apt-2,
   .home-redesign .apt-3,
-  .home-redesign .apt-4 { grid-column: 1 / -1; align-self: auto; }
+  .home-redesign .apt-4,
+  .home-redesign .apt-5,
+  .home-redesign .apt-6 { grid-column: 1 / -1; align-self: auto; }
   .home-redesign .apt-1 .apt-img { aspect-ratio: 4 / 3; }
-  .home-redesign .apt-2 .apt-img,
+  .home-redesign .apt-2 .apt-img { aspect-ratio: 4 / 3; }
   .home-redesign .apt-3 .apt-img { aspect-ratio: 4 / 5; }
-  .home-redesign .apt-4 .apt-img { aspect-ratio: 16 / 9; }
+  .home-redesign .apt-4 .apt-img,
+  .home-redesign .apt-5 .apt-img,
+  .home-redesign .apt-6 .apt-img { aspect-ratio: 16 / 9; }
 
   .home-redesign .pull { padding: 72px 20px; grid-template-columns: 1fr; gap: 16px; }
   .home-redesign .pull blockquote { grid-column: 1; font-size: 30px; }
@@ -573,6 +675,10 @@
   .home-redesign .cal-wrap { grid-template-columns: 1fr; gap: 32px; }
   .home-redesign .cal-aside h3 { font-size: 34px; }
   .home-redesign .cal-months { grid-template-columns: 1fr; gap: 28px; }
+
+  .home-redesign .avail-split { grid-template-columns: 1fr; gap: 24px; }
+  .home-redesign .avail-bleed { margin-left: -20px; margin-right: -20px; }
+  .home-redesign .avail-footer { flex-direction: column; align-items: flex-start; gap: 20px; }
 
   .home-redesign .map-wrap { grid-template-columns: 1fr; gap: 24px; }
   .home-redesign .map-item { grid-template-columns: 28px 1fr auto; gap: 10px; padding: 14px 0; }

@@ -4,7 +4,7 @@ import { CATEGORIES, type Category } from "@/types/recommendation";
 import { getByCategory } from "@/lib/recommendations-data";
 import { CategoryListing } from "./CategoryListing";
 
-type Params = { category: string };
+type Params = Promise<{ category: string }>;
 
 function isCategory(v: string): v is Category {
   return CATEGORIES.some((c) => c.slug === v);
@@ -15,17 +15,19 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: Params }) {
-  if (!isCategory(params.category)) return {};
-  const c = CATEGORIES.find((x) => x.slug === params.category);
+  const { category } = await params;
+  if (!isCategory(category)) return {};
+  const c = CATEGORIES.find((x) => x.slug === category);
   return {
     title: `${c?.title} — Our Recommendations — Laya Living`,
     description: c?.hint,
   };
 }
 
-export default function CategoryPage({ params }: { params: Params }) {
-  if (!isCategory(params.category)) notFound();
-  const category = params.category as Category;
+export default async function CategoryPage({ params }: { params: Params }) {
+  const { category: categoryParam } = await params;
+  if (!isCategory(categoryParam)) notFound();
+  const category = categoryParam as Category;
   const meta = CATEGORIES.find((c) => c.slug === category)!;
   const rows = getByCategory(category);
 

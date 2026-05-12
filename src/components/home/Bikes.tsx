@@ -7,11 +7,11 @@ export function Bikes() {
       <div className="sec-head">
         <div className="sec-num">IV — Cruise like a local</div>
         <h2 className="sec-title">
-          Two vintage bikes, and a city waiting to be rolled through.
+          Bicycles to rent, and a city waiting to be explored.
         </h2>
         <p className="sec-lede">
-          In Lucerne, cycling is a way of life. Glide the scenic riverside
-          path and reach the old town in minutes.
+          On the campus you can find bicycles to rent — the perfect way to
+          explore Lucerne like a local.
         </p>
       </div>
       <div className="split">
@@ -27,13 +27,12 @@ export function Bikes() {
         <div className="split-body">
           <h3>The kind of bikes the locals love.</h3>
           <p>
-            Swiss-made, lovingly maintained, and parked right by the front
-            door. Helmets, locks, and a small map of the best cafés are tucked
-            in the basket.
+            Glide along the scenic bike highway and reach the heart of the
+            Old Town in just five minutes.
           </p>
           <p>
-            Within ten minutes you are on the old wooden Kapellbrücke; in
-            twenty, on a forest trail along the lake.
+            Helmets, locks, and a small laminated guide to our favourite café
+            stops are tucked in the basket.
           </p>
           <div className="split-ledger">
             <div><div className="k">Bikes</div><div className="v">2</div></div>

@@ -1,9 +1,11 @@
-const CELLS: [string, string][] = [
-  ["Location", "Kriens, LU"],
+import type { ReactNode } from "react";
+
+const CELLS: [string, string | ReactNode][] = [
+  ["Location", "Kriens near Lucerne"],
   ["Coordinates", "47°03′N · 8°17′E"],
-  ["Sleeps", "Up to four"],
-  ["Views", "Rigi · Pilatus · Stanserhorn"],
-  ["From", "CHF 220 / night"],
+  ["Accommodation", "Up to four Guests"],
+  ["Views", "Rigi, Bürgenstock and Alps in the background"],
+  ["From", <span key="price">CHF 295 / Night <span style={{ fontSize: "0.72em", opacity: 0.65, fontWeight: 400 }}>· approx. USD 330 / EUR 305</span></span>],
 ];
 
 export function Spec() {

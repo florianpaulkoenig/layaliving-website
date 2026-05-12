@@ -39,6 +39,11 @@ export function LodgifyBookNowBox({ language = "en", className }: Props) {
           --ldg-bnb-font-family: inherit;
           --ldg-bnb-input-background: #FFFFFF;
         }
+        #lodgify-book-now-box button,
+        #lodgify-book-now-box [type="submit"],
+        #lodgify-book-now-box [type="button"] {
+          color: #FBF8F3 !important;
+        }
       `}</style>
       <div
         id="lodgify-book-now-box"

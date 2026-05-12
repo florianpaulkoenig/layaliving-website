@@ -1,13 +1,15 @@
 // Canonical content for the homepage. Matches the Alpine Quiet handoff.
 
 export const HOME_IMG = {
-  lucerne: "/images/lucerne-riverside.jpg",
-  living: "/images/living-room.jpg",
+  lucerne: "/images/summer-lucerne.jpg",
+  hero: "/images/living-room.jpg",
+  living: "/images/living-room-sofa.jpg",
+  kitchen: "/images/kitchen.jpg",
   sofa: "/images/sofa.jpg",
   bed: "/images/bedroom.jpg",
   sofabed: "/images/sofa-bed.jpg",
-  titlis: "/images/titlis.jpg",
-  bike: "/images/bike-kapellbrucke.jpg",
+  naturalLight: "/images/natural-light.jpg",
+  bike: "/images/bikes-rental.jpg",
   orchard: "/images/orchard.jpg",
 } as const;
 
@@ -36,8 +38,9 @@ export type Season = {
   name: string;
   months: string;
   img: string;
-  titleLead: string;   // before the comma
-  titleTail: string;   // after the comma (italic accent)
+  imgCredit?: string;
+  titleLead: string;
+  titleTail: string;
   body: string;
   data: [string, string][];
 };
@@ -45,35 +48,39 @@ export type Season = {
 export const SEASONS: Season[] = [
   {
     n: "01", key: "spring", name: "Spring", months: "Mar – May",
-    img: HOME_IMG.orchard,
+    img: "/images/spring-lucerne.jpg",
+    imgCredit: "Photo: Ricardo Gómez Angel / Unsplash",
     titleLead: "Orchards in bloom",
     titleTail: " and the lake warming.",
-    body: "Apple trees flowering above Kriens; long afternoons on the Ufschötti. The first ferries of the season across Lake Lucerne.",
-    data: [["Avg. temp", "8 – 18°C"], ["Daylight", "13 h"], ["Best for", "Cycling · walks"]],
+    body: "Apple trees flowering above Kriens; long afternoons on the Ufschötti. The fresh, clean morning air carries the scent of blossoms down from the hills — perfect weather for setting out on foot. Warm afternoons invite lazy hours by the lake, while the surrounding trails come alive with colour. Spring in Lucerne means ideal conditions for day hikes, from easy lakeside paths to the first clear summits of the season. The first ferries of the year return to Lake Lucerne, and the city stretches back into life.",
+    data: [["Day Temp. Range", "5 – 25°C"], ["Daylight", "13 h"], ["Best for", "Cycling · hikes"]],
   },
   {
     n: "02", key: "summer", name: "Summer", months: "Jun – Aug",
-    img: HOME_IMG.lucerne,
+    img: "/images/summer-lucerne.jpg",
+    imgCredit: "Photo: PJ Soans / Unsplash",
     titleLead: "Swims, slow dinners",
     titleTail: " and the longest evenings.",
-    body: "The lake is warm, the cable cars run late, and Lucerne glows until 10pm. Bikes by the door, a bottle of wine in the fridge.",
-    data: [["Avg. temp", "18 – 28°C"], ["Daylight", "16 h"], ["Best for", "Lake swims · hiking"]],
+    body: "The lake is warm, the cable cars run late, and Lucerne glows until 10pm. Spend your mornings with a coffee at the water's edge, watching the mountains catch the early light. Afternoons belong to the lake — swimming at the Lido or drifting by paddle board. Evenings stretch long: drinks on the terrace, dinners that spill outside, and warm nights where nobody wants to go in. The Rigi is at its greenest, and the whole city feels like it's holding its breath before summer slips away.",
+    data: [["Day Temp. Range", "18 – 32°C"], ["Daylight", "16 h"], ["Best for", "Lake swims · terrace"]],
   },
   {
     n: "03", key: "autumn", name: "Autumn", months: "Sep – Nov",
-    img: HOME_IMG.titlis,
+    img: "/images/autumn-lucerne.jpg",
+    imgCredit: "Photo: Taisha Ellison / Unsplash",
     titleLead: "Clear peaks, Föhn light",
     titleTail: " and quiet cafés.",
-    body: "The clearest mountain views of the year. Golden light across the Pilatus ridge; old town cafés warm and empty on weekdays.",
-    data: [["Avg. temp", "5 – 16°C"], ["Daylight", "11 h"], ["Best for", "Photography · peaks"]],
+    body: "Autumn brings the clearest mountain views of the year — the Föhn sweeps in and sharpens the horizon so the peaks look almost close enough to touch. Take the train to Interlaken for a dramatic day in the Bernese Oberland, or explore the old town of Lucerne now that the summer crowds have thinned. The cafés are warm and quiet on weekday mornings, and the hiking trails are at their most photogenic: golden light, empty paths, and air that feels like it was made for walking. A season for going slowly and seeing more.",
+    data: [["Day Temp. Range", "5 – 20°C"], ["Daylight", "11 h"], ["Best for", "Hiking · day trips"]],
   },
   {
     n: "04", key: "winter", name: "Winter", months: "Dec – Feb",
-    img: HOME_IMG.bed,
+    img: "/images/winter-lucerne.jpg",
+    imgCredit: "Photo: Kuno Schweizer / Unsplash",
     titleLead: "Snow on the rooftops",
-    titleTail: " wool on the couch.",
-    body: "Wake up to white-dusted Alps. Ski day trips to Engelberg by train; home by 5 for mulled wine and a hot bath.",
-    data: [["Avg. temp", "-2 – 6°C"], ["Daylight", "9 h"], ["Best for", "Ski trips · reading"]],
+    titleTail: " and wool on the couch.",
+    body: "Wake up to white-dusted Alps and take the train to Engelberg for a full ski day on Mount Titlis — the slopes are just over half an hour away. For something closer, winter hikes on Mount Pilatus offer remarkable views and far fewer crowds than the summer season. Back in Lucerne, wander the Christmas markets along the Reuss for Glühwein and roasted chestnuts, or settle in for a long fondue night in one of the old town's candlelit restaurants. The apartment — always warm, always cosy — is ready whenever you return.",
+    data: [["Day Temp. Range", "-2 – 8°C"], ["Daylight", "9 h"], ["Best for", "Ski · Christmas markets"]],
   },
 ];
 
@@ -93,12 +100,12 @@ export const JOURNAL: JournalEntry[] = [
     body: "Grated potato, a knob of butter, patience. Three ingredients, one pan, twenty quiet minutes before the Pilatus clears.",
   },
   {
-    n: "№ 02", kicker: "A walk", date: "April 2026", img: HOME_IMG.orchard,
+    n: "№ 02", kicker: "A walk", date: "April 2026", img: "/images/spring-lucerne.jpg",
     title: "The Sonnenberg loop: two hours above the rooftops.",
     body: "From the front door, up through the orchards, and back down via the funicular. An afternoon that makes the apartment feel like a basecamp.",
   },
   {
-    n: "№ 03", kicker: "A view", date: "May 2026", img: HOME_IMG.titlis,
+    n: "№ 03", kicker: "A view", date: "May 2026", img: "/images/balcony-view.jpg",
     title: "Five minutes of morning alpenglow on Rigi.",
     body: "A short film from the window, every day at 6:42. A reason to wake up on holiday.",
   },
@@ -108,16 +115,16 @@ export type Guest = { q: string; who: string; where: string };
 
 export const GUESTS: Guest[] = [
   {
-    q: "Arrived on a Friday evening and forgot everything else by Sunday morning. The view alone is worth the flight.",
-    who: "Elena & Marco", where: "Milan · November 2025",
+    q: "One of the best places we have stayed in a long time. Such meticulous arrangements and amenities — every small detail is taken care of. Such a cosy and tastefully done-up place.",
+    who: "Vani G.", where: "India · August 2025",
   },
   {
-    q: "Every detail has been considered — the linens, the music, the little guide tucked in the drawer. A rare, quiet place.",
-    who: "Sophie B.", where: "Paris · September 2025",
+    q: "The thinking of all the small details made us feel at home. We loved how clean, cosy and well decorated the place is. We will definitely recommend it for family and friends.",
+    who: "Noga, Yael & Renana", where: "Israel · July 2025",
   },
   {
-    q: "We took the bikes out every morning. Ten minutes to the old town, and a completely different city by the time we got back.",
-    who: "James & Hana", where: "London · July 2025",
+    q: "We thoroughly enjoyed our cosy stay in your tastefully decorated apartment and appreciate all the thoughtful amenities. Looking forward to coming back in the near future.",
+    who: "Annamaria & Deborah", where: "October 2025",
   },
 ];
 
@@ -129,8 +136,8 @@ export const FAQ: FaqItem[] = [
     a: "Self check-in from 15:00 on arrival day; check-out by 11:00. Late check-out is usually possible for a small fee — just ask.",
   },
   {
-    n: "02", q: "Are the vintage bikes included in the stay?",
-    a: "Yes, both bikes are yours for the duration of your stay, along with helmets, locks and a small laminated guide to our favourite café stops.",
+    n: "02", q: "Are bikes available?",
+    a: "Bikes are available to rent just a few minutes from the apartment. We're happy to point you to the nearest rental spot — just ask.",
   },
   {
     n: "03", q: "Is the apartment suitable for children or pets?",
@@ -138,7 +145,7 @@ export const FAQ: FaqItem[] = [
   },
   {
     n: "04", q: "How do I get there from Zurich Airport?",
-    a: "One hour by direct train to Luzern Bahnhof, then a ten-minute taxi or the №1 bus to Kriens. Our full arrival guide is sent by email two days before.",
+    a: "One hour by direct train to Luzern Bahnhof, then a ten-minute taxi or the №14 bus to Kriens, Nidfeld. Our full arrival guide is sent by email two days before.",
   },
   {
     n: "05", q: "What is your cancellation policy?",

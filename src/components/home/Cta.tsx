@@ -3,7 +3,7 @@ import Link from "next/link";
 export function Cta() {
   return (
     <section className="cta-band">
-      <div className="eyebrow">Available May – November</div>
+      <div className="eyebrow">Available all Year</div>
       <h2>
         See you soon, <span className="it">in Lucerne</span>.
       </h2>

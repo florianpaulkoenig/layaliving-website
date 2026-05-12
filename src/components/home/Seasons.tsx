@@ -1,12 +1,33 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { SEASONS } from "./content";
+import type { SanitySiteContent } from "../../../sanity/lib/queries";
 
-export function Seasons() {
+type Props = {
+  sanitySeasons?: SanitySiteContent["seasons"];
+};
+
+export function Seasons({ sanitySeasons }: Props = {}) {
+  const seasons = useMemo(() => {
+    if (!sanitySeasons || sanitySeasons.length === 0) return SEASONS;
+    return SEASONS.map((staticSeason) => {
+      const override = sanitySeasons.find((s) => s.key === staticSeason.key);
+      if (!override) return staticSeason;
+      return {
+        ...staticSeason,
+        name: override.name || staticSeason.name,
+        months: override.months || staticSeason.months,
+        titleLead: override.titleLead || staticSeason.titleLead,
+        titleTail: override.titleTail || staticSeason.titleTail,
+        body: override.body || staticSeason.body,
+      };
+    });
+  }, [sanitySeasons]);
+
   const [i, setI] = useState(1);
-  const s = SEASONS[i];
+  const s = seasons[i];
 
   return (
     <section className="h-section">
@@ -16,13 +37,15 @@ export function Seasons() {
           One apartment, <span className="it">four seasons</span>.
         </h2>
         <p className="sec-lede">
-          The view shifts. The light shifts. The apartment rearranges itself
-          around whatever season you arrive in.
+          The view shifts. The light shifts. The apartment is always beautiful
+          and cosy — with a reversible state-of-the-art cooling and heating
+          system, it is always ready to accommodate you and your fellow
+          travellers.
         </p>
       </div>
 
       <div className="seasons-tabs" role="tablist">
-        {SEASONS.map((ss, idx) => (
+        {seasons.map((ss, idx) => (
           <button
             key={ss.key}
             type="button"
@@ -56,6 +79,11 @@ export function Seasons() {
             className="object-cover"
             style={{ transition: "opacity 0.4s" }}
           />
+          {s.imgCredit && (
+            <div style={{ position: "absolute", bottom: 8, right: 10, fontSize: 10, color: "rgba(255,255,255,0.65)", letterSpacing: "0.05em" }}>
+              {s.imgCredit}
+            </div>
+          )}
         </div>
         <div className="seasons-body">
           <h3>

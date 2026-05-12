@@ -8,10 +8,10 @@ export default function ImpressumPage() {
         <div>
           <h2 className="mb-2 text-lg">Betreiber</h2>
           <address className="not-italic text-ink-muted">
-            Laya Living<br />
-            Nidfeldstrasse 2G<br />
-            6010 Kriens — Luzern<br />
-            Schweiz
+            Laya AG<br />
+            Schweighofweg 16<br />
+            6010 Kriens<br />
+            CHE-211.264.656
           </address>
         </div>
         <div>

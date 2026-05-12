@@ -617,7 +617,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     name: "Four Lakes Hike",
     tagline: "Engelberg to Melchsee-Frutt over the Jochpass",
     description: "Trübsee → Engstlensee → Tannensee → Melchsee. Four alpine lakes connected by a marked path that crosses the Jochpass (2,207 m). Technically easy walking on broad tracks, but a long day with the Jochpass climb. Restaurant at each lake. For experienced walkers with an early start — check last cable cars before leaving. Summer only: in winter the area is snow-covered and the slopes are used for skiing. Before you go, check online whether the route is open and whether the chairlifts are running — both affect the shortcuts.",
-    bus_route: "Via Lucerne station, train to Engelberg (about 45 min), Titlis cableway to Trübsee. Return: gondola down from Melchsee-Frutt to Stöckalp, then PostBus to Sarnen, train back to Lucerne and on to Kriens. Check last departures carefully — missing the final gondola or bus leaves you stranded.",
+    bus_route: "Via Lucerne station, train to Engelberg (about 45 min), then gondola from Engelberg up to Trübsee / Jochpass — this is the starting point of the hike. Return: gondola down from Melchsee-Frutt to Stöckalp, then PostBus to Sarnen, train back to Lucerne and on to Kriens. Check last departures carefully — missing the final gondola or bus leaves you stranded.",
     website: "https://www.titlis.ch/en",
     season: ["summer", "autumn"],
     tags: ["mountain", "view"],

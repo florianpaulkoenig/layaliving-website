@@ -33,7 +33,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     id: 1, slug: "two-hands", category: "eat", sort_order: 10,
     image_url: "/images/recommendations/two-hands.jpg",
     name: "Two Hands",
-    tagline: "Creative cosmopolitan cuisine",
+    tagline: "Creative cosmopolitan cuisine — great for brunch",
     address: "Waldstätterstrasse 6, 6003 Luzern",
     lat: 47.0519, lng: 8.2957,
     website: "https://www.twohandsluzern.ch",

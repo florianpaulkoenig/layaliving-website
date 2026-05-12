@@ -613,7 +613,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
   {
     ...BASE,
     id: 58, slug: "four-lakes-hike", category: "hike", sort_order: 85,
-    image_url: "/images/recommendations/hike-01-four-lakes.jpg",
+    image_url: "/images/recommendations/klewendalp.jpg",
     name: "Four Lakes Hike",
     tagline: "Engelberg to Melchsee-Frutt over the Jochpass",
     description: "Trübsee → Engstlensee → Tannensee → Melchsee. Four alpine lakes connected by a marked path that crosses the Jochpass (2,207 m). Technically easy walking on broad tracks, but a long day with the Jochpass climb. Restaurant at each lake. For experienced walkers with an early start — check last cable cars before leaving.",

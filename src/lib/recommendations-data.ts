@@ -106,9 +106,9 @@ export const RECOMMENDATIONS: Recommendation[] = [
     tagline: "Moroccan cuisine",
     address: "Himmelrichstrasse 12, 6003 Luzern",
     price_range: 2,
-    description: "Majorelle in Lucerne whisks guests away to a world of Moroccan flavors and colors. Aromatic tagines, spicy couscous variations, and oriental mezze are served in an atmospheric setting – everything is freshly prepared and rich in spices. Inspired by the famous Jardin Majorelle in Marrakesh, the restaurant combines culinary authenticity with stylish hospitality. A place for enjoyable evenings, convivial gatherings and a little break from everyday life in the heart of Lucerne.",
+    description: "Moroccan restaurant in Neustadt, a short bus ride from the apartment. Tagines, couscous, and mezze — the mezze platter for sharing is our recommendation if you're going with someone. The interior is warm and atmospheric. Good for an evening out that feels a bit different from the usual Swiss options.",
     bus_route: "Take bus no. 14 to the Paulusplatz bus stop, then walk 4 minutes to Neustadt.",
-    why_we_love_it: "Fresh Moroccan mint tea or homemade chai latte",
+    why_we_love_it: "The mezze platter for sharing",
   },
   {
     ...BASE,

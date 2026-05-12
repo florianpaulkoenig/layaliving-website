@@ -66,7 +66,9 @@ export default function LocationPage() {
           </h2>
           <p>
             Bus No. 14 stops right in front of the building and takes you to
-            Lucerne main station in about ten minutes.
+            Lucerne main station in about ten minutes. Mattenhof S-Bahn station
+            is a short walk away — from there it&apos;s around five minutes by
+            train to Lucerne Bahnhof.
           </p>
           <p>
             Bikes are available to rent near the apartment — a flat, scenic

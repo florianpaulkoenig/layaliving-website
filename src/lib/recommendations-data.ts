@@ -587,7 +587,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
   {
     ...BASE,
     id: 106, slug: "sonnenberg-loop", category: "walks", sort_order: 70,
-    image_url: "/images/recommendations/walk-14-sonnenberg.jpg",
+    image_url: null,
     name: "Sonnenberg & Chrüzhöchi",
     tagline: "Easy ridge walk above Kriens via funicular",
     description: "Easy circular route on the Sonnenberg ridge above Kriens. Views across Lucerne and the lake. Picnic spots, small hotel-restaurant. With children, the ComicTrail riddle path adds a game along the way.",

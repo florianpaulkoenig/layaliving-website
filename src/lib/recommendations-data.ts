@@ -488,9 +488,9 @@ export const RECOMMENDATIONS: Recommendation[] = [
     website: "https://www.klewenalp.ch",
     phone: "+41 41 624 66 00",
     price_range: 3,
-    description: "The Klewenalp above Beckenried is a family-friendly destination offering magnificent views of Lake Lucerne and the surrounding Alps. Accessible by gondola lift, it offers idyllic hiking trails, bike routes, and barbecue areas in summer, and a small, charming ski area with wide slopes in winter. Cozy mountain restaurants invite you to linger, while the relaxed atmosphere and wide range of leisure activities make Klewenalp a popular destination for those seeking relaxation and nature lovers.",
-    bus_route: "Only accessible by car (large parking lot available at the valley station).",
-    tags: ["family-friendly", "mountain"],
+    description: "Family-friendly mountain above Beckenried on the southern shore of Lake Lucerne. Gondola up to hiking trails, bike routes, and barbecue spots in summer; small ski area in winter. Good mountain restaurants on top.\n\nWorth combining with the boat: take the ship from Lucerne to Beckenried — a scenic crossing of about 45 minutes — then walk to the gondola valley station. A proper day out.",
+    bus_route: "Boat from Lucerne to Beckenried (about 45 min), then 10 min walk to the gondola valley station. Or by car — large parking lot at the valley station.",
+    tags: ["family-friendly", "mountain", "lake"],
   },
   {
     ...BASE,

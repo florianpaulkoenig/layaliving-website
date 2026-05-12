@@ -66,9 +66,9 @@ export default function LocationPage() {
             train to Lucerne Bahnhof.
           </p>
           <p>
-            Bikes are available to rent near the apartment — a flat, scenic
-            ride along the river brings you to the Kapellbrücke in roughly
-            ten minutes.
+            There is a Nextbike station right in the neighbourhood — rent a
+            bike via the Nextbike app and follow the Velohighway car-free into
+            the old town in about ten minutes.
           </p>
           <div className="ledger">
             <div><div className="k">Bus</div><div className="v">№ 14 · at the door</div></div>

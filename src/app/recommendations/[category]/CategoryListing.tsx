@@ -31,7 +31,7 @@ export function CategoryListing({
 
   function toggle(slug: string) {
     setActive((prev) =>
-      prev.includes(slug) ? prev.filter((s) => s !== slug) : [...prev, slug]
+      prev.includes(slug) ? [] : [slug]
     );
   }
 

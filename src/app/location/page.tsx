@@ -17,7 +17,7 @@ export default function LocationPage() {
         <div className="ph-kicker">Location</div>
         <h1>
           Kriens near Lucerne —{" "}
-          <span className="it-accent">quiet above, lively below</span>.
+          <span className="it-accent">urban and new, with the mountains close</span>.
         </h1>
         <p className="lede">
           The apartment sits on the top floor of a newly built campus near

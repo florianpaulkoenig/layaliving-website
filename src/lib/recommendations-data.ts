@@ -38,7 +38,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     lat: 47.0519, lng: 8.2957,
     website: "https://www.twohandsluzern.ch",
     price_range: 2,
-    description: "Two Hands in Lucerne stands for creative, cosmopolitan cuisine with regional roots. The restaurant focuses on fresh, seasonal ingredients and combines them to create sophisticated dishes with international influences. The modern yet cozy ambiance creates a relaxed atmosphere where enjoyment and hospitality take center stage. Whether for a relaxed lunch, a romantic dinner, or a special occasion, Two Hands offers culinary experiences that will linger in your memory for a long time to come.",
+    description: "Two Hands is our go-to for brunch in Lucerne. The menu is creative and cosmopolitan — think seasonal ingredients put together with care, in a relaxed setting that doesn't feel rushed. It gets busy on weekend mornings, so arriving early or on a weekday is worth it. The chai tea and homemade pancakes are a good reason to come back.",
     bus_route: "Take bus no. 14 to Moosmatt, then walk 4 minutes to Neustadt.",
     why_we_love_it: "Chai tea and homemade pancakes",
     tags: ["personal-favorites"],

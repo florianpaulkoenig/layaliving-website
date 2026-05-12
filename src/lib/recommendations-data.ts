@@ -139,7 +139,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     description: "The Wirtshaus Taube in Lucerne stands for genuine hospitality and honest, down-to-earth cuisine. Seasonal specialities, Swiss classics and fine home-style dishes are served in a cosy, rustic atmosphere – always freshly prepared and often using regional products. Whether for lunch, dinner, or a get-together with friends, the Traube offers a warm, inviting atmosphere where you will immediately feel at home. Here, tradition meets warmth—a piece of Lucerne's way of life.",
     bus_route: "Take bus no. 14 to Pilatusplatz, then walk 5 minutes toward the Reuss River.",
     why_we_love_it: "Lucerne Kügelipastetli — and a terrace right on the Reuss on sunny days",
-    tags: ["personal-favorites"],
+    tags: ["personal-favorites", "view"],
   },
   {
     ...BASE,
@@ -154,7 +154,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     description: "Mamma Leone in Lucerne brings the authentic taste of Italy to your plate. Fresh pasta, crispy stone-baked pizzas, and homemade desserts are prepared with the finest ingredients and lots of amore. The Mediterranean atmosphere, friendly service, and exquisite wine selection invite you to linger—whether for a relaxed lunch, a romantic dinner, or a cheerful get-together with friends. Mamma Leone is a piece of Italy in the heart of Lucerne that combines enjoyment and joie de vivre. 14 Gault Millau points",
     bus_route: "Take bus no. 14 to Pilatusplatz, then walk 8 minutes to the old town.",
     why_we_love_it: "Carpaccio di barbabietola (beetroot carpaccio with burrata)",
-    tags: ["splurge", "reservation"],
+    tags: ["splurge", "reservation", "view"],
   },
   {
     ...BASE,

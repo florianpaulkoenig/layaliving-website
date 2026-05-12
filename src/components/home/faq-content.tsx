@@ -110,7 +110,12 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         n: "15",
         q: "Is parking available?",
-        a: "Public parking directly opposite the building. Around CHF 1 per hour.",
+        a: (
+          <>
+            Public parking directly opposite the building. Around CHF 1 per hour.{" "}
+            <a href="https://www.google.com/maps/search/parking/@47.02737,8.30196,17z" target="_blank" rel="noopener noreferrer">View on Google Maps →</a>
+          </>
+        ),
       },
       {
         n: "16",

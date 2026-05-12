@@ -90,7 +90,7 @@ export default function InspirationPage() {
           <span className="it-accent">through our eyes</span>.
         </h1>
         <p className="lede">
-          The lake at dawn, mountain trails dusted with snow, the old town's
+          The lake at dawn, mountain trails dusted with snow, the old town&apos;s
           cobblestones in afternoon light. These are the landscapes, moments,
           and details that surround our apartment and keep drawing us back.
         </p>

@@ -17,10 +17,10 @@ export function Families() {
           Everything you need, <span className="it">nothing in the way</span>.
         </h2>
         <p className="sec-lede">
-          Travel cot, high chair, and full kitchen available. Outside:
+          Travel cot and full kitchen available. Outside:
           lakeshore walks, the Pilu Land playground at Krienseregg, the
-          Verkehrshaus (Swiss Transport Museum) in Lucerne, and
-          family-friendly hikes on Rigi.
+          Verkehrshaus (Swiss Transport Museum) in Lucerne, family-friendly
+          hikes on Rigi — and sledding in winter.
         </p>
       </div>
       <div className="split">

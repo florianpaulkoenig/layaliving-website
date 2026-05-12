@@ -967,7 +967,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     image_url: "/images/recommendations/practical-03-bakery.jpg",
     name: "Bäckerei Hug",
     tagline: "Fresh bread and pastries · open daily including Sundays",
-    description: "Bäckerei Hug at Mattenhof (Am Mattenhof 6, Kriens) — 10 min walk from the apartment. Fresh bread, pastries, and coffee. Open daily including Sundays. For a wider selection, Konditorei Heini at Pilatusplatz in Lucerne is worth the bus ride — known for Nussgipfel and Luzerner Lebkuchen. The Luzerner Chügelipastete (puff-pastry pie) is a regional speciality worth trying.",
+    description: "Bäckerei Hug at Mattenhof (Am Mattenhof 6, Kriens) — 10 min walk from the apartment. Fresh bread, pastries, and coffee. Open daily including Sundays. In Lucerne, two good options: Konditorei Heini at Pilatusplatz (Nussgipfel, Luzerner Lebkuchen) and Bäckerei Bachmann, with several branches in the old town and around the city — wide range of pastries, cakes, and regional specialities. The Luzerner Chügelipastete (puff-pastry pie) is a regional speciality worth trying.",
     walk_time_min: 10,
     lat: 47.0426, lng: 8.2848,
     season: ["spring", "summer", "autumn", "winter"],

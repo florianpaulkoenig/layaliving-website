@@ -68,9 +68,9 @@ export const SEASONS: Season[] = [
     n: "03", key: "autumn", name: "Autumn", months: "Sep – Nov",
     img: "/images/autumn-lucerne.jpg",
     imgCredit: "Photo: Taisha Ellison / Unsplash",
-    titleLead: "Clear peaks, Föhn light",
-    titleTail: " and quiet cafés.",
-    body: "On Föhn days, Rigi and Pilatus are at their sharpest. The leaves turn yellow and orange — the hillsides above Kriens look particularly good in October. Summer crowds thin out, and the old town is easier to walk around. Fog is common in November, but the clear days more than make up for it.",
+    titleLead: "Autumn colours",
+    titleTail: " and clear peaks.",
+    body: "On Föhn days, Rigi and Pilatus are at their sharpest. The leaves turn yellow and orange — the hillsides above Kriens look particularly good in October. Marroni stands appear in the old town, and the restaurants start serving wild game. Summer crowds thin out, and the old town is easier to walk around. Fog is common in November, but the clear days more than make up for it.",
     data: [["Day Temp. Range", "5 – 20°C"], ["Daylight", "11 h"], ["Best for", "Hiking · day trips"]],
   },
   {

@@ -122,7 +122,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     price_range: 2,
     description: "The Helvetia restaurant in Lucerne combines traditional Swiss cuisine with contemporary sophistication. The focus here is on classics such as rösti and fresh fish dishes – prepared with regional ingredients and great attention to detail. The stylish, cozy atmosphere invites both locals and visitors to linger. With its warm service and select wine list, Helvetia is a place for authentic enjoyment and convivial moments in the heart of Lucerne.",
     bus_route: "Take bus no. 14 to Moosmatt, then walk 3 minutes to Neustadt.",
-    why_we_love_it: "Farmhouse bratwurst and chocolate mousse",
+    why_we_love_it: "Farmhouse bratwurst and chocolate mousse — a local meeting point in the Helvetia-Park",
   },
   {
     ...BASE,

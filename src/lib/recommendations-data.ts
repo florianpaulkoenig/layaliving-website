@@ -739,18 +739,6 @@ export const RECOMMENDATIONS: Recommendation[] = [
     season: ["spring", "summer", "autumn"],
     tags: ["lake", "family-friendly"],
   },
-  {
-    ...BASE,
-    id: 83, slug: "cycling-sempachersee", category: "bike", sort_order: 40,
-    image_url: "/images/recommendations/cycling-05-sempach.jpg",
-    name: "Sempachersee Loop",
-    tagline: "A quieter lake north-west of Lucerne — open countryside, less tourism",
-    description: "Complete loop around the Sempachersee, a quieter lake north-west of Lucerne. Mostly flat, on dedicated paths and quiet farm roads. Sempach old town and the Vogelwarte ornithology centre as natural stops. Different in character to Lake Lucerne — more open countryside, less tourism.",
-    bus_route: "Via Lucerne station (bus 14 from Kriens, Nidfeld, ~10 min), then S-Bahn to Sempach-Neuenkirch with bike (usually S1 or RE24, about 15–17 min). Loop starts at the lake.",
-    website: "https://schweizmobil.ch",
-    season: ["spring", "summer", "autumn"],
-    tags: ["family-friendly"],
-  },
 
   // ── SWIMMING ───────────────────────────────────────────────────────────
   {

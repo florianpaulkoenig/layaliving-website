@@ -562,7 +562,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
   {
     ...BASE,
     id: 104, slug: "tribschen-peninsula", category: "walks", sort_order: 50,
-    image_url: "/images/recommendations/walk-10-tribschen.jpg",
+    image_url: null,
     name: "Tribschen Peninsula",
     tagline: "Wagner's lakeside home — quiet alternative to the busy promenade",
     description: "Wooded peninsula south of the train station where Richard Wagner lived in the 1860s. Lakeside park is free and open; the museum in his former house has period rooms and an audio guide. Quiet alternative to the busy city promenade. Museum closed Mondays; otherwise 11:00–17:00.\n\nRight next to it: Strandbad Tribschen — a family-friendly lido directly on the lake.",

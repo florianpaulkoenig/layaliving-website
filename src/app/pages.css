@@ -883,6 +883,10 @@
 .page-rec-detail .rec-detail-text p {
   font-size: 17px; line-height: 1.7; color: var(--ink-2); margin: 0;
 }
+.page-rec-detail .rec-detail-section-title {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em;
+  color: var(--ink); font-weight: 500; margin: 0;
+}
 .page-rec-detail .rec-detail-quote {
   margin: 0;
   padding: 0 0 0 24px;

@@ -110,11 +110,17 @@ export default async function RecommendationDetail({ params }: { params: Params 
       {/* ─── Body ─── */}
       <div className="rec-detail-body">
         <div className="rec-detail-text">
-          {r.description && <p>{r.description}</p>}
+          {r.description && r.description.split('\n\n').map((block, i) =>
+            block.startsWith('## ')
+              ? <h4 key={i} className="rec-detail-section-title">{block.slice(3)}</h4>
+              : <p key={i}>{block}</p>
+          )}
           {r.why_we_love_it && (
             <blockquote className="rec-detail-quote">
               <span className="rec-detail-quote-label">Why we love it</span>
-              {r.why_we_love_it}
+              {r.why_we_love_it.split('\n\n').map((block, i) => (
+                <p key={i}>{block}</p>
+              ))}
             </blockquote>
           )}
           {(r.tags?.length ?? 0) > 0 && (

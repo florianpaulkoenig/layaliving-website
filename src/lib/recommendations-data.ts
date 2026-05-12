@@ -619,7 +619,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     description: "Trübsee → Engstlensee → Tannensee → Melchsee. Four alpine lakes connected by a marked path that crosses the Jochpass (2,207 m). Take the gondola from Engelberg up to Trübsee — this is where the hike starts. From Trübsee, you can either walk up to the Jochpass (steep) or take the chairlift from Trübsee directly to the pass — the first shortcut, and worth it if you want to save your legs for the rest. Technically straightforward from there, but a long day overall. Restaurant at each lake. For experienced walkers with an early start — check last cable cars before leaving. Summer only: in winter the area is snow-covered and the slopes are used for skiing. Before you go, check online whether the route is open and whether the chairlifts are running — both affect the shortcuts.",
     bus_route: "Via Lucerne station, train to Engelberg (about 45 min), then gondola from Engelberg up to Trübsee / Jochpass — this is the starting point of the hike. Return: gondola down from Melchsee-Frutt to Stöckalp, then PostBus to Sarnen, train back to Lucerne and on to Kriens. Check last departures carefully — missing the final gondola or bus leaves you stranded.",
     website: "https://www.titlis.ch/en",
-    season: ["summer", "autumn"],
+    season: ["summer"],
     tags: ["mountain", "view"],
     why_we_love_it: "A full immersion in Central Switzerland's mountain world — quiet lakes, open ridges, and views that change at every turn. Four shortcuts if needed: Jochpass chairlift up from Trübsee, Engstlenalp chairlift over the pass, the Melchsee-Frutt Zügli (small electric train across the plateau), and the Stöckalp gondola at the end. Even with all four, the day stays substantial.",
   },

@@ -63,9 +63,9 @@ export function MapSection() {
         </h2>
         <p className="sec-lede">
           Lucerne&apos;s culinary scene is full of hidden gems — and we&apos;ll
-          help you discover them. In our apartment, you&apos;ll find a curated
-          guide to our favourite local spots, from cozy wine bars to family-run
-          eateries off the tourist trail.
+          help you discover them. On this website and in the apartment, you&apos;ll
+          find a curated guide to our favourite local spots, from cozy wine bars
+          to family-run eateries off the tourist trail.
         </p>
       </div>
 

@@ -390,7 +390,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     tagline: "Open views over the lake from the park — a local tip",
     address: "Dreilindenstrasse 93, 6006 Luzern",
     lat: 47.0631, lng: 8.3253,
-    description: "The Lucerne Conservatory, nestled in the idyllic Dreilindenpark, combines music, education, and culture in a unique setting. The historic park, located high above the city, offers breathtaking views of Lucerne, Lake Lucerne, and the Alps. Surrounded by old trees, sculptures, and well-kept green spaces, it invites you to stroll, linger, and be inspired. The conservatory itself is a place of musical excellence where talent is nurtured and cultural events can be enjoyed in a special atmosphere.",
+    description: "Not in the old town — this is in the Neustadt, up the hill in the Dreilindenpark. A quiet park with old trees, open views over the lake, and mostly locals. The conservatory building sits in the middle of it. Good for a slow walk, a sit-down with a view, or catching a concert if something is on. Few tourists make it up here, which is part of the appeal.",
     bus_route: "Take bus no. 14 to Lucerne Conservatory, then walk up the stairs on the other side of the street.",
     why_we_love_it: "Bring a picnic and enjoy the breathtaking view. There is no restaurant at the conservatory.",
     tags: ["personal-favorites", "view", "hidden-gem", "photo-spot"],

@@ -113,7 +113,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
         a: (
           <>
             Public parking directly opposite the building. Around CHF 1 per hour.{" "}
-            <a href="https://www.google.com/maps/search/parking/@47.02737,8.30196,17z" target="_blank" rel="noopener noreferrer">View on Google Maps →</a>
+            <a href="https://www.google.com/maps/place/Parkhaus/@47.0298966,8.2923184,17z/data=!4m10!1m2!2m1!1sparking!3m6!1s0x478ffb349c55af9d:0x71480fd8796ad7b7!8m2!3d47.0298966!4d8.297082!15sCgdwYXJraW5nWgkiB3BhcmtpbmeSAQ5wYXJraW5nX2dhcmFnZZoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VOb2VGOXFlRzlSUlJBQuABAPoBBAgAEEA!16s%2Fg%2F11jnqj0s52?entry=ttu" target="_blank" rel="noopener noreferrer">View on Google Maps →</a>
           </>
         ),
       },

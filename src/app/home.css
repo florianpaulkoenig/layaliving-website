@@ -641,6 +641,7 @@
   .home-redesign .sec-num { font-size: 14px; }
   .home-redesign .sec-title { font-size: 36px; }
   .home-redesign .sec-lede { font-size: 15px; }
+  .home-redesign .faq-search-wrap { grid-column: 1; margin-top: 0; }
 
   .home-redesign .apt-grid { grid-template-columns: 1fr; gap: 16px; }
   .home-redesign .apt-1,

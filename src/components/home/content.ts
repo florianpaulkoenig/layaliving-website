@@ -70,7 +70,7 @@ export const SEASONS: Season[] = [
     imgCredit: "Photo: Taisha Ellison / Unsplash",
     titleLead: "Clear peaks, Föhn light",
     titleTail: " and quiet cafés.",
-    body: "The Föhn brings the clearest views of the year — Rigi and Pilatus sharpen considerably on those days. Summer crowds thin out. The old town is easier to walk around, and the cafés on weekday mornings are quiet. Good season for hiking: dry trails, reasonable temperatures, less UV than summer.",
+    body: "On Föhn days, Rigi and Pilatus are at their sharpest. The leaves turn yellow and orange — the hillsides above Kriens look particularly good in October. Summer crowds thin out, and the old town is easier to walk around. Fog is common in November, but the clear days more than make up for it.",
     data: [["Day Temp. Range", "5 – 20°C"], ["Daylight", "11 h"], ["Best for", "Hiking · day trips"]],
   },
   {

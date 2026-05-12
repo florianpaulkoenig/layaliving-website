@@ -23,16 +23,15 @@ export function Apartment() {
   return (
     <section className="h-section" id="apartment">
       <div className="sec-head">
-        <div className="sec-num">I — The Apartment: face to face with the Rigi</div>
+        <div className="sec-num">I — The Apartment</div>
         <h2 className="sec-title">
-          Perched above the rooftops, <span className="it">face to face</span> with the Alps.
+          Top floor. Open views <span className="it">over the rooftops</span>.
         </h2>
         <p className="sec-lede">
-          Wake up to the Bürgenstock from your bed, and step onto the living
-          room or private balcony to find yourself face to face with the iconic
-          Rigi. Designed with a modern, minimalist aesthetic, the apartment
-          blends natural materials and a carefully curated color palette to
-          create a sense of calm and balance.
+          Step onto the balcony and you&apos;ll see the Rigi on a clear day.
+          Designed with a modern, minimalist aesthetic, the apartment blends
+          natural materials and a carefully curated colour palette to create
+          a sense of calm and balance.
         </p>
       </div>
       <div className="apt-grid">

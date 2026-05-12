@@ -4,8 +4,8 @@ export function Pull() {
       <blockquote>
         The <span className="it">Rigi</span> from the balcony. Lucerne is
         10 minutes away by bus — old town, lakeshore, cafés. For a longer
-        walk, the <span className="it">Himmelrich</span> loop above Kriens
-        has open views over Lake Lucerne and gets quiet on weekdays.
+        day trip, <span className="it">Pilatus</span> is just up the road —
+        on a clear day the views over the mountains and Lake Lucerne are hard to beat.
       </blockquote>
     </section>
   );

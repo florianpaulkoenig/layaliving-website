@@ -16,10 +16,7 @@ export function Seasons() {
           One apartment, <span className="it">four seasons</span>.
         </h2>
         <p className="sec-lede">
-          The view shifts. The light shifts. The apartment is always beautiful
-          and cosy — with a reversible state-of-the-art cooling and heating
-          system, it is always ready to accommodate you and your fellow
-          travellers.
+          The view changes with the season. Reversible heating and cooling system, so the apartment is comfortable year-round.
         </p>
       </div>
 

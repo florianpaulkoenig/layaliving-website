@@ -17,11 +17,10 @@ export function Families() {
           Everything you need, <span className="it">nothing in the way</span>.
         </h2>
         <p className="sec-lede">
-          The apartment is set up to make family travel easy: a travel cot,
-          high chair, and all the kitchen equipment you need are on hand.
-          Outside, Lucerne and the surrounding mountains offer endless
-          adventures for every age — from calm lake days to cable-car rides
-          and gentle mountain hikes.
+          Travel cot, high chair, and full kitchen available. Outside:
+          lakeshore walks, the Pilu Land playground at Krienseregg, the
+          Verkehrshaus (Swiss Transport Museum) in Lucerne, and
+          family-friendly hikes on Rigi.
         </p>
       </div>
       <div className="split">
@@ -35,16 +34,15 @@ export function Families() {
           />
         </div>
         <div className="split-body">
-          <h3>Adventures right on the doorstep.</h3>
+          <h3>Easy to get around.</h3>
           <p>
-            Bike rentals are available near the apartment. The bus stop is
-            directly in front of the building — ten minutes and you&apos;re in
-            the old town.
+            A Nextbike station is in front of the building. The bus stop is
+            across the street — about 10 minutes to Lucerne old town on bus 14.
           </p>
           <p>
-            Mount Rigi and Mount Pilatus are both reachable within the hour,
-            with family-friendly trails and unforgettable views. In winter,
-            Engelberg&apos;s snow park is just 35 minutes away by car.
+            Rigi and Pilatus are reachable within the hour by bus, boat, and
+            cable car or cogwheel. Engelberg (Mt. Titlis, snow park in winter)
+            is about 35 minutes by car or 50 minutes by train.
           </p>
           <div className="split-ledger">
             {ACTIVITIES.map(({ k, v }) => (

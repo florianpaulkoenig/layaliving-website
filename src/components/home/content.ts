@@ -52,7 +52,7 @@ export const SEASONS: Season[] = [
     imgCredit: "Photo: Ricardo Gómez Angel / Unsplash",
     titleLead: "Orchards in bloom",
     titleTail: " and the lake warming.",
-    body: "Apple trees flowering above Kriens; long afternoons on the Ufschötti. The fresh, clean morning air carries the scent of blossoms down from the hills — perfect weather for setting out on foot. Warm afternoons invite lazy hours by the lake, while the surrounding trails come alive with colour. Spring in Lucerne means ideal conditions for day hikes, from easy lakeside paths to the first clear summits of the season. The first ferries of the year return to Lake Lucerne, and the city stretches back into life.",
+    body: "Apple trees in bloom above Kriens. The first ferries back on Lake Lucerne. Mild afternoons at the Ufschötti before the summer crowds arrive. Good conditions for day hikes — the lower trails are clear early, and the first summits open by late April.",
     data: [["Day Temp. Range", "5 – 25°C"], ["Daylight", "13 h"], ["Best for", "Cycling · hikes"]],
   },
   {
@@ -61,7 +61,7 @@ export const SEASONS: Season[] = [
     imgCredit: "Photo: PJ Soans / Unsplash",
     titleLead: "Swims, slow dinners",
     titleTail: " and the longest evenings.",
-    body: "The lake is warm, the cable cars run late, and Lucerne glows until 10pm. Spend your mornings with a coffee at the water's edge, watching the mountains catch the early light. Afternoons belong to the lake — swimming at the Lido or drifting by paddle board. Evenings stretch long: drinks on the terrace, dinners that spill outside, and warm nights where nobody wants to go in. The Rigi is at its greenest, and the whole city feels like it's holding its breath before summer slips away.",
+    body: "Long days — daylight until around 9:30 PM in June. Lake swimming at the Lido, Ufschötti, or the quieter spots in Horw and Meggen. Cable cars on Rigi and Pilatus run into the evening. Many restaurants in Lucerne have terraces along the river or the lake.",
     data: [["Day Temp. Range", "18 – 32°C"], ["Daylight", "16 h"], ["Best for", "Lake swims · terrace"]],
   },
   {
@@ -70,7 +70,7 @@ export const SEASONS: Season[] = [
     imgCredit: "Photo: Taisha Ellison / Unsplash",
     titleLead: "Clear peaks, Föhn light",
     titleTail: " and quiet cafés.",
-    body: "Autumn brings the clearest mountain views of the year — the Föhn sweeps in and sharpens the horizon so the peaks look almost close enough to touch. Take the train to Interlaken for a dramatic day in the Bernese Oberland, or explore the old town of Lucerne now that the summer crowds have thinned. The cafés are warm and quiet on weekday mornings, and the hiking trails are at their most photogenic: golden light, empty paths, and air that feels like it was made for walking. A season for going slowly and seeing more.",
+    body: "The Föhn brings the clearest views of the year — Rigi and Pilatus sharpen considerably on those days. Summer crowds thin out. The old town is easier to walk around, and the cafés on weekday mornings are quiet. Good season for hiking: dry trails, reasonable temperatures, less UV than summer.",
     data: [["Day Temp. Range", "5 – 20°C"], ["Daylight", "11 h"], ["Best for", "Hiking · day trips"]],
   },
   {
@@ -79,7 +79,7 @@ export const SEASONS: Season[] = [
     imgCredit: "Photo: Kuno Schweizer / Unsplash",
     titleLead: "Snow on the rooftops",
     titleTail: " and wool on the couch.",
-    body: "Wake up to white-dusted Alps and take the train to Engelberg for a full ski day on Mount Titlis — the slopes are just over half an hour away. For something closer, winter hikes on Mount Pilatus offer remarkable views and far fewer crowds than the summer season. Back in Lucerne, wander the Christmas markets along the Reuss for Glühwein and roasted chestnuts, or settle in for a long fondue night in one of the old town's candlelit restaurants. The apartment — always warm, always cosy — is ready whenever you return.",
+    body: "Engelberg and Mt. Titlis are about 35 minutes by car or 50 minutes by train — a full ski day is easy. Pilatus has winter hiking routes with far fewer people than summer. In Lucerne: Christmas markets along the Reuss in December, fondue restaurants in the old town year-round.",
     data: [["Day Temp. Range", "-2 – 8°C"], ["Daylight", "9 h"], ["Best for", "Ski · Christmas markets"]],
   },
 ];

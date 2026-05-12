@@ -190,7 +190,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     id: 13, slug: "grottino-1313", category: "eat", sort_order: 130,
     image_url: "/images/recommendations/grottino-1313.jpg",
     name: "Grottino 1313",
-    tagline: "Surprise menu, Mediterranean",
+    tagline: "Surprise menu, Mediterranean — unique atmosphere",
     address: "Industriestrasse 7, 6005 Luzern",
     lat: 47.0393, lng: 8.3063,
     website: "https://www.grottino1313.ch",

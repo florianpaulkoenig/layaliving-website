@@ -683,7 +683,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
     website: "https://www.pilatus.ch/en",
     season: ["spring", "summer", "autumn"],
     tags: ["mountain", "view"],
-    why_we_love_it: "Buy a one-way mountain railway ticket at the top for the descent. For half the distance, take the mountain railway up to Aemsigen and walk only the upper section.",
+    why_we_love_it: "Buy a one-way mountain railway ticket at the top for the descent. For half the distance, take the mountain railway up to Aemsigen and walk only the upper section. Sturdy hiking boots are essential — the upper section is rocky and this is a demanding hike, not a casual walk.",
   },
 
   // ── BOATS ──────────────────────────────────────────────────────────────

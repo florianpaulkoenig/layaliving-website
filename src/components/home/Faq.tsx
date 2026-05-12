@@ -49,8 +49,9 @@ export function Faq() {
           A few practical <span className="it">answers</span>.
         </h2>
         <p className="sec-lede">
-          The most common questions. If yours isn&apos;t here, a short email
-          will always be answered within the day.
+          The most common questions. If yours isn&apos;t here, just send us
+          a message via Airbnb or your booking platform — we usually reply
+          within a few hours.
         </p>
 
         {/* Search bar */}

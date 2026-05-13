@@ -80,7 +80,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         n: "11",
         q: "Is smoking allowed?",
-        a: "On the balcony only. Not inside the apartment.",
+        a: "No — smoking is not allowed inside the apartment. On the balcony only.",
       },
       {
         n: "12",

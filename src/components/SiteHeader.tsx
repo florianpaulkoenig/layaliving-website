@@ -68,7 +68,7 @@ export function SiteHeader() {
           aria-label="Menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center border border-ink/25 text-ink md:hidden"
+          className="flex h-10 w-10 items-center justify-center text-ink md:hidden"
         >
           <span className="relative block h-[1px] w-5 bg-current before:absolute before:left-0 before:block before:h-[1px] before:w-5 before:-translate-y-[6px] before:bg-current after:absolute after:left-0 after:block after:h-[1px] after:w-5 after:translate-y-[6px] after:bg-current" />
         </button>

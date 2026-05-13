@@ -667,7 +667,7 @@
   .home-redesign .apt-1 .apt-img { aspect-ratio: 4 / 3; }
   .home-redesign .apt-2 .apt-img { aspect-ratio: 4 / 3; }
   .home-redesign .apt-3 .apt-img { aspect-ratio: 4 / 5; }
-  .home-redesign .apt-4 .apt-img,
+  .home-redesign .apt-4 .apt-img { aspect-ratio: 3 / 4; }
   .home-redesign .apt-5 .apt-img,
   .home-redesign .apt-6 .apt-img { aspect-ratio: 16 / 9; }
 

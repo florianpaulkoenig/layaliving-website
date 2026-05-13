@@ -16,12 +16,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         n: "02",
         q: "How does self check-in work?",
-        a: (
-          <>
-            On your arrival day you&apos;ll receive the keybox code by message shortly before check-in. The keybox is inside the mailbox labelled &ldquo;Laya&rdquo; at the main entrance of{" "}
-            <strong>Nidfeldstrasse 2G, 6010 Kriens</strong>. The key opens both the building entrance and the apartment door.
-          </>
-        ),
+        a: "The apartment has a self check-in system — no need to meet us in person. You'll receive full arrival instructions, including access details, by message two days before check-in.",
       },
       {
         n: "03",
@@ -55,7 +50,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         n: "07",
         q: "Is WiFi included?",
-        a: (<>Yes — fast WiFi throughout the apartment, free of charge. Network: <strong>Laya</strong> · Password: <strong>Layaliving4512!</strong></>),
+        a: "Yes — fast WiFi throughout the apartment, free of charge. Network details are in the apartment.",
       },
       {
         n: "08",
@@ -144,33 +139,18 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         n: "21",
-        q: "How does the heating work?",
-        a: "The apartment has a centrally controlled underfloor heating system. You can adjust the temperature individually in each room, but note that changes take some time to become noticeable. In summer, the system provides gentle cooling; in winter, a comfortable warmth.",
+        q: "Is there heating and cooling?",
+        a: "Yes — the apartment has underfloor heating and a cooling system, so it's comfortable year-round.",
       },
       {
         n: "22",
-        q: "How do I get hotter water in the shower?",
-        a: "The shower has a temperature control safety button. To get hotter water, press the button and continue turning the handle.",
+        q: "Is safety equipment provided?",
+        a: "Yes — the apartment is equipped with a first aid kit, fire extinguisher, and fire blanket.",
       },
       {
         n: "23",
-        q: "Do I need to close the windows?",
-        a: "Yes — please ensure all windows are closed when leaving the apartment and during rainfall.",
-      },
-      {
-        n: "24",
-        q: "Where do I dispose of waste?",
-        a: "Waste containers are located further down the street near the roundabout. You'll need the apartment key to access them.",
-      },
-      {
-        n: "25",
-        q: "Is there a first aid kit?",
-        a: "Yes — a first aid kit, fire extinguisher, and fire blanket are all located in the wardrobe.",
-      },
-      {
-        n: "26",
         q: "How can I reach you during my stay?",
-        a: "Via Airbnb chat. We're available daily from 09:00 to 18:00 and happy to help.",
+        a: "Via the chat on your booking platform. We're available daily from 09:00 to 18:00 and happy to help.",
       },
     ],
   },

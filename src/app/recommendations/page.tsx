@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { CATEGORIES, type Recommendation } from "@/types/recommendation";
 import { RECOMMENDATIONS } from "@/lib/recommendations-data";
 import { RecommendationsView } from "@/components/recommendations/RecommendationsView";
+import "../home.css";
 import "../pages.css";
 
 export const metadata = {

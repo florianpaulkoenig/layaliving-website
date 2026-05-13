@@ -20,7 +20,7 @@ export default function LocationPage() {
           <span className="it-accent">urban and new, with the mountains close</span>.
         </h1>
         <p className="lede">
-          The apartment sits on the top floor of a newly built campus near
+          The apartment is in a newly built campus near
           Lucerne. Close enough to the city — but high enough to breathe. The
           bus stop is right in front of the building, and the local train
           station (with trains to Lucerne and Engelberg) is around ten minutes

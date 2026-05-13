@@ -13,7 +13,7 @@ export function Hero() {
         </h1>
         <div className="hero-meta">
           <div className="eyebrow">Kriens near Lucerne · Switzerland</div>
-          <p>A thoughtfully designed top-floor apartment in Kriens — modern, comfortable, and well connected. The old town is ten minutes by bus, and Pilatus, Rigi and Engelberg are all within easy reach by train or bus.</p>
+          <p>A thoughtfully designed apartment in Kriens — modern, comfortable, and well connected. The old town is ten minutes by bus, and Pilatus, Rigi and Engelberg are all within easy reach by train or bus.</p>
           <div className="hero-actions">
             <Link href="/book" className="h-btn">Reserve your stay</Link>
             <Link href="#apartment" className="h-btn ghost">Look inside</Link>

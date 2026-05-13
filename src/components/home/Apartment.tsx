@@ -25,7 +25,7 @@ export function Apartment() {
       <div className="sec-head">
         <div className="sec-num">I — The Apartment</div>
         <h2 className="sec-title">
-          Top floor. Open views <span className="it">over the rooftops</span>.
+          Open views <span className="it">over the rooftops</span>.
         </h2>
         <p className="sec-lede">
           Step onto the balcony and you&apos;ll see the Rigi on a clear day.

@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Laya Living — A little paradise near Lucerne",
   description:
-    "Thoughtfully designed top-floor apartment in Kriens near Lucerne. Ten minutes by bus to the old town, easy train connections to Pilatus, Rigi and Engelberg.",
+    "Thoughtfully designed apartment in Kriens near Lucerne. Ten minutes by bus to the old town, easy train connections to Pilatus, Rigi and Engelberg.",
   metadataBase: new URL("https://layaliving.ch"),
   openGraph: {
     title: "Laya Living",

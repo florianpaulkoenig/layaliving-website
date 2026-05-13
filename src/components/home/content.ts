@@ -49,8 +49,8 @@ export type Season = {
 export const SEASONS: Season[] = [
   {
     n: "01", key: "spring", name: "Spring", months: "Mar – May",
-    img: "/images/spring-lucerne.jpg",
-    imgCredit: "Photo: Ricardo Gómez Angel / Unsplash",
+    img: "/images/autumn-lucerne.jpg",
+    imgCredit: "Photo: Taisha Ellison / Unsplash",
     titleLead: "The mountains clear",
     titleTail: " and the days lengthen.",
     body: "Apple trees in bloom above Kriens. The first ferries back on Lake Lucerne. Mild afternoons at the Ufschötti before the summer crowds arrive. Good conditions for day hikes — the lower trails are clear early, and the first summits open by late April.",
@@ -67,8 +67,8 @@ export const SEASONS: Season[] = [
   },
   {
     n: "03", key: "autumn", name: "Autumn", months: "Sep – Nov",
-    img: "/images/autumn-lucerne.jpg",
-    imgCredit: "Photo: Taisha Ellison / Unsplash",
+    img: "/images/autumn-lucerne-new.jpg",
+    imgCredit: "Photo: Reza Hoque / Unsplash",
     titleLead: "Autumn colours",
     titleTail: " and clear peaks.",
     body: "On Föhn days, Rigi and Pilatus are at their sharpest. The leaves turn yellow and orange — the hillsides above Kriens look particularly good in October. Marroni stands appear in the old town, and the restaurants start serving wild game. Summer crowds thin out, and the old town is easier to walk around. Fog is common in November, but the clear days more than make up for it.",

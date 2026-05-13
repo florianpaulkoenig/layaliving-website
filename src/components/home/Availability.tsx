@@ -1,4 +1,4 @@
-import { LodgifyButton } from "@/components/LodgifyEmbed";
+import Link from "next/link";
 
 export function Availability() {
   return (
@@ -15,7 +15,7 @@ export function Availability() {
             Live availability, straight from our calendar. Pick your dates and
             book directly — no platform fees, no middlemen.
           </p>
-          <LodgifyButton label="Check availability →" />
+          <Link href="/book" className="h-btn">Check availability →</Link>
         </div>
       </div>
     </section>

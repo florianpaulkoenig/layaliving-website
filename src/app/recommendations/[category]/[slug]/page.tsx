@@ -56,7 +56,7 @@ export default async function RecommendationDetail({ params }: { params: Params 
         <div className="ph-kicker">
           <Link href="/recommendations" className="rec-breadcrumb">Our Recommendations</Link>
           {" / "}
-          <Link href={`/recommendations/${category}`} className="rec-breadcrumb">{categoryTitle}</Link>
+          <Link href={`/recommendations?cat=${category}`} className="rec-breadcrumb">{categoryTitle}</Link>
         </div>
         <h1>{r.name}</h1>
         {r.tagline && (
@@ -147,7 +147,7 @@ export default async function RecommendationDetail({ params }: { params: Params 
               Open in Google Maps →
             </a>
           )}
-          <Link href={`/recommendations/${category}`} className="btn-ghost">
+          <Link href={`/recommendations?cat=${category}`} className="btn-ghost">
             ← Back to {categoryTitle}
           </Link>
         </div>

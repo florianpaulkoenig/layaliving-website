@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { photoFor } from "@/lib/photo";
 import type { Category } from "@/types/recommendation";
 import type { RecommendationRow } from "@/app/recommendations/page";
@@ -63,8 +64,17 @@ function imageSizes(v: Variant): string {
 }
 
 export function RecommendationsView({ rows, categories }: Props) {
+  const searchParams = useSearchParams();
   const [filter, setFilter] = useState<"all" | Category>("all");
   const [surprise, setSurprise] = useState<RecommendationRow | null>(null);
+
+  // Pre-select category filter from ?cat= URL param
+  useEffect(() => {
+    const cat = searchParams.get("cat") as Category | null;
+    if (cat && categories.some((c) => c.slug === cat)) {
+      setFilter(cat);
+    }
+  }, [searchParams, categories]);
 
   const triggerSurprise = useCallback((category: "all" | Category) => {
     const pool = category === "all" ? rows : rows.filter((r) => r.category === category);

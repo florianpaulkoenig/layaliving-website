@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { CATEGORIES, type Recommendation } from "@/types/recommendation";
 import { RECOMMENDATIONS } from "@/lib/recommendations-data";
 import { RecommendationsView } from "@/components/recommendations/RecommendationsView";
@@ -31,5 +32,9 @@ export default function RecommendationsPage() {
     rows.some((r) => r.category === c.slug)
   );
 
-  return <RecommendationsView rows={rows} categories={categories} />;
+  return (
+    <Suspense>
+      <RecommendationsView rows={rows} categories={categories} />
+    </Suspense>
+  );
 }

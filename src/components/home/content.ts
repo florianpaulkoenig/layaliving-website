@@ -6,6 +6,7 @@ export const HOME_IMG = {
   living: "/images/living-room-sofa.jpg",
   kitchen: "/images/kitchen.jpg",
   sofa: "/images/sofa.jpg",
+  bathroom: "/images/bathroom.jpg",
   bed: "/images/bedroom.jpg",
   sofabed: "/images/sofa-bed.jpg",
   naturalLight: "/images/natural-light.jpg",

@@ -14,7 +14,7 @@ const FIGS: Fig[] = [
   { cls: "apt-1", src: HOME_IMG.living,     alt: "Main living area",                  title: "Main living area",                  n: "01 / 06", sizes: "(max-width: 768px) 100vw, 55vw" },
   { cls: "apt-2", src: HOME_IMG.kitchen,    alt: "Fully equipped kitchen",             title: "Fully equipped kitchen",             n: "02 / 06", sizes: "(max-width: 768px) 100vw, 42vw" },
   { cls: "apt-3", src: HOME_IMG.bed,        alt: "Thoughtful design for cozy nights",  title: "Thoughtful design for cozy nights",  n: "03 / 06", sizes: "(max-width: 768px) 100vw, 65vw" },
-  { cls: "apt-4", src: HOME_IMG.sofa,       alt: "Designer details",                   title: "Designer details",                   n: "04 / 06", sizes: "(max-width: 768px) 100vw, 30vw" },
+  { cls: "apt-4", src: HOME_IMG.bathroom,   alt: "Bathroom",                           title: "Bathroom",                           n: "04 / 06", sizes: "(max-width: 768px) 100vw, 30vw" },
   { cls: "apt-5", src: HOME_IMG.naturalLight, alt: "Large windows, plenty of light",   title: "Large windows, plenty of light",     n: "05 / 06", sizes: "(max-width: 768px) 100vw, 50vw" },
   { cls: "apt-6", src: HOME_IMG.sofabed,    alt: "The sofa converts into a bed",        title: "The sofa converts into a bed",       n: "06 / 06", sizes: "(max-width: 768px) 100vw, 45vw" },
 ];

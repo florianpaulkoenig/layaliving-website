@@ -80,6 +80,27 @@ const PHOTOS = [
   "yannis-zaugg-iLq3l4KKL6s-unsplash.jpg",
 ];
 
+function getCredit(filename: string): string {
+  // Remove -unsplash.jpg suffix, then parse photographer name.
+  // Unsplash filenames: photographer-name-PHOTOID-unsplash.jpg
+  // The photo ID is the last run of non-pure-lowercase segments before "unsplash".
+  const base = filename.replace(/-unsplash\.jpg$/, "");
+  const parts = base.split("-");
+
+  let idStart = parts.length;
+  for (let i = parts.length - 1; i >= 0; i--) {
+    const p = parts[i];
+    // A pure lowercase word (len > 1) marks the end of the photographer name
+    if (/^[a-z]+$/.test(p) && p.length > 1) break;
+    idStart = i;
+  }
+
+  return parts
+    .slice(0, idStart)
+    .map((p) => p.charAt(0).toUpperCase() + p.slice(1))
+    .join(" ");
+}
+
 export default function InspirationPage() {
   return (
     <div className="page-inspiration">
@@ -108,6 +129,9 @@ export default function InspirationPage() {
               className="insp-img"
               unoptimized
             />
+            <div className="insp-item-credit">
+              {getCredit(filename)} / Unsplash
+            </div>
           </div>
         ))}
       </div>

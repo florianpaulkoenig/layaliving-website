@@ -40,7 +40,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         n: "04",
         q: "Where is the apartment?",
-        a: "Nidfeldstrasse 2G, 6010 Kriens — about 10 minutes from Lucerne by bus 14.",
+        a: "The apartment is in the Nidfeldquartier in Kriens — about 10 minutes from Lucerne by bus 14.",
       },
       {
         n: "05",

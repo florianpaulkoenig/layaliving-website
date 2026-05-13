@@ -44,8 +44,8 @@ export const FAQ_GROUPS: FaqGroup[] = [
       },
       {
         n: "05",
-        q: "Which floor is it on?",
-        a: "6th floor (top floor). There's an elevator.",
+        q: "Is there a lift to the apartment?",
+        a: "Yes — there is a lift.",
       },
       {
         n: "06",

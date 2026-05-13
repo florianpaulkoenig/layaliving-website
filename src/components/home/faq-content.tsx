@@ -55,12 +55,12 @@ export const FAQ_GROUPS: FaqGroup[] = [
       {
         n: "07",
         q: "Is WiFi included?",
-        a: "Yes — fast WiFi throughout the apartment, free of charge.",
+        a: (<>Yes — fast WiFi throughout the apartment, free of charge. Network: <strong>Laya</strong> · Password: <strong>Layaliving4512!</strong></>),
       },
       {
         n: "08",
         q: "Is the kitchen fully equipped?",
-        a: "Yes — induction hob and oven, microwave, dishwasher, coffee machine, kettle, toaster, rice cooker, fridge and freezer. Cookware, utensils, plates, glasses, cutlery. Basic spices and oil.",
+        a: "Yes — induction hob and oven, microwave, dishwasher, coffee machine, kettle, toaster, rice cooker, fridge and freezer. Cookware, utensils, plates, glasses, cutlery. Basic spices and oil. Note: the induction cooktop only activates when a suitable pan is placed on the cooking zone.",
       },
       {
         n: "09",
@@ -126,6 +126,51 @@ export const FAQ_GROUPS: FaqGroup[] = [
             <a href="https://www.sbb.ch/en/buying/pages/fahrplan/fahrplan.xhtml?von=Z%C3%BCrich+Flughafen&nach=Kriens%2C+Nidfeld" target="_blank" rel="noopener noreferrer">Plan your journey on SBB.ch →</a>
           </>
         ),
+      },
+    ],
+  },
+  {
+    topic: "Good to Know",
+    items: [
+      {
+        n: "19",
+        q: "What's provided on arrival?",
+        a: "As a small welcome gesture, you'll find a selection of drinks in the fridge. Coffee and tea are also provided in the kitchen.",
+      },
+      {
+        n: "20",
+        q: "Is the tap water safe to drink?",
+        a: "Yes — Swiss tap water is of excellent quality and perfectly safe to drink.",
+      },
+      {
+        n: "21",
+        q: "How does the heating work?",
+        a: "The apartment has a centrally controlled underfloor heating system. You can adjust the temperature individually in each room, but note that changes take some time to become noticeable. In summer, the system provides gentle cooling; in winter, a comfortable warmth.",
+      },
+      {
+        n: "22",
+        q: "How do I get hotter water in the shower?",
+        a: "The shower has a temperature control safety button. To get hotter water, press the button and continue turning the handle.",
+      },
+      {
+        n: "23",
+        q: "Do I need to close the windows?",
+        a: "Yes — please ensure all windows are closed when leaving the apartment and during rainfall.",
+      },
+      {
+        n: "24",
+        q: "Where do I dispose of waste?",
+        a: "Waste containers are located further down the street near the roundabout. You'll need the apartment key to access them.",
+      },
+      {
+        n: "25",
+        q: "Is there a first aid kit?",
+        a: "Yes — a first aid kit, fire extinguisher, and fire blanket are all located in the wardrobe.",
+      },
+      {
+        n: "26",
+        q: "How can I reach you during my stay?",
+        a: "Via Airbnb chat. We're available daily from 09:00 to 18:00 and happy to help.",
       },
     ],
   },

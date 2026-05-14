@@ -24,13 +24,11 @@ export type Pick = {
 };
 
 export const PICKS: Pick[] = [
-  { n: "01", name: "Café Rössli",        kind: "Breakfast · Kriens",   dist: "3 min walk",   x: 48, y: 52 },
-  { n: "02", name: "Osteria Primavera",  kind: "Dinner · Old town",    dist: "12 min bike",  x: 58, y: 38 },
-  { n: "03", name: "Weinhandel Am See",  kind: "Natural wine",         dist: "14 min bike",  x: 62, y: 42 },
-  { n: "04", name: "Helvetia Bakehouse", kind: "Sourdough · Pastry",   dist: "9 min bike",   x: 54, y: 46 },
-  { n: "05", name: "Pilatus Talstation", kind: "Cable car · Mountain", dist: "6 min walk",   x: 42, y: 62 },
-  { n: "06", name: "Rigi Kaltbad",       kind: "Thermal bath",         dist: "40 min ferry", x: 72, y: 22 },
-  { n: "07", name: "Bourbaki Kino",      kind: "Arthouse cinema",      dist: "15 min bike",  x: 60, y: 34 },
+  { n: "01", name: "Montana Beach Club", kind: "Rooftop bar · Art Deco", dist: "15 min bike",  x: 68, y: 26 },
+  { n: "02", name: "Mount Pilatus",      kind: "Mountain · gondola",     dist: "6 min bus",    x: 42, y: 64 },
+  { n: "03", name: "Bireggwald",         kind: "Forest walk",            dist: "5 min walk",   x: 46, y: 58 },
+  { n: "04", name: "Grottino 1313",      kind: "Dinner · surprise menu", dist: "12 min bike",  x: 53, y: 37 },
+  { n: "05", name: "Paddle Steamer",     kind: "Vintage steamer · lake", dist: "15 min bike",  x: 57, y: 31 },
 ];
 
 export type Season = {
@@ -68,7 +66,6 @@ export const SEASONS: Season[] = [
   {
     n: "03", key: "autumn", name: "Autumn", months: "Sep – Nov",
     img: "/images/autumn-lucerne-new.jpg",
-    imgCredit: "Photo: Reza Hoque / Unsplash",
     titleLead: "Autumn colours",
     titleTail: " and clear peaks.",
     body: "On Föhn days, Rigi and Pilatus are at their sharpest. The leaves turn yellow and orange — the hillsides above Kriens look particularly good in October. Marroni stands appear in the old town, and the restaurants start serving wild game. Summer crowds thin out, and the old town is easier to walk around. Fog is common in November, but the clear days more than make up for it.",

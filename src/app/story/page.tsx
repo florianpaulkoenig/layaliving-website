@@ -70,24 +70,9 @@ export default function StoryPage() {
             travel.
           </p>
 
-          <p style={{ fontSize: 15, color: "var(--ink-2)", maxWidth: "52ch", margin: 0 }}>
-            When we travel, we love to immerse ourselves in local life and
-            discover a city from the perspective of locals — with all the
-            insider tips, special places, and authentic moments that you
-            won&rsquo;t find in a standard travel guide. That&rsquo;s exactly
-            why we created our{" "}
-            <Link href="/recommendations" className="it-accent" style={{ borderBottom: "1px solid var(--accent)" }}>
-              recommendations guide
-            </Link>
-            : to share our personal picks and favourite experiences.
-          </p>
-
           <div style={{ marginTop: "auto", display: "flex", gap: 16, flexWrap: "wrap" }}>
-            <Link href="/recommendations" className="h-btn">
-              Browse our recommendations →
-            </Link>
-            <Link href="/book" className="h-btn ghost">
-              Reserve your stay
+            <Link href="/book" className="h-btn">
+              Reserve your stay →
             </Link>
           </div>
         </div>

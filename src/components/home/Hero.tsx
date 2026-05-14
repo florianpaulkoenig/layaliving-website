@@ -30,7 +30,6 @@ export function Hero() {
           className="object-cover"
           style={{ filter: "saturate(0.95)" }}
         />
-        <div className="hero-caption">Fig. 01 — VIEW OF THE MAIN LIVING AREA</div>
       </div>
     </section>
   );

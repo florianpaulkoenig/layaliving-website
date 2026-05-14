@@ -30,7 +30,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
   // ── EAT ────────────────────────────────────────────────────────────────
   {
     ...BASE,
-    id: 1, slug: "two-hands", category: "eat", sort_order: 10,
+    id: 1, slug: "two-hands", category: "eat", sort_order: 10, published: false,
     image_url: "/images/recommendations/two-hands.jpg",
     name: "Two Hands",
     tagline: "Creative cosmopolitan cuisine — great for brunch",
@@ -45,7 +45,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
   },
   {
     ...BASE,
-    id: 2, slug: "melissas-kitchen", category: "eat", sort_order: 20,
+    id: 2, slug: "melissas-kitchen", category: "eat", sort_order: 20, published: false,
     image_url: "/images/recommendations/melissas-kitchen.jpg",
     name: "Melissa's Kitchen",
     tagline: "Homemade, fresh, organic — brunch on Sundays",
@@ -280,7 +280,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
   {
     ...BASE,
     id: 23, slug: "central-kriens", category: "drink", sort_order: 40,
-    image_url: "/images/recommendations/central-kriens.jpg",
+    image_url: "/images/recommendations/central-kriens.png",
     name: "Central Kriens",
     tagline: "Coffee & drinks · right next to the Pilatus gondola",
     address: "Waldheimstrasse 1, 6010 Kriens",
@@ -481,7 +481,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
   {
     ...BASE,
     id: 54, slug: "klewendalp", category: "hike", sort_order: 50,
-    image_url: "/images/recommendations/walk-27-klewenalp.jpg",
+    image_url: "/images/recommendations/klewenalp.webp",
     name: "Klewenalp",
     tagline: "Scenic walks · family-friendly · gondola",
     address: "Beckenried",
@@ -491,6 +491,21 @@ export const RECOMMENDATIONS: Recommendation[] = [
     description: "Family-friendly mountain above Beckenried on the southern shore of Lake Lucerne. Gondola up to hiking trails, bike routes, and barbecue spots in summer; small ski area in winter. Good mountain restaurants on top.\n\nWorth combining with the boat: take the ship from Lucerne to Beckenried — a scenic crossing of about 45 minutes — then walk to the gondola valley station. A proper day out.",
     bus_route: "Boat from Lucerne to Beckenried (about 45 min), then 10 min walk to the gondola valley station. Or by car — large parking lot at the valley station.",
     tags: ["family-friendly", "mountain", "lake"],
+  },
+  {
+    ...BASE,
+    id: 55, slug: "melchsee-frutt", category: "hike", sort_order: 55,
+    image_url: "/images/recommendations/melchsee-frutt.jpg",
+    name: "Melchsee-Frutt",
+    tagline: "High alpine plateau · mountain lake · car-free village",
+    address: "Stöckalp",
+    website: "https://www.melchsee-frutt.ch",
+    price_range: 3,
+    description: "Melchsee-Frutt is a car-free mountain resort at 1,920 m, reached by a gondola from Stöckalp. At the top: a still alpine lake surrounded by open meadows, easy circular paths, and views toward Titlis and the surrounding peaks. In summer it is quiet and uncrowded compared to Pilatus or Rigi — genuinely remote in feel, even though it's under two hours from the apartment.\n\nThe Melchsee itself is a highlight — a walk around the lake takes about 45 minutes on a flat, well-marked path. For those wanting more, longer trails continue to the Tannensee and the Jochpass, linking up with the Four Lakes Hike. The village has a handful of mountain restaurants and a small ski area in winter.\n\nGood option for families — the gondola ride is part of the appeal, the terrain at the top is gentle, and it gets less traffic than the better-known peaks.",
+    bus_route: "Via Lucerne station (bus 14 from Kriens, Nidfeld, ~10 min), then train to Sarnen (25 min), then PostBus to Stöckalp (about 30 min), then gondola up to Melchsee-Frutt (about 20 min). Total: approx. 1 hr 30 min.",
+    season: ["spring", "summer", "autumn", "winter"],
+    tags: ["mountain", "view", "family-friendly", "hidden-gem"],
+    why_we_love_it: "The Melchsee lake at the top is beautiful and calm — one of the most peaceful spots in the region.",
   },
   {
     ...BASE,
@@ -562,7 +577,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
   {
     ...BASE,
     id: 104, slug: "tribschen-peninsula", category: "walks", sort_order: 50,
-    image_url: null,
+    image_url: "/images/recommendations/tribschen-peninsula.webp",
     name: "Tribschen Peninsula",
     tagline: "Wagner's lakeside home — quiet alternative to the busy promenade",
     description: "Wooded peninsula south of the train station where Richard Wagner lived in the 1860s. Lakeside park is free and open; the museum in his former house has period rooms and an audio guide. Quiet alternative to the busy city promenade. Museum closed Mondays; otherwise 11:00–17:00.\n\nRight next to it: Strandbad Tribschen — a family-friendly lido directly on the lake.",
@@ -587,7 +602,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
   {
     ...BASE,
     id: 106, slug: "sonnenberg-loop", category: "walks", sort_order: 70,
-    image_url: null,
+    image_url: "/images/recommendations/sonnenberg.jpg",
     name: "Sonnenberg & Chrüzhöchi",
     tagline: "Easy ridge walk above Kriens via funicular",
     description: "Easy circular route on the Sonnenberg ridge above Kriens. Views across Lucerne and the lake. Picnic spots, small hotel-restaurant, playground, and a mini golf course. With children, the ComicTrail riddle path adds a game along the way. Reached by the Sonnenbergbahn funicular from Kriens — a short ride up and you're there.",
@@ -602,7 +617,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
   {
     ...BASE,
     id: 58, slug: "four-lakes-hike", category: "hike", sort_order: 85,
-    image_url: "/images/recommendations/klewendalp.jpg",
+    image_url: "/images/recommendations/four-lakes-hike.jpg",
     name: "Four Lakes Hike",
     tagline: "Engelberg to Melchsee-Frutt over the Jochpass",
     description: "Trübsee → Engstlensee → Tannensee → Melchsee. Four alpine lakes connected by a marked path that crosses the Jochpass (2,207 m). Take the gondola from Engelberg up to Trübsee — this is where the hike starts. From Trübsee, you can either walk up to the Jochpass (steep) or take the chairlift from Trübsee directly to the pass — the first shortcut, and worth it if you want to save your legs for the rest. Technically straightforward from there, but a long day overall. Restaurant at each lake. For experienced walkers with an early start — check last cable cars before leaving. Summer only: in winter the area is snow-covered and the slopes are used for skiing. Before you go, check online whether the route is open and whether the chairlifts are running — both affect the shortcuts.\n\nShorter alternative: just walk around the Trübsee itself — a gentle loop at the top of the gondola with beautiful views, no pass crossing required.",
@@ -793,7 +808,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
   },
   {
     ...BASE,
-    id: 96, slug: "reussschwimmen", category: "swim", sort_order: 60,
+    id: 96, slug: "reussschwimmen", category: "swim", sort_order: 60, published: false,
     image_url: "/images/recommendations/swim-07-reuss.jpg",
     name: "Reussschwimmen",
     tagline: "Drift 1.4 km down the Reuss through the old town — a local summer ritual",
@@ -891,7 +906,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
   {
     ...BASE,
     id: 207, slug: "aldi-kriens", category: "essentials", sort_order: 25,
-    image_url: null,
+    image_url: "/images/recommendations/aldi-kriens.jpg",
     name: "ALDI Kriens",
     tagline: "Budget supermarket · alcohol · household goods",
     description: "The nearest budget supermarket — good for alcohol (Migros doesn't sell it), household goods, and weekly shopping at lower prices. Located in the Ringcenter on Ringstrasse, a short bus ride from the apartment.",
@@ -959,7 +974,7 @@ export const RECOMMENDATIONS: Recommendation[] = [
   {
     ...BASE,
     id: 208, slug: "food-delivery", category: "essentials", sort_order: 65,
-    image_url: null,
+    image_url: "/images/recommendations/fast-food.jpg",
     name: "Delivery & Fast Food",
     tagline: "eat.ch · Uber Eats · McDonald's · Subway — 10 min",
     description: "For delivery, both eat.ch and Uber Eats deliver to the apartment — search by address (Nidfeldstrasse 2G, Kriens). McDonald's and Subway are both around a 10-minute walk from the flat, at the Mattenhof complex.",

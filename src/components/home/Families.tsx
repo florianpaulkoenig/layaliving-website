@@ -36,8 +36,11 @@ export function Families() {
         <div className="split-body">
           <h3>Easy to get around.</h3>
           <p>
-            A Nextbike station is in front of the building. The bus stop is
-            across the street — about 10 minutes to Lucerne old town on bus 14.
+            The Velohighway starts right outside the building — a dedicated,
+            flat cycle path that takes you car-free into Lucerne old town in
+            about ten minutes. A Nextbike station is in front of the building.
+            The bus stop is across the street — about 10 minutes to Lucerne old
+            town on bus 14.
           </p>
           <p>
             Rigi and Pilatus are reachable within the hour by bus, boat, and

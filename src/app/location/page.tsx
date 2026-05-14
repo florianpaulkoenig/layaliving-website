@@ -98,19 +98,19 @@ export default function LocationPage() {
         <figure className="p">
           <div className="fig">
             <Image
-              src="/images/bike-kapellbrucke.jpg"
-              alt="Old town by bike"
+              src="/images/lucerne-oldtown.jpg"
+              alt="Lucerne old town"
               fill
               sizes="(max-width: 768px) 100vw, 48vw"
               className="object-cover"
             />
           </div>
-          <div className="cap"><span>Fig. 03</span><span>Ten minutes to the old town</span></div>
-          <h3>Car-free into the city from the door.</h3>
+          <div className="cap"><span>Fig. 03</span><span>OLD TOWN · LUCERNE</span></div>
+          <h3>The old town, ten minutes away.</h3>
           <p>
-            The Velohighway starts right outside the building — a dedicated,
-            flat cycle path that takes you car-free into Lucerne old town in
-            about ten minutes.
+            Café tables by the Reuss, the Chapel Bridge, cobblestone lanes that
+            open into sun-lit squares. Take bus 14 from the front door, and
+            you&apos;re in the middle of it in ten minutes.
           </p>
         </figure>
       </div>

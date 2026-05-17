@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { EB_Garamond, Inter, Dancing_Script } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import "./globals.css";
@@ -56,6 +57,7 @@ export default function RootLayout({
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
+        <Analytics />
       </body>
     </html>
   );

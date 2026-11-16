@@ -23,7 +23,7 @@ export const apartment = {
   },
   host: {
     name: "Elin & Florian",
-    email: "info@layaliving.ch",
+    email: "info.layaliving@gmail.com",
   },
 };
 

@@ -19,10 +19,10 @@ export default function ImpressumPage() {
           <p className="text-ink-muted">
             E-Mail:{" "}
             <a
-              href="mailto:info@layaliving.ch"
+              href="mailto:info.layaliving@gmail.com"
               className="underline underline-offset-4"
             >
-              info@layaliving.ch
+              info.layaliving@gmail.com
             </a>
           </p>
         </div>

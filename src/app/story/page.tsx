@@ -4,7 +4,7 @@ import "../pages.css";
 export const metadata = {
   title: "Our Story — Laya Living",
   description:
-    "We are Elin, Vivien, Lucio, and Florian — passionate travellers who wanted to share the feeling of a home away from home.",
+    "We are Vivien and Lucio — passionate travellers who wanted to share the feeling of a home away from home.",
 };
 
 export default function StoryPage() {
@@ -16,7 +16,7 @@ export default function StoryPage() {
           Passionate travellers, <span className="it-accent">at heart</span>.
         </h1>
         <p className="lede">
-          We are Elin, Vivien, Lucio, and Florian — four friends who love
+          We are Vivien and Lucio — a couple who loves
           discovering the world and believe the best stays feel like coming
           home.
         </p>
@@ -28,7 +28,7 @@ export default function StoryPage() {
 
           <div className="contact-block">
             <div className="k">The Team</div>
-            <div className="v">Elin, Vivien,<br />Lucio & Florian</div>
+            <div className="v">Vivien & Lucio</div>
           </div>
 
           <div className="contact-block">
@@ -44,7 +44,7 @@ export default function StoryPage() {
           <div className="contact-block" style={{ marginTop: "auto" }}>
             <div className="k">Contact</div>
             <div className="v v--small">
-              <a href="mailto:info@layaliving.ch">info@layaliving.ch</a>
+              <a href="mailto:info.layaliving@gmail.com">info.layaliving@gmail.com</a>
             </div>
           </div>
         </aside>
@@ -56,7 +56,7 @@ export default function StoryPage() {
           </blockquote>
 
           <p style={{ fontSize: 15, color: "var(--ink-2)", maxWidth: "52ch", margin: 0 }}>
-            We — Elin, Vivien, Lucio, and Florian — are passionate travellers
+            We — Vivien and Lucio — are passionate travellers
             and love discovering new places. On our travels, we have always
             found it special to arrive at a rental that feels like home. We
             want to share this feeling with others.

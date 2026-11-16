@@ -27,9 +27,9 @@ export default function DatenschutzPage() {
         </p>
         <p className="text-sm">
           Fragen zum Datenschutz: <a
-            href="mailto:info@layaliving.ch"
+            href="mailto:info.layaliving@gmail.com"
             className="underline underline-offset-4"
-          >info@layaliving.ch</a>
+          >info.layaliving@gmail.com</a>
         </p>
       </div>
     </section>

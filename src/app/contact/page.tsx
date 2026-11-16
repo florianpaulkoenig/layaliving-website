@@ -28,7 +28,7 @@ export default function ContactPage() {
           <div className="contact-block">
             <div className="k">E-mail</div>
             <div className="v">
-              <a href="mailto:info@layaliving.ch">info@layaliving.ch</a>
+              <a href="mailto:info.layaliving@gmail.com">info.layaliving@gmail.com</a>
             </div>
             <p>The fastest way to reach us. Write in any language below.</p>
           </div>

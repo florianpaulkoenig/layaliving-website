@@ -35,10 +35,10 @@ export function SiteFooter() {
         <div>
           <h4 className="kicker">Say hello</h4>
           <a
-            href="mailto:info@layaliving.ch"
+            href="mailto:info.layaliving@gmail.com"
             className="mt-3 block leading-[1.7] text-ink-soft hover:text-ink"
           >
-            info@layaliving.ch
+            info.layaliving@gmail.com
           </a>
         </div>
 
